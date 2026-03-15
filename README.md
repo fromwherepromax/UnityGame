@@ -130,3 +130,62 @@ git push --tags
 - 关键场景可进入、可操作、可退出
 - 没有把 [My-RPG/Library](My-RPG/Library) / [My-RPG/Temp](My-RPG/Temp) 提交进来
 - 新增资源是否带 `.meta`
+
+## 8. 变基冲突处理手册（zkt 分支同步 main）
+
+适用场景
+- 你在个人分支（例如 zkt）开发，需要同步最新 main。
+
+标准流程（无冲突）
+1. git fetch origin
+2. git rebase origin/main
+3. git push --force-with-lease origin zkt
+
+发生冲突时（通用）
+1. 先看冲突文件
+	- git status
+2. 打开冲突文件，处理标记
+	- <<<<<<<
+	- =======
+	- >>>>>>>
+3. 处理完成后标记已解决
+	- git add <文件路径>
+4. 继续变基
+	- git rebase --continue
+5. 如果还有冲突，重复 1-4，直到结束
+6. 完成后推送
+	- git push --force-with-lease origin zkt
+
+Unity 场景冲突专用处理（.unity / .prefab / .asset）
+1. 不建议直接在文本里硬改大段 YAML。
+2. 冲突复杂时优先策略
+	- 先保留一方场景版本完成变基
+	- 在 Unity Editor 中手工补回另一方改动
+3. 场景文件与对应 meta 要同时关注。
+4. 完成后务必在 Unity 中验证
+	- 无 Missing 脚本
+	- 关键流程可跑通
+
+常用快速命令
+1. 查看当前卡在哪个提交
+	- git rebase --show-current-patch
+2. 跳过当前冲突提交（谨慎）
+	- git rebase --skip
+3. 放弃本次变基，回到变基前
+	- git rebase --abort
+
+强制要求（避免踩坑）
+1. 不要在变基进行中执行新的 pull。
+2. 不要在未解决冲突前直接 push。
+3. 变基后推送必须用 --force-with-lease，不要用 --force。
+
+最短应急流程（可直接照抄）
+1. git fetch origin
+2. git rebase origin/main
+3. 发生冲突后：
+	- git status
+	- 解决冲突
+	- git add .
+	- git rebase --continue
+4. 全部完成后：
+	- git push --force-with-lease origin zkt
