@@ -1,0 +1,39 @@
+# Unity generated folders
+My-RPG/[Ll]ibrary/
+My-RPG/[Tt]emp/
+My-RPG/[Oo]bj/
+My-RPG/[Bb]uild/
+My-RPG/[Bb]uilds/
+My-RPG/[Ll]ogs/
+My-RPG/[Uu]ser[Ss]ettings/
+My-RPG/[Mm]emoryCaptures/
+My-RPG/[Rr]ecordings/
+
+# Unity auto-generated files
+My-RPG/[Aa]ssets/AssetStoreTools*
+My-RPG/[Aa]ssets/Plugins/Editor/JetBrains*
+
+# Rider / VS / VS Code
+My-RPG/*.csproj
+My-RPG/*.unityproj
+My-RPG/*.sln.DotSettings.user
+My-RPG/*.user
+My-RPG/*.userprefs
+My-RPG/*.pidb
+My-RPG/*.booproj
+My-RPG/*.svd
+My-RPG/*.pdb
+My-RPG/*.mdb
+My-RPG/*.opendb
+My-RPG/*.VC.db
+My-RPG/.vs/
+My-RPG/.idea/
+My-RPG/.vscode/
+
+# Keep the Unity solution for easier C# collaboration
+!My-RPG/My-RPG.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
