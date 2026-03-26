@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class NPC_Patrol : MonoBehaviour
 {
-    public Vector2[] patrolPoints;
+    
     public float speed = 2f;
     public float waitTime = 1f;
     private bool isWaiting = true;
-    private Vector2 target;
+    public Vector2[] patrolPoints;  //巡逻点数组，可以在Inspector中设置
     private int currentPatrolIndex = 0;
+    private Vector2 target;
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -21,7 +22,8 @@ public class NPC_Patrol : MonoBehaviour
     }
 
     void Update()
-    {   if (isWaiting)
+    {   
+        if (isWaiting)
         {
             rb.velocity = Vector2.zero;
             return;
