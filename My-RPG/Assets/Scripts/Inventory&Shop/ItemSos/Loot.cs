@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class Loot : MonoBehaviour
     public Animator anim;
     public int quantity;
     public bool canBePickedUp = true;
+    public static event Action<ItemSo, int> OnItemLooted;
 
     private void OnValidate()
     {
@@ -27,6 +29,7 @@ public class Loot : MonoBehaviour
         if (collision.CompareTag("Player") && canBePickedUp)
         {
             anim.Play("LootPickUp");
+            OnItemLooted?.Invoke(itemSo, quantity);
             Destroy(gameObject, 0.5f);
         }
     }
