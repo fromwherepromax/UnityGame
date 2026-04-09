@@ -12,14 +12,14 @@ public class PlayerMovemont : MonoBehaviour
     private bool isKnockback;
     public bool isShooting;
 
-    public player_Combat player_Combat;
-    private void Update()
-    {
-        if (Input.GetButtonDown("Slash"))
-        {
-            player_Combat.Attack();
-        }
-    }
+    // public player_Combat player_Combat;
+    // private void Update()
+    // {
+    //     if (Input.GetButtonDown("Slash"))
+    //     {
+    //         player_Combat.Attack();
+    //     }
+    // }
 
 
 
