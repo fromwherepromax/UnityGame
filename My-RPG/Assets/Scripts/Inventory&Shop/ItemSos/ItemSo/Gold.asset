@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4df2b9640c169014ab5f1fe80c2f2c90, type: 3}
-  m_Name: Mushroom
+  m_Name: Gold
   m_EditorClassIdentifier: 
-  itemName: Mushroom
-  itemDescription: Is Mushroom?
-  itemIcon: {fileID: 21300000, guid: ac52fecda43975440ba548d1eb0ae0cb, type: 3}
+  itemName: 
+  itemDescription: 
+  itemIcon: {fileID: 0}
   isGold: 0
   isExp: 0
-  stackSize: 10
+  stackSize: 3
   currentHealth: 0
   maxHealth: 0
   speed: 0
