@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df2b9640c169014ab5f1fe80c2f2c90, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemIcon: {fileID: 0}
+  itemName: Wood
+  itemDescription: Lucky Wodd
+  itemIcon: {fileID: 21300000, guid: d4ea3e2dc4ff9b744834b25526479492, type: 3}
   isGold: 0
   isExp: 0
   stackSize: 99
