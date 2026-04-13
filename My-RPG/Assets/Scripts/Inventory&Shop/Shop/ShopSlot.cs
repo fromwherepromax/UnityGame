@@ -6,18 +6,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopSlot : MonoBehaviour
+public class ShopSlot : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IPointerMoveHandler
 {
     public ItemSo itemSo;
     public TMP_Text itemNameText;
     public TMP_Text PriceText;
     public Image itemImage;
     public int price;
-    // [SerializeField] private ShopManager shopManager;
-    // [SerializeField] private ShopInfo shopInfo;
+    [SerializeField] private ShopManager shopManager;
+    [SerializeField] private ShopInfo shopInfo;
 
      
-    public void Initialize(ItemSo newitemSo, int Price)
+    public void Initialize(ItemSo newitemSo, int Price) //初始化商店物品
     {
         itemSo = newitemSo;
         itemImage.sprite = itemSo.itemIcon;
@@ -25,27 +25,27 @@ public class ShopSlot : MonoBehaviour
         price = Price;
         PriceText.text = price.ToString();
     }
-    // public void OnBuyButtonClicked()
-    // {
-    //    shopManager.TryBuyItem(itemSo, price);
-    // }
+    public void OnBuyButtonClicked()
+    {
+       shopManager.TryBuyItem(itemSo, price);
+    }
 
-    // public void OnPointerEnter(PointerEventData eventData)
-    // {   
-    //     if(itemSo != null)
-    //     shopInfo.ShowItemInfo(itemSo);
-    // }
+    public void OnPointerEnter(PointerEventData eventData)
+    {   
+        if(itemSo != null)
+        shopInfo.ShowItemInfo(itemSo);
+    }
 
-    // public void OnPointerExit(PointerEventData eventData)
-    // {   
-    //     if(itemSo != null)
-    //     shopInfo.HideItemInfo();
-    // }
+    public void OnPointerExit(PointerEventData eventData)
+    {   
+        if(itemSo != null)
+        shopInfo.HideItemInfo();
+    }
 
-    // public void OnPointerMove(PointerEventData eventData)
-    // {   
-    //     if(itemSo != null){
-    //         shopInfo.FollowMouse();
-    //     }
-    // }
+    public void OnPointerMove(PointerEventData eventData)
+    {   
+        if(itemSo != null){
+            shopInfo.FollowMouse();
+        }
+    }
 }

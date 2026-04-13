@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 8689302444041174615}
   - component: {fileID: 8871746685365728469}
   - component: {fileID: 6518870612695846935}
+  - component: {fileID: 8988403940456805974}
   m_Layer: 5
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -198,7 +199,38 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8871746685365728469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8988403940456805974}
+        m_TargetAssemblyTypeName: ShopSlot, Assembly-CSharp
+        m_MethodName: OnBuyButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8988403940456805974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829223886330115882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084db91726dbdb4fbbf0931affcbfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSo: {fileID: 0}
+  itemNameText: {fileID: 3818169991708718257}
+  PriceText: {fileID: 4045155811073996395}
+  itemImage: {fileID: 7410549762611527582}
+  price: 0
+  shopManager: {fileID: 0}
+  shopInfo: {fileID: 0}
 --- !u!1 &4083454367655694544
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -576,14 +608,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
+  m_fontSize: 48.95
   m_fontSizeBase: 48
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
