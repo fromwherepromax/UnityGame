@@ -10,7 +10,7 @@ public class ItemSo : ScriptableObject
     public Sprite itemIcon;
     public bool isGold;
     public bool isExp;
-    public int stackSize=3;
+    public int stackSize=99; //默认堆叠数量为99
 
     [Header("Stats")]
     public int currentHealth;

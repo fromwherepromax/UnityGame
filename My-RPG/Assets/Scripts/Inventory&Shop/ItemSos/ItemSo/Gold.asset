@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df2b9640c169014ab5f1fe80c2f2c90, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemIcon: {fileID: 0}
-  isGold: 0
+  itemName: Gold
+  itemDescription: 'The Best You Can Meet
+
+'
+  itemIcon: {fileID: 21300000, guid: 7a0f4fab77b344f7b9386a7c87e492b1, type: 3}
+  isGold: 1
   isExp: 0
   stackSize: 3
   currentHealth: 0

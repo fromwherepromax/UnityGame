@@ -40,7 +40,7 @@ public class Loot : MonoBehaviour
             canBePickedUp = true;
         }
     }
-    public void Initialize(ItemSo itemSo, int quantity)
+    public void Initialize(ItemSo itemSo, int quantity)  //初始化掉落物
     {
         this.itemSo = itemSo;
         this.quantity = quantity;

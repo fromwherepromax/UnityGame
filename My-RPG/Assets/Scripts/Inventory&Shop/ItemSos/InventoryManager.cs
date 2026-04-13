@@ -126,8 +126,24 @@ public class InventoryManager : MonoBehaviour
         if (quantity > 0)
         {
             Debug.Log("Inventory is full! Could not add all items.");
-            // DropLoot(itemSo, quantity);
+            DropLoot(itemSo, quantity);
         }
+    }
+    public void DropItem(InventorySlot slot) //丢弃物品
+    {
+        DropLoot(slot.itemSo, 1);
+        slot.quantity--;
+        if (slot.quantity <= 0)
+        {
+            slot.itemSo = null;
+        }
+        slot.UpdateUI();
+    }
+    private void DropLoot(ItemSo itemSo, int quantity)  //在玩家位置生成掉落物
+    {
+        Debug.Log($"Dropped {quantity} of {itemSo.itemName} at player's position.");
+        Loot loot = Instantiate(lootPrefab, player.position, Quaternion.identity).GetComponent<Loot>();
+        loot.Initialize(itemSo, quantity);
     }
 
     public void UseItem(InventorySlot slot)

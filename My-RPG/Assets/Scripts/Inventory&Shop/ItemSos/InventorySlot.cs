@@ -34,10 +34,10 @@ public class InventorySlot : MonoBehaviour,IPointerClickHandler
                     inventoryManager.UseItem(this); 
                 // }
             }
-            // else if (eventData.button == PointerEventData.InputButton.Right)
-            // {
-            //     inventoryManager.DropItem(this);
-            // }
+            else if (eventData.button == PointerEventData.InputButton.Right)
+            {
+                inventoryManager.DropItem(this);
+            }
         }
     }
 
