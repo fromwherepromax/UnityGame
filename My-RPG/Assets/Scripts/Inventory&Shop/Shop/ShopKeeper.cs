@@ -14,8 +14,8 @@ public class ShopKeeper : MonoBehaviour
     [SerializeField] private List<ShopItem> shopItems;  //商店物品列表，包含物品和价格
     [SerializeField] private List<ShopItem> shopWeapons;  //商店物品列表，包含物品和价格
     [SerializeField] private List<ShopItem> shopArmours;  //商店物品列表，包含物品和价格
-    // [SerializeField] private Camera shopKeeperCam; //商店界面专用相机
-    // [SerializeField] private Vector3 CameraOffset=new Vector3(0,0,-1); //商店界面相机偏移量
+    [SerializeField] private Camera shopKeeperCam; //商店界面专用相机
+    [SerializeField] private Vector3 CameraOffset=new Vector3(0,0,-1); //商店界面相机偏移量
     public static event Action<ShopManager,bool> OnShopStateChanged; //商店状态改变事件，参数为商店管理器和商店是否打开
 
      private void Start()
@@ -37,8 +37,8 @@ public class ShopKeeper : MonoBehaviour
                     shopCanvasGroup.interactable = true;
                     shopCanvasGroup.blocksRaycasts = true;
                     isShopOpen = true;
-                    // shopKeeperCam.transform.position = transform.position + CameraOffset;
-                    // shopKeeperCam.gameObject.SetActive(true);
+                    shopKeeperCam.transform.position = transform.position + CameraOffset;
+                    shopKeeperCam.gameObject.SetActive(true);
                     OpenItemShop();
                 }
                 else
@@ -50,7 +50,7 @@ public class ShopKeeper : MonoBehaviour
                     shopCanvasGroup.interactable = false;
                     shopCanvasGroup.blocksRaycasts = false;
                     isShopOpen = false;
-                    // shopKeeperCam.gameObject.SetActive(false);
+                    shopKeeperCam.gameObject.SetActive(false);
                 }
             }
             
