@@ -10,17 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
-  m_Name: PurpleBob_Greeting
+  m_Name: PurpleBob_TellMeMore
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: Hi Welcome to the World
+    line: Is So Great
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
-    line: Oh Thanks
-  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: No Thanks
-  dialogueOptions:
-  - optionText: Tell me More
-    nextDialogue: {fileID: 11400000, guid: 101a1ff83d540fe4093fa617071adf57, type: 2}
-  - optionText: ......
-    nextDialogue: {fileID: 11400000, guid: 9696eb0bd42196a408ea5e8d35c35a18, type: 2}
+    line: HA HA HA HAH
+  dialogueOptions: []

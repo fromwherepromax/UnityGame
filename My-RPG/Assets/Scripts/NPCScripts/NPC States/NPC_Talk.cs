@@ -7,6 +7,7 @@ public class NPC_Talk : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     public Animator interactAnim;
+    public DialogueSO currentDialogue; //对话数据
     private void Awake()  
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,5 +24,19 @@ public class NPC_Talk : MonoBehaviour
     {
         interactAnim.Play("CloseSpeechIcon"); //禁用时播放交互结束动画
         rb.isKinematic=false; //禁用时恢复刚体物理属性
+    }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Interact")) //按下F键触发对话
+        {
+            if(DialogueManager.Instance.isDialogueActive) //如果对话已经激活，结束对话
+            {
+                DialogueManager.Instance.AdvanceDialogue(); //推进对话
+            }
+            else //如果对话未激活，开始对话
+            {
+                DialogueManager.Instance.StartDialogue(currentDialogue); //开始当前对话
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class DialogueSO : ScriptableObject
 {
     public DialogueLine[] dialogueLines; //对话行数组
-
+    public DialogueOption[] dialogueOptions; //对话选项数组
 }
 
 
@@ -18,4 +18,11 @@ public class DialogueLine
 
     [TextArea(3, 5)]
     public string line; //对话内容
+}
+
+[System.Serializable]
+public class DialogueOption
+{
+    public string optionText; //选项文本
+    public DialogueSO nextDialogue; //选择这个选项后进入的下一个对话
 }
