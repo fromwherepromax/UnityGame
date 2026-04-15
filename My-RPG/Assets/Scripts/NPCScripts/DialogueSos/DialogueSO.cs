@@ -7,6 +7,54 @@ public class DialogueSO : ScriptableObject
 {
     public DialogueLine[] dialogueLines; //对话行数组
     public DialogueOption[] dialogueOptions; //对话选项数组
+
+    [Header("Conditions Required (optional)")] //条件
+    public ActorSO[] requiredNPC; //需要的角色
+
+     public bool CheckConditions() //检查条件是否满足
+    {
+        if (requiredNPC.Length > 0)
+        {
+            foreach (var npc in requiredNPC) //遍历需要的角色
+            {
+                if (!DialogueHistoryTracker.Instance.HasSpokenWith(npc)) //如果没有与某个角色对话过
+                {
+                    return false; //条件不满足
+                }
+            }
+        }
+        // if(requiredLocations.Length > 0)
+        // {
+        //     foreach (var location in requiredLocations) //遍历需要的地点
+        //     {
+        //         if (!GameManager.Instance.locationHistoryTracker.HasVisited(location)) //如果没有访问过某个地点
+        //         {
+        //             return false; //条件不满足
+        //         }
+        //     }
+        // }
+        // if(requiredItems.Length > 0)
+        // {
+        //     foreach (var item in requiredItems) //遍历需要的物品
+        //     {
+        //         if (!InventoryManager.Instance.HasItem(item)) //如果没有某个物品
+        //         {
+        //             return false; //条件不满足
+        //         }
+        //     }
+        // }
+        // if(requireCompleteQuests.Length > 0)
+        // {
+        //     foreach (var quest in requireCompleteQuests) //遍历需要完成的任务
+        //     {
+        //         if (!GameManager.Instance.questManager.IsQuestComplete(quest)) //如果没有完成某个任务
+        //         {
+        //             return false; //条件不满足
+        //         }
+        //     }
+        // }
+        return true; //条件满足
+    }
 }
 
 
