@@ -10,6 +10,7 @@ public class DialogueSO : ScriptableObject
 
     [Header("Conditions Required (optional)")] //条件
     public ActorSO[] requiredNPC; //需要的角色
+    public LocationSo[] requiredLocations; //需要的地点
 
      public bool CheckConditions() //检查条件是否满足
     {
@@ -23,16 +24,16 @@ public class DialogueSO : ScriptableObject
                 }
             }
         }
-        // if(requiredLocations.Length > 0)
-        // {
-        //     foreach (var location in requiredLocations) //遍历需要的地点
-        //     {
-        //         if (!GameManager.Instance.locationHistoryTracker.HasVisited(location)) //如果没有访问过某个地点
-        //         {
-        //             return false; //条件不满足
-        //         }
-        //     }
-        // }
+        if(requiredLocations.Length > 0)
+        {
+            foreach (var location in requiredLocations) //遍历需要的地点
+            {
+                if (!LocationHistoryTracker.Instance.HasVisited(location)) //如果没有访问过某个地点
+                {
+                    return false; //条件不满足
+                }
+            }
+        }
         // if(requiredItems.Length > 0)
         // {
         //     foreach (var item in requiredItems) //遍历需要的物品
