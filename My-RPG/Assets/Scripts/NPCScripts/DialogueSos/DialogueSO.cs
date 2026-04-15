@@ -11,6 +11,7 @@ public class DialogueSO : ScriptableObject
     [Header("Conditions Required (optional)")] //条件
     public ActorSO[] requiredNPC; //需要的角色
     public LocationSo[] requiredLocations; //需要的地点
+    public ItemSo[] requiredItems; //需要的物品  
 
      public bool CheckConditions() //检查条件是否满足
     {
@@ -34,16 +35,16 @@ public class DialogueSO : ScriptableObject
                 }
             }
         }
-        // if(requiredItems.Length > 0)
-        // {
-        //     foreach (var item in requiredItems) //遍历需要的物品
-        //     {
-        //         if (!InventoryManager.Instance.HasItem(item)) //如果没有某个物品
-        //         {
-        //             return false; //条件不满足
-        //         }
-        //     }
-        // }
+        if(requiredItems.Length > 0)
+        {
+            foreach (var item in requiredItems) //遍历需要的物品
+            {
+                if (!InventoryManager.Instance.HasItem(item)) //如果没有某个物品
+                {
+                    return false; //条件不满足
+                }
+            }
+        }
         // if(requireCompleteQuests.Length > 0)
         // {
         //     foreach (var quest in requireCompleteQuests) //遍历需要完成的任务

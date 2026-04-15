@@ -50,7 +50,7 @@ public class NPC_Talk : MonoBehaviour
             {
                 conversations.RemoveAt(i); //从列表中移除这个对话，确保每个对话只触发一次
                 currentDialogue=convo; //设置当前对话
-                return; //退出循环，使用这个对话
+                break; //退出循环，使用第一个满足条件的对话
             }
         }
     }
