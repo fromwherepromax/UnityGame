@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     private DialogueSO currentDialogue; //当前对话
     private int dialogueIndex;//当前对话索引
     public Button[] optionButtons; //对话选项按钮数组
+    private float lastDialogueTime; //上次推进对话的时间
+    private float dialogueCooldown = 0.5f; //对话冷却
 
     private void Awake()
     {
@@ -39,8 +41,17 @@ public class DialogueManager : MonoBehaviour
             button.gameObject.SetActive(false);
         }
     }
+     public bool CanStartDialogue() //检查是否可以开始对话
+    {
+       return Time.time - lastDialogueTime >= dialogueCooldown; //如果距离上次推进对话的时间大于等于冷却时间，返回true
+    }
     public void StartDialogue(DialogueSO dialogueSO) //开始对话
     {   
+        if (!CanStartDialogue()) //如果不能开始对话
+        {
+            return;
+        }
+
         currentDialogue = dialogueSO; //设置当前对话
         dialogueIndex = 0; //重置对话索引
         isDialogueActive = true; //激活对话
@@ -134,6 +145,7 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvasGroup.alpha = 0; //隐藏对话UI
         dialogueCanvasGroup.interactable = false; //禁用对话UI交互
         dialogueCanvasGroup.blocksRaycasts = false; //不阻挡射线
+        lastDialogueTime = Time.time; //记录结束对话的时间
 
     }
 

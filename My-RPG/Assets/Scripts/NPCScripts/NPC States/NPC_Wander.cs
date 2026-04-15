@@ -59,10 +59,11 @@ public class NPC_Wander : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) //当NPC与其他物体发生碰撞时，获取新的漫游目标点
     {   
         if(!enabled) return; //如果NPC已经被禁用，直接返回
-        if (collision.gameObject.CompareTag("Obstacle")) //如果碰撞对象是障碍物
-        {
-            target = GetRandomWanderPoint(); //获取新的漫游目标点
-        }
+        // if (collision.gameObject.CompareTag("Obstacle")) //如果碰撞对象是障碍物
+        // {
+        //     target = GetRandomWanderPoint(); //获取新的漫游目标点
+        // }
+        StartCoroutine(WanderRoutine()); //NPC原地跑步问题
     }   
 
     private Vector2 GetRandomWanderPoint() //在漫游区域内随机生成一个目标点
