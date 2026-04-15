@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: PurpleBob_Quest_VisitGreenHills_Complete
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: ah, i see you have visited the green hill
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: Please return there
+  dialogueOptions: []
+  requiredNPC: []
+  requiredLocations:
+  - {fileID: 11400000, guid: f57fe6d3bad7c174d8ee38020eb40324, type: 2}
+  requiredItems: []
+  removeAfterPlay: 0
+  removeTheseOnPlay: []

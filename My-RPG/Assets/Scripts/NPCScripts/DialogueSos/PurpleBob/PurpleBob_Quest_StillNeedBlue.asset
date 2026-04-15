@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
-  m_Name: PurpleBob_VisitGreenHills
+  m_Name: PurpleBob_Quest_StillNeedBlue
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: I see you found blue Bob .please find Yellow
   dialogueOptions: []
-  requiredNPC: []
-  requiredLocations: []
+  requiredNPC:
+  - {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}

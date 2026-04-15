@@ -13,6 +13,10 @@ public class DialogueSO : ScriptableObject
     public LocationSo[] requiredLocations; //需要的地点
     public ItemSo[] requiredItems; //需要的物品  
 
+    [Header("Control Flags")]//控制标志
+    public bool removeAfterPlay; //播放后移除
+    public List<DialogueSO> removeTheseOnPlay; //播放后移除这些对话
+
      public bool CheckConditions() //检查条件是否满足
     {
         if (requiredNPC.Length > 0)

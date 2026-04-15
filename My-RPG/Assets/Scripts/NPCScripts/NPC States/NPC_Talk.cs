@@ -35,9 +35,12 @@ public class NPC_Talk : MonoBehaviour
                 DialogueManager.Instance.AdvanceDialogue(); //推进对话
             }
             else
-            {
-                CheckForConversations(); //检查是否有可用的对话
-                DialogueManager.Instance.StartDialogue(currentDialogue); //开始对话
+            {   
+                if(DialogueManager.Instance.CanStartDialogue()) //如果可以开始对话
+                {
+                    CheckForConversations(); //检查是否有可用的对话
+                    DialogueManager.Instance.StartDialogue(currentDialogue); //开始对话
+                }
             }
         }
     }
@@ -45,12 +48,22 @@ public class NPC_Talk : MonoBehaviour
     {
         for(int i=0; i<conversations.Count; i++) //遍历对话列表
         {
-            var convo=conversations[i];
-            if(convo!=null && convo.CheckConditions()) //如果对话存在且条件满足
-            {
-                conversations.RemoveAt(i); //从列表中移除这个对话，确保每个对话只触发一次
-                currentDialogue=convo; //设置当前对话
-                break; //退出循环，使用第一个满足条件的对话
+            var convo = conversations[i];
+            if(convo!=null && convo.CheckConditions()) //如果对话存在且满足条件
+            {    
+                    currentDialogue = convo; //设置当前对话
+                    if(convo.removeAfterPlay) //如果需要播放后移除
+                    {
+                        conversations.RemoveAt(i); //从列表中移除这个对话，确保每个对话只触发一次
+                    }
+                    if(convo.removeTheseOnPlay!=null) //如果需要播放后移除其他对话
+                    {
+                        foreach(var toRemove in convo.removeTheseOnPlay)
+                        {
+                            conversations.Remove(toRemove); //从列表中移除这些对话，确保每个对话只触发一次
+                        }
+                    }
+                    break; //退出循环，优先使用满足条件的第一个对话
             }
         }
     }

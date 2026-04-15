@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
-  m_Name: PurpleBob_FindYouHaveMeat
+  m_Name: Yellow_Quest_FoundBlueBob_Complete
   m_EditorClassIdentifier: 
-  dialogueLines: []
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: Hi, I am Yellow Bob
   dialogueOptions: []
-  requiredNPC: []
-  requiredLocations: []
-  requiredItems: []
+  requiredNPC:
+  - {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
