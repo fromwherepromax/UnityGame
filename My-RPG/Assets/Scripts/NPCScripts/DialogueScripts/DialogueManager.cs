@@ -111,6 +111,9 @@ public class DialogueManager : MonoBehaviour
     private void ShowDialogue()
     {
         DialogueLine line = currentDialogue.dialogueLines[dialogueIndex]; //获取当前对话行
+
+        DialogueHistoryTracker.Instance.RecordDialogue(line.speaker); //记录对话角色到历史记录中
+
         portraitImage.sprite = line.speaker.portrait; //设置角色头像
         actorName.text = line.speaker.actorName; //设置角色名字
         dialogueText.text = line.line; //设置对话内容
