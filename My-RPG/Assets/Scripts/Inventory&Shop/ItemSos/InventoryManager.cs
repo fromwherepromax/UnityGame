@@ -159,4 +159,15 @@ public class InventoryManager : MonoBehaviour
             slot.UpdateUI();
         }
     }
+    public bool HasItem(ItemSo itemSo)
+    {
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.itemSo == itemSo && slot.quantity > 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
