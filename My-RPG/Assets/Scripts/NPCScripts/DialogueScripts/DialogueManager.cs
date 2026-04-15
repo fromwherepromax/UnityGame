@@ -8,7 +8,6 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager Instance; //单例实例
     public CanvasGroup dialogueCanvasGroup; //对话UI的CanvasGroup组件
 
     [Header("UI References")]  //UI引用
@@ -24,14 +23,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this; //设置单例实例
-        }
-        else
-        {
-            Destroy(gameObject); //如果已经存在实例，销毁当前对象
-        }
         dialogueCanvasGroup.alpha = 0; //初始时隐藏对话UI
         dialogueCanvasGroup.interactable = false; //初始时禁用对话UI交互
         dialogueCanvasGroup.blocksRaycasts = false; //初始时不阻挡射线
@@ -123,7 +114,7 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueLine line = currentDialogue.dialogueLines[dialogueIndex]; //获取当前对话行
 
-        DialogueHistoryTracker.Instance.RecordDialogue(line.speaker); //记录对话角色到历史记录中
+        GameManager.Instance.dialogueHistoryTracker.RecordDialogue(line.speaker); //记录对话角色到历史记录中
 
         portraitImage.sprite = line.speaker.portrait; //设置角色头像
         actorName.text = line.speaker.actorName; //设置角色名字

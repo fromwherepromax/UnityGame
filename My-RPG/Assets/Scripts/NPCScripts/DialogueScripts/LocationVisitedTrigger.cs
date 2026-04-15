@@ -11,7 +11,7 @@ public class LocationVisitedTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player")) //如果碰撞对象是玩家
         {
-            LocationHistoryTracker.Instance.RecordLocation(LocationVisited); //记录访问的位置
+            GameManager.Instance.locationHistoryTracker.RecordLocation(LocationVisited); //记录访问的位置
             Debug.Log("Player visited " + LocationVisited.displayName);
             if (destroyOnTouch)
             {
