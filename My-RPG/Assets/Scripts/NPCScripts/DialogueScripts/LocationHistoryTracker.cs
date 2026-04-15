@@ -4,20 +4,7 @@ using UnityEngine;
 
 public class LocationHistoryTracker : MonoBehaviour
 {   
-    public static LocationHistoryTracker Instance; //单例实例
     private HashSet<LocationSo> spokenLocations = new HashSet<LocationSo>(); //已访问的位置列表
-
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this; //设置单例实例
-        }
-        else
-        {
-            Destroy(gameObject); //如果已经存在实例，销毁当前对象
-        }
-    }
 
     public void RecordLocation(LocationSo location) //记录访问的位置
     {

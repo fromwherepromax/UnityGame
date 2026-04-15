@@ -30,16 +30,16 @@ public class NPC_Talk : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact")) //按下交互键
         {
-            if(DialogueManager.Instance.isDialogueActive) //如果对话已经激活
+            if(GameManager.Instance.dialogueManager.isDialogueActive) //如果对话已经激活
             {
-                DialogueManager.Instance.AdvanceDialogue(); //推进对话
+                GameManager.Instance.dialogueManager.AdvanceDialogue(); //推进对话
             }
             else
             {   
-                if(DialogueManager.Instance.CanStartDialogue()) //如果可以开始对话
+                if(GameManager.Instance.dialogueManager.CanStartDialogue()) //如果可以开始对话
                 {
                     CheckForConversations(); //检查是否有可用的对话
-                    DialogueManager.Instance.StartDialogue(currentDialogue); //开始对话
+                    GameManager.Instance.dialogueManager.StartDialogue(currentDialogue); //开始对话
                 }
             }
         }

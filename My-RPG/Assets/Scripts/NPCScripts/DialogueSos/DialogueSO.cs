@@ -23,7 +23,7 @@ public class DialogueSO : ScriptableObject
         {
             foreach (var npc in requiredNPC) //遍历需要的角色
             {
-                if (!DialogueHistoryTracker.Instance.HasSpokenWith(npc)) //如果没有与某个角色对话过
+                if (!GameManager.Instance.dialogueHistoryTracker.HasSpokenWith(npc)) //如果没有与某个角色对话过
                 {
                     return false; //条件不满足
                 }
@@ -33,7 +33,7 @@ public class DialogueSO : ScriptableObject
         {
             foreach (var location in requiredLocations) //遍历需要的地点
             {
-                if (!LocationHistoryTracker.Instance.HasVisited(location)) //如果没有访问过某个地点
+                if (!GameManager.Instance.locationHistoryTracker.HasVisited(location)) //如果没有访问过某个地点
                 {
                     return false; //条件不满足
                 }
