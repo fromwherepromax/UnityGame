@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561eb48e07b55d840b4c377321bfdf08, type: 3}
-  m_Name: TheGreenHill
+  m_Script: {fileID: 11500000, guid: ca4909ba643e56e4c944e755dd3424dc, type: 3}
+  m_Name: Quest_LikeTheVideo
   m_EditorClassIdentifier: 
-  locationName: Hill1
-  displayName: TheGreenHill
+  questName: 
+  questLevel: 0
+  questDescription: 
+  objectives: []
+  rewards: []

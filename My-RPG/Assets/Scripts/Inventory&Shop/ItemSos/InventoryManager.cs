@@ -170,4 +170,16 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+    public int GetItemQuantity(ItemSo itemSo)
+    {
+        int totalQuantity = 0;
+        foreach (var slot in inventorySlots)
+        {
+            if (slot.itemSo == itemSo)
+            {
+                totalQuantity += slot.quantity;
+            }
+        }
+        return totalQuantity;
+    }
 }
