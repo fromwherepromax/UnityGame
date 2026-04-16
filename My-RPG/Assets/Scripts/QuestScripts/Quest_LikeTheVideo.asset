@@ -25,4 +25,10 @@ MonoBehaviour:
   - description: Return The Blue Bob
     target: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
     requiredAmount: 1
-  rewards: []
+  rewards:
+  - itemSo: {fileID: 11400000, guid: 024cc61549536824da5f66fc0cf15c17, type: 2}
+    amount: 10
+  - itemSo: {fileID: 11400000, guid: 98c041b46b8a3a14aa5a5c608de06bc6, type: 2}
+    amount: 1
+  - itemSo: {fileID: 11400000, guid: 50120b75b52024040bde28dd80959d03, type: 2}
+    amount: 5
