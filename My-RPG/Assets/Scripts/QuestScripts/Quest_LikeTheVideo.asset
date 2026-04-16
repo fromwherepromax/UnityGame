@@ -12,8 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4909ba643e56e4c944e755dd3424dc, type: 3}
   m_Name: Quest_LikeTheVideo
   m_EditorClassIdentifier: 
-  questName: 
-  questLevel: 0
-  questDescription: 
-  objectives: []
+  questName: Like The Video
+  questLevel: 99
+  questDescription: You need like the video
+  objectives:
+  - description: Collect 1 Mushroom
+    target: {fileID: 11400000, guid: 98c041b46b8a3a14aa5a5c608de06bc6, type: 2}
+    requiredAmount: 1
+  - description: Visit green hill
+    target: {fileID: 11400000, guid: f57fe6d3bad7c174d8ee38020eb40324, type: 2}
+    requiredAmount: 1
+  - description: Return The Blue Bob
+    target: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    requiredAmount: 1
   rewards: []
