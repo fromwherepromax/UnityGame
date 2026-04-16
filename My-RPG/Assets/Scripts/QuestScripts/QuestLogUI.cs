@@ -68,6 +68,14 @@ public class QuestLogUI : MonoBehaviour
 
         questManager.AcceptQuest(questSo); //接受当前任务
         QuestEvents.OnQuestAccepted?.Invoke(questSo); //触发任务被接受事件
+
+        if (questManager.IsQuestComplete(questSo))
+        {
+            RefreshQuestList(); //刷新任务列表
+            ShowQuestTurnIn(questSo); //如果任务在接受时已经完成，直接显示交付界面
+            return;
+        }
+
         SetCanvasState(acceptCanvas, false); //隐藏任务接受界面
         SetCanvasState(completeCanvas, false); //隐藏任务完成界面
         SetCanvasState(declineCanvas, false); //隐藏任务拒绝界面
