@@ -59,7 +59,7 @@ public class DialogueManager : MonoBehaviour
             ShowOptions(); //显示对话选项
         }
     }
-    private void ShowOptions()
+     private void ShowOptions()
     {   
         clearOptionButtons(); //清除之前的选项按钮事件
         if(currentDialogue.dialogueOptions != null && currentDialogue.dialogueOptions.Length > 0) //如果有对话选项
@@ -82,15 +82,29 @@ public class DialogueManager : MonoBehaviour
             }
             EventSystem.current.SetSelectedGameObject(optionButtons[0].gameObject); //设置第一个选项为当前选中
         }
-        else
-        {
-            optionButtons[0].GetComponentInChildren<TMP_Text>().text = "End"; //设置按钮文本为继续
-            optionButtons[0].onClick.AddListener(() => EndDialogue()); //添加按钮点击事件，结束对话
-            optionButtons[0].gameObject.SetActive(true); //如果没有选项，显示一个默认的继续按钮
-            EventSystem.current.SetSelectedGameObject(optionButtons[0].gameObject); //设置第一个选项为当前选中
+        else{
+            if(currentDialogue.turnInQuest != null && GameManager.Instance.questManager.IsQuestComplete(currentDialogue.turnInQuest)) //如果没有选项但有交付的任务
+            {
+                QuestEvents.OnQuestTurnInRequested?.Invoke(currentDialogue.turnInQuest); //触发任务交付事件
+                EndDialogue(); //结束当前对话
+            }
+            else if(currentDialogue.offerQuestOnEnd != null) //如果没有选项但有提供的任务
+            {
+                QuestSO questToOffer = currentDialogue.offerQuestOnEnd; //先缓存任务，避免 EndDialogue 清空 currentDialogue
+                Debug.Log("Offering quest: " + questToOffer.questName); //日志输出提供的任务名称
+                EndDialogue(); //结束当前对话
+                QuestEvents.OnQuestofferRequested?.Invoke(questToOffer); //触发任务提供事件
+            }
+            else
+            {
+                optionButtons[0].GetComponentInChildren<TMP_Text>().text = "End"; //设置按钮文本为继续
+                optionButtons[0].onClick.AddListener(() => EndDialogue()); //添加按钮点击事件，结束对话
+                optionButtons[0].gameObject.SetActive(true); //如果没有选项，显示一个默认的继续按钮
+                EventSystem.current.SetSelectedGameObject(optionButtons[0].gameObject); //设置第一个选项为当前选中
+            }
         }
-    }
-    private void ChooseOption(DialogueSO dialogueSo)
+        
+    }    private void ChooseOption(DialogueSO dialogueSo)
     {
         if (dialogueSo == null)
         {
