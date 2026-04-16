@@ -19,3 +19,9 @@ MonoBehaviour:
   requiredNPC:
   - {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
   - {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay:
+  - {fileID: 11400000, guid: 2e1b67e2af989e943b623b7ad6c47bba, type: 2}
+  - {fileID: 11400000, guid: 65c7d640830cd134b9b448aea1daf3af, type: 2}
