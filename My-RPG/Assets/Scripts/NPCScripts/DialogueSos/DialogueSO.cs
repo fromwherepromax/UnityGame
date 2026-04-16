@@ -17,7 +17,16 @@ public class DialogueSO : ScriptableObject
     public bool removeAfterPlay; //播放后移除
     public List<DialogueSO> removeTheseOnPlay; //播放后移除这些对话
 
-     public bool CheckConditions() //检查条件是否满足
+    [Header("Quest offered (optional)")] //提供的任务
+    public QuestSO offerQuestOnEnd; //提供的任务数据
+
+    [Header("Complete Quest (optional)")] //完成的任务
+    public QuestSO[] requireCompleteQuests; //完成的任务数据
+
+    [Header("Complete Turn-In Quest (optional)")] //交付的任务
+    public QuestSO turnInQuest; //交付的任务数据
+
+    public bool CheckConditions() //检查条件是否满足
     {
         if (requiredNPC.Length > 0)
         {
@@ -49,16 +58,16 @@ public class DialogueSO : ScriptableObject
                 }
             }
         }
-        // if(requireCompleteQuests.Length > 0)
-        // {
-        //     foreach (var quest in requireCompleteQuests) //遍历需要完成的任务
-        //     {
-        //         if (!GameManager.Instance.questManager.IsQuestComplete(quest)) //如果没有完成某个任务
-        //         {
-        //             return false; //条件不满足
-        //         }
-        //     }
-        // }
+        if(requireCompleteQuests.Length > 0)
+        {
+            foreach (var quest in requireCompleteQuests) //遍历需要完成的任务
+            {
+                if (!GameManager.Instance.questManager.IsQuestComplete(quest)) //如果没有完成某个任务
+                {
+                    return false; //条件不满足
+                }
+            }
+        }
         return true; //条件满足
     }
 }
@@ -79,4 +88,6 @@ public class DialogueOption
 {
     public string optionText; //选项文本
     public DialogueSO nextDialogue; //选择这个选项后进入的下一个对话
+    public QuestSO offerQuest; //选择这个选项后提供的任务
 }
+

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public DialogueManager dialogueManager; //对话管理器引用
     public DialogueHistoryTracker dialogueHistoryTracker; //对话历史记录器引用
     public LocationHistoryTracker locationHistoryTracker; //地点历史记录器引用
+    public QuestManager questManager; //任务管理器引用
 
    [Header("Persistent Objects")]
    public GameObject[] persistentObjects;
