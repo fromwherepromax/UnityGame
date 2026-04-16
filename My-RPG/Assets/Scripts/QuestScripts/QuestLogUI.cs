@@ -13,12 +13,52 @@ public class QuestLogUI : MonoBehaviour
     [SerializeField] private QuestRewardSlot[] rewardSlots; //任务奖励槽位数组
 
     private QuestSO questSo; //当前显示的任务数据
-    // [SerializeField] private QuestSO noAvailableQuest; //没有可用任务时显示的默认任务数据
-    // [SerializeField] private QuestLogSlot[] questLogSlots; //任务日志槽位数组
-    // [SerializeField] private CanvasGroup questCanvas; //任务提供界面
-    // [SerializeField] private CanvasGroup acceptCanvas; //任务接受界面
-    // [SerializeField] private CanvasGroup declineCanvas; //任务拒绝界面
-    // [SerializeField] private CanvasGroup completeCanvas; //任务完成界面
+    [SerializeField] private QuestSO noAvailableQuest; //没有可用任务时显示的默认任务数据
+    [SerializeField] private QuestLogSlot[] questLogSlots; //任务日志槽位数组
+    [SerializeField] private CanvasGroup questCanvas; //任务提供界面
+    [SerializeField] private CanvasGroup acceptCanvas; //任务接受界面
+    [SerializeField] private CanvasGroup declineCanvas; //任务拒绝界面
+    [SerializeField] private CanvasGroup completeCanvas; //任务完成界面
+    public void OnEnable() //当脚本启用时
+    {
+        QuestEvents.OnQuestofferRequested += ShowQuestOffer; //订阅任务提供事件
+        // QuestEvents.OnQuestTurnInRequested += ShowQuestTurnIn; //订阅任务交付事件
+    }
+    public void OnDisable() //当脚本禁用时
+    {
+        QuestEvents.OnQuestofferRequested -= ShowQuestOffer; //取消订阅任务提供事件
+        // QuestEvents.OnQuestTurnInRequested -= ShowQuestTurnIn; //取消订阅任务交付事件
+    }
+    public void ShowQuestOffer(QuestSO incomingQuest) //显示任务提供界面
+    {   
+        // if(questManager.IsQuestAccepted(incomingQuest) || questManager.GetCompleteQuest(incomingQuest)) //如果任务已经被接受
+        // {
+        //     questSo=noAvailableQuest; //显示没有可用任务的默认数据
+        //     SetCanvasState(acceptCanvas, false); //显示任务接受界面
+        //     SetCanvasState(declineCanvas, true); //显示任务拒绝界面
+        //     SetCanvasState(completeCanvas, false); //隐藏任务完成界面
+        // }
+        // else
+        // {   
+        //     questSo=incomingQuest; //显示传入的任务数据
+        //     SetCanvasState(acceptCanvas, true); //显示任务接受界面
+        //     SetCanvasState(declineCanvas, true); //显示任务拒绝界面
+        //     SetCanvasState(completeCanvas, false); //隐藏任务完成界面
+        // }
+        questSo=incomingQuest; //显示传入的任务数据
+        HandleQuestclick(questSo); //处理任务点击事件
+        SetCanvasState(questCanvas, true); //显示任务提供界面
+        SetCanvasState(acceptCanvas, true); //显示任务接受界面
+        SetCanvasState(declineCanvas, true); //显示任务提供界面
+        SetCanvasState(completeCanvas, false); //隐藏任务完成界面
+
+    }
+    private void SetCanvasState(CanvasGroup canvasGroup, bool state) //设置界面状态
+    {
+        canvasGroup.alpha = state ? 1 : 0; //根据状态设置界面透明度
+        canvasGroup.interactable = state; //根据状态设置界面交互
+        canvasGroup.blocksRaycasts = state; //根据状态设置界面射线检测
+    }
     public void HandleQuestclick(QuestSO questSO) //处理任务点击事件
     {   
         this.questSo = questSO; //保存当前点击的任务数据
