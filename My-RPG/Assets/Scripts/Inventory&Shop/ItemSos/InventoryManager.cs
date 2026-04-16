@@ -182,4 +182,27 @@ public class InventoryManager : MonoBehaviour
         }
         return totalQuantity;
     }
+    public void RemoveItem(ItemSo itemSo, int quantity)
+    {
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            var slot = inventorySlots[i];
+            if (slot.itemSo == itemSo)
+            {
+                if (slot.quantity >= quantity)
+                {
+                    slot.quantity -= quantity;
+                    slot.UpdateUI();
+                    return;
+                }
+                else
+                {
+                    quantity -= slot.quantity;
+                    slot.itemSo = null;
+                    slot.quantity = 0;
+                    slot.UpdateUI();
+                }
+            }
+        }
+    }
 }

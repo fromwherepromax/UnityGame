@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDescription: 'The Best You Can Meet
 
 '
-  itemIcon: {fileID: 21300000, guid: 7a0f4fab77b344f7b9386a7c87e492b1, type: 3}
+  itemIcon: {fileID: 21300000, guid: ea6380ca638102e43b7411a8a0eae721, type: 3}
   isGold: 1
   isExp: 0
   stackSize: 3
