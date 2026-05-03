@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: Give you a Quest
+    line: WA
   dialogueOptions: []
   requiredNPC: []
   requiredLocations: []
   requiredItems: []
   removeAfterPlay: 0
   removeTheseOnPlay: []
-  offerQuestOnEnd: {fileID: 11400000, guid: 5a30799f186a1bf4dad47431d5a203fc, type: 2}
-  requireCompleteQuests: []
-  turnInQuest: {fileID: 0}
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests:
+  - {fileID: 11400000, guid: 5a30799f186a1bf4dad47431d5a203fc, type: 2}
+  turnInQuest: {fileID: 11400000, guid: 5a30799f186a1bf4dad47431d5a203fc, type: 2}
