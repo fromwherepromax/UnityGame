@@ -10,11 +10,17 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
     public Image itemImage;
     public TMP_Text quantityText;
 
+    // 槽位点击后需要把自己传给右侧详情面板
     private InventoryDetailsUI detailsUI;
 
     private void Start()
     {
-        detailsUI = GetComponentInParent<InventoryDetailsUI>();
+        InventoryManager inventoryManager = GetComponentInParent<InventoryManager>();
+        if (inventoryManager != null)
+        {
+            detailsUI = inventoryManager.GetComponentInChildren<InventoryDetailsUI>(true);
+        }
+
         UpdateUI();
     }
 
