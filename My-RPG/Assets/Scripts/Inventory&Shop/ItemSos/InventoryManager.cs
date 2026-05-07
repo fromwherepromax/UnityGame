@@ -1,35 +1,49 @@
-// 脚本说明：InventoryManager 相关逻辑。
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System;
 
 public class InventoryManager : MonoBehaviour
-{   
+{
     public InventorySlot[] inventorySlots;
-    public static InventoryManager Instance; //单例实例
+    public static InventoryManager Instance;
+
     public int gold;
     public TMP_Text goldText;
     public GameObject lootPrefab;
     public Transform player;
-    public CanvasGroup canvasGroup; //用于控制UI显示的CanvasGroup组件
-    public UseItem useItem; //用于应用物品效果的组件
-    private bool isInventoryOpen=false; //当前背包UI是否打开
-    [SerializeField] private KeyCode toggleInventoryKey = KeyCode.B; //切换背包的快捷键
+    public CanvasGroup canvasGroup;
+    public UseItem useItem;
+    [SerializeField] private KeyCode toggleInventoryKey = KeyCode.B;
+    [SerializeField] private InventoryDetailsUI inventoryDetailsUI;
 
-    public static event Action<int> OnExpGained; //经验增加事件
+    public static event Action<int> OnExpGained;
+    private bool isInventoryOpen = false;
+
     private void Awake()
     {
         if (Instance == null)
         {
-            Instance = this; //设置单例实例
+            Instance = this;
         }
         else
         {
-            Destroy(gameObject); //如果已经存在实例，销毁当前对象
+            Destroy(gameObject);
+            return;
+        }
+
+        if (inventoryDetailsUI == null)
+        {
+            inventoryDetailsUI = GetComponent<InventoryDetailsUI>();
+        }
+
+        if (inventoryDetailsUI == null)
+        {
+            inventoryDetailsUI = gameObject.AddComponent<InventoryDetailsUI>();
         }
     }
-    private void Update()  //监听背包切换按键
+
+    private void Update()
     {
         if (Input.GetKeyDown(toggleInventoryKey))
         {
@@ -37,7 +51,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void Start() //初始化背包UI状态
+    private void Start()
     {
         isInventoryOpen = canvasGroup != null && canvasGroup.alpha > 0f;
 
@@ -50,8 +64,11 @@ public class InventoryManager : MonoBehaviour
         {
             slot.UpdateUI();
         }
+
+        inventoryDetailsUI?.RefreshSelection();
     }
-    public void ToggleInventory() 
+
+    public void ToggleInventory()
     {
         SetInventoryVisible(!isInventoryOpen);
     }
@@ -70,33 +87,58 @@ public class InventoryManager : MonoBehaviour
         canvasGroup.interactable = isVisible;
         canvasGroup.blocksRaycasts = isVisible;
 
+        if (inventoryDetailsUI != null)
+        {
+            if (isVisible)
+            {
+                inventoryDetailsUI.RefreshSelection();
+            }
+            else
+            {
+                inventoryDetailsUI.HidePanel();
+            }
+        }
+
         if (!isVisible && EventSystem.current != null)
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
     }
+
     private void OnEnable()
     {
         Loot.OnItemLooted += AddItem;
     }
+
     private void OnDisable()
     {
         Loot.OnItemLooted -= AddItem;
     }
+
     public void AddItem(ItemSo itemSo, int quantity)
     {
-        if (itemSo.isGold)  //如果是金钱，直接增加数量并更新UI
+        if (itemSo == null || quantity <= 0)
+        {
+            return;
+        }
+
+        if (itemSo.isGold)
         {
             gold += quantity;
-            goldText.text = gold.ToString();
+            if (goldText != null)
+            {
+                goldText.text = gold.ToString();
+            }
             return;
         }
+
         if (itemSo.isExp)
         {
-            OnExpGained?.Invoke(quantity); //触发经验增加事件
+            OnExpGained?.Invoke(quantity);
             return;
         }
-        foreach (var slot in inventorySlots)  //先检查是否已有该物品，若有则叠加数量
+
+        foreach (var slot in inventorySlots)
         {
             if (slot.itemSo == itemSo && slot.quantity < itemSo.stackSize)
             {
@@ -105,60 +147,86 @@ public class InventoryManager : MonoBehaviour
                 slot.quantity += quantityToAdd;
                 quantity -= quantityToAdd;
                 slot.UpdateUI();
+
                 if (quantity <= 0)
                 {
+                    inventoryDetailsUI?.RefreshSelection();
                     return;
                 }
-
             }
         }
-        foreach (var slot in inventorySlots) 
-        {    
+
+        foreach (var slot in inventorySlots)
+        {
             if (slot.itemSo == null)
-            {   
+            {
                 int amountToAdd = Mathf.Min(quantity, itemSo.stackSize);
                 slot.itemSo = itemSo;
                 slot.quantity = amountToAdd;
                 slot.UpdateUI();
+                inventoryDetailsUI?.RefreshSelection();
                 return;
             }
         }
+
         if (quantity > 0)
         {
             Debug.Log("Inventory is full! Could not add all items.");
             DropLoot(itemSo, quantity);
         }
+
+        inventoryDetailsUI?.RefreshSelection();
     }
-    public void DropItem(InventorySlot slot) //丢弃物品
+
+    public void DropItem(InventorySlot slot)
     {
+        if (slot == null || slot.itemSo == null || slot.quantity <= 0)
+        {
+            return;
+        }
+
         DropLoot(slot.itemSo, 1);
         slot.quantity--;
+
         if (slot.quantity <= 0)
         {
             slot.itemSo = null;
         }
+
         slot.UpdateUI();
+        inventoryDetailsUI?.RefreshSelection();
     }
-    private void DropLoot(ItemSo itemSo, int quantity)  //在玩家位置生成掉落物
+
+    private void DropLoot(ItemSo itemSo, int quantity)
     {
-        Debug.Log($"Dropped {quantity} of {itemSo.itemName} at player's position.");
+        if (itemSo == null || lootPrefab == null || player == null)
+        {
+            return;
+        }
+
         Loot loot = Instantiate(lootPrefab, player.position, Quaternion.identity).GetComponent<Loot>();
         loot.Initialize(itemSo, quantity);
     }
 
     public void UseItem(InventorySlot slot)
     {
-        if (slot.itemSo != null && slot.quantity > 0)
+        if (slot == null || slot.itemSo == null || slot.quantity <= 0)
         {
-            useItem.ApplyItemEffect(slot.itemSo);
-            slot.quantity--;
-            if (slot.quantity <= 0)
-            {
-                slot.itemSo = null;
-            }
-            slot.UpdateUI();
+            return;
         }
+
+        useItem.ApplyItemEffect(slot.itemSo);
+        slot.quantity--;
+
+        if (slot.quantity <= 0)
+        {
+            slot.itemSo = null;
+        }
+
+        slot.UpdateUI();
+        inventoryDetailsUI?.RefreshSelection();
     }
+
     public bool HasItem(ItemSo itemSo)
     {
         foreach (var slot in inventorySlots)
@@ -168,11 +236,14 @@ public class InventoryManager : MonoBehaviour
                 return true;
             }
         }
+
         return false;
     }
+
     public int GetItemQuantity(ItemSo itemSo)
     {
         int totalQuantity = 0;
+
         foreach (var slot in inventorySlots)
         {
             if (slot.itemSo == itemSo)
@@ -180,29 +251,42 @@ public class InventoryManager : MonoBehaviour
                 totalQuantity += slot.quantity;
             }
         }
+
         return totalQuantity;
     }
+
     public void RemoveItem(ItemSo itemSo, int quantity)
     {
-        for(int i = 0; i < inventorySlots.Length; i++)
+        if (itemSo == null || quantity <= 0)
+        {
+            return;
+        }
+
+        for (int i = 0; i < inventorySlots.Length && quantity > 0; i++)
         {
             var slot = inventorySlots[i];
-            if (slot.itemSo == itemSo)
+            if (slot.itemSo != itemSo)
             {
-                if (slot.quantity >= quantity)
-                {
-                    slot.quantity -= quantity;
-                    slot.UpdateUI();
-                    return;
-                }
-                else
-                {
-                    quantity -= slot.quantity;
-                    slot.itemSo = null;
-                    slot.quantity = 0;
-                    slot.UpdateUI();
-                }
+                continue;
             }
+
+            if (slot.quantity >= quantity)
+            {
+                slot.quantity -= quantity;
+                if (slot.quantity <= 0)
+                {
+                    slot.itemSo = null;
+                }
+                slot.UpdateUI();
+                break;
+            }
+
+            quantity -= slot.quantity;
+            slot.itemSo = null;
+            slot.quantity = 0;
+            slot.UpdateUI();
         }
+
+        inventoryDetailsUI?.RefreshSelection();
     }
 }
