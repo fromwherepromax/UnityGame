@@ -4604,11 +4604,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506014022}
-  - component: {fileID: 506014021}
   - component: {fileID: 506014020}
   - component: {fileID: 506014019}
   - component: {fileID: 506014018}
   - component: {fileID: 506014017}
+  - component: {fileID: 506014023}
   m_Layer: 0
   m_Name: InventoryDetailsPanel
   m_TagString: Untagged
@@ -4683,29 +4683,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!223 &506014021
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506014016}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 200
-  m_TargetDisplay: 0
 --- !u!224 &506014022
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4715,7 +4692,7 @@ RectTransform:
   m_GameObject: {fileID: 506014016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1830715457}
@@ -4726,13 +4703,37 @@ RectTransform:
   - {fileID: 506667391}
   - {fileID: 1216265231}
   - {fileID: 1011425971}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1705684401}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -120, y: -12}
+  m_SizeDelta: {x: 420, y: 760}
+  m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &506014023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506014016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d6d9b15a4de4f6b8e7d8f6a7f1c3a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 506014020}
+  panelRect: {fileID: 506014022}
+  itemIcon: {fileID: 1370933006}
+  itemNameText: {fileID: 1830715458}
+  itemDescriptionText: {fileID: 1807620388}
+  quantityText: {fileID: 1443443812}
+  statText: {fileID: 1444757797}
+  useButton: {fileID: 506667392}
+  dropButton: {fileID: 1216265232}
+  closeButton: {fileID: 1011425972}
+  bangersFont: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  buttonLabelOffset: {x: 0, y: 4}
 --- !u!1 &506667390
 GameObject:
   m_ObjectHideFlags: 0
@@ -14781,7 +14782,6 @@ GameObject:
   - component: {fileID: 1705684397}
   - component: {fileID: 1705684396}
   - component: {fileID: 1705684402}
-  - component: {fileID: 1705684403}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -14844,7 +14844,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 1705684397}
   useItem: {fileID: 1705684402}
   toggleInventoryKey: 98
-  inventoryDetailsUI: {fileID: 0}
+  inventoryDetailsUI: {fileID: 506014023}
 --- !u!225 &1705684397
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14933,6 +14933,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 372000067}
+  - {fileID: 506014022}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -14952,31 +14953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d206ae0f14f607747a585147579fec0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1705684403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1705684395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6d9b15a4de4f6b8e7d8f6a7f1c3a21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 506014020}
-  panelRect: {fileID: 506014022}
-  itemIcon: {fileID: 1370933006}
-  itemNameText: {fileID: 1830715458}
-  itemDescriptionText: {fileID: 1807620388}
-  quantityText: {fileID: 1443443812}
-  statText: {fileID: 1444757797}
-  useButton: {fileID: 506667392}
-  dropButton: {fileID: 1216265232}
-  closeButton: {fileID: 1011425972}
-  bangersFont: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  panelSprite: {fileID: 21300000, guid: 4218f59c8e609154886f5f572aa3a02d, type: 3}
-  buttonSprite: {fileID: 21300000, guid: 98b936f5bb596eb45bd904d684bc702f, type: 3}
 --- !u!1 &1714556664
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,12 +34,7 @@ public class InventoryManager : MonoBehaviour
 
         if (inventoryDetailsUI == null)
         {
-            inventoryDetailsUI = GetComponent<InventoryDetailsUI>();
-        }
-
-        if (inventoryDetailsUI == null)
-        {
-            inventoryDetailsUI = gameObject.AddComponent<InventoryDetailsUI>();
+            inventoryDetailsUI = GetComponentInChildren<InventoryDetailsUI>(true);
         }
     }
 
@@ -91,6 +86,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (isVisible)
             {
+                inventoryDetailsUI.ClearSelection();
                 inventoryDetailsUI.RefreshSelection();
             }
             else
