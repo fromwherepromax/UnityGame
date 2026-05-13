@@ -17371,7 +17371,7 @@ MonoBehaviour:
   attackPoint: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   anim: {fileID: 0}
   cooldown: 2
 --- !u!114 &1882276630
