@@ -7764,7 +7764,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740902289}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -20267,6 +20267,7 @@ SceneRoots:
   - {fileID: 1610346036}
   - {fileID: 346618397}
   - {fileID: 1985371606}
+  - {fileID: 527979252}
   - {fileID: 728967485}
   - {fileID: 718278984}
   - {fileID: 1722189164}
@@ -20278,4 +20279,3 @@ SceneRoots:
   - {fileID: 1668624673}
   - {fileID: 159926180}
   - {fileID: 1021025822}
-  - {fileID: 527979252}
