@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7304661562868040436}
   - component: {fileID: 2475121708502311235}
   - component: {fileID: 2023364646000650936}
-  - component: {fileID: 3959612487913052272}
+  - component: {fileID: 8445838757117127598}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -159,7 +159,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.22980976, y: 0.2303822}
   m_EdgeRadius: 0
---- !u!114 &3959612487913052272
+--- !u!114 &8445838757117127598
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,22 +168,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 7204921627577352864}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35b4ddde780e8844933e84e2de628d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 20324b18b8d3b484ea5934af614e0eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2475121708502311235}
-  direction: {x: 0, y: 0}
+  direction: {x: 1, y: 0}
   lifeSpawn: 2
   speed: 8
-  damage: 1
+  damage: 2
   obstaclleLayer:
     serializedVersion: 2
     m_Bits: 128
   sr: {fileID: 7304661562868040436}
-  buriedSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  buriedSprite: {fileID: 21300000, guid: ae52090395309614eb7a1b0481b78634, type: 3}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 64
-  knckbackForce: 10
-  knockbackTime: 0.2
-  stunTime: 0.2
+    m_Bits: 256
+  knckbackForce: 0
+  knockbackTime: 0
+  stunTime: 0
