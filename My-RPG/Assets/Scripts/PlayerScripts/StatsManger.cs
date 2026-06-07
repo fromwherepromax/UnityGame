@@ -27,6 +27,10 @@ public class StatsManager : MonoBehaviour
     public int MaxHealth;
     public int CurrentHealth;
 
+    [Header("Level Up Rewards")]
+    public int MaxHealthPerLevel = 10;
+    public int damagePerLevel = 1;
+
     private void Awake()
     {
         if (Instance==null)
@@ -36,6 +40,32 @@ public class StatsManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnEnable()
+    {
+        ExpManager.OnLevelUp += OnLevelUp;
+    }
+
+    private void OnDisable()
+    {
+        ExpManager.OnLevelUp -= OnLevelUp;
+    }
+
+    private void OnLevelUp(int level)
+    {
+        UpdateHealth(MaxHealthPerLevel);
+        CurrentHealth = MaxHealth; // 升级回满血
+        damage += damagePerLevel;
+
+        if (healthText != null)
+        {
+            healthText.text = "HP:" + CurrentHealth + "/" + MaxHealth;
+        }
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
         }
     }
     private void BindUIReferences()

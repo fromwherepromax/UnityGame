@@ -36,7 +36,10 @@ public class player_Combat : MonoBehaviour
         if (enemies.Length > 0)
         {
             enemies[0].GetComponent<Enemy_Health>().ChangeHealth(-StatsManager.Instance.damage);
-            enemies[0].GetComponent<Enemy_knockBack>().knockback(transform, StatsManager.Instance.knockbackforce, StatsManager.Instance.knockbacktime, StatsManager.Instance.stuntime);
+            if (enemies[0].gameObject.activeInHierarchy)
+            {
+                enemies[0].GetComponent<Enemy_knockBack>().knockback(transform, StatsManager.Instance.knockbackforce, StatsManager.Instance.knockbacktime, StatsManager.Instance.stuntime);
+            }
         }
     }
 
