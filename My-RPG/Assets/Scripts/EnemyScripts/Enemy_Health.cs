@@ -55,6 +55,8 @@ public class Enemy_Health : MonoBehaviour
         else if (currentHealth <= 0)
         {
             OnEnemyDefeated(expReward);
+            Enemy_Loot enemyLoot = GetComponent<Enemy_Loot>();
+            if (enemyLoot != null) enemyLoot.DropLoot();
             gameObject.SetActive(false);
             return;
         }
