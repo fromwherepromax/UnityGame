@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 8252622310517234522}
   - component: {fileID: 4752065645700421156}
   - component: {fileID: 3648399886735489112}
+  - component: {fileID: 7124048913257166011}
   m_Layer: 8
   m_Name: Enemy_RedTorch
   m_TagString: Enemy
@@ -308,3 +309,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7124048913257166011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7376836435337527455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac94c3dff354c44193727d42ce0e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: {fileID: 11400000, guid: dd5a13818eb4b9d41a58d8a38442ea82, type: 2}
+  lootPrefab: {fileID: 4622356984233209990, guid: 340aac20d92ccb6449f6ee9ae25e8787, type: 3}
+  dropRadius: 0.5
