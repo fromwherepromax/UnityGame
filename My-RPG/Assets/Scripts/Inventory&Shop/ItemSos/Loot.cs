@@ -9,7 +9,7 @@ public class Loot : MonoBehaviour
     public SpriteRenderer sr;
     public Animator anim;
     public int quantity;
-    public bool canBePickedUp = true;
+    public bool canBePickedUp = false;
     public static event Action<ItemSo, int> OnItemLooted;
 
     private void OnValidate()
