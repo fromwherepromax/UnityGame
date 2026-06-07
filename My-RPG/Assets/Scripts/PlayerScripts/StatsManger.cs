@@ -19,6 +19,17 @@ public class StatsManager : MonoBehaviour
     public float stuntime;
     public float cooldown;
 
+    [Header("Arrow Stats")]
+    public int arrowDamage = 2;
+    public float arrowSpeed = 20f;
+    public float arrowKnockbackForce = 5f;
+    public float arrowKnockbackDuration = 0.5f;
+    public float arrowStunTime = 0.5f;
+
+    [Header("Monk Stats")]
+    public int healAmount = 5;
+    public float healCooldown = 5f;
+
     [Header("Movement Stats")]
     public int speed;
 
@@ -30,6 +41,8 @@ public class StatsManager : MonoBehaviour
     [Header("Level Up Rewards")]
     public int MaxHealthPerLevel = 10;
     public int damagePerLevel = 1;
+    public int arrowDamagePerLevel = 1;
+    public int healPerLevel = 1;
 
     private void Awake()
     {
@@ -58,6 +71,8 @@ public class StatsManager : MonoBehaviour
         UpdateHealth(MaxHealthPerLevel);
         CurrentHealth = MaxHealth; // 升级回满血
         damage += damagePerLevel;
+        arrowDamage += arrowDamagePerLevel;
+        healAmount += healPerLevel;
 
         if (healthText != null)
         {

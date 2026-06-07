@@ -512,17 +512,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsUI: {fileID: 1698338771}
   healthText: {fileID: 1899960184}
-  damage: 3
+  damage: 4
   weaponRange: 1
   knockbackforce: 7
   knockbacktime: 0.15
   stuntime: 0.2
   cooldown: 0.5
+  arrowDamage: 2
+  arrowSpeed: 10
+  arrowKnockbackForce: 5
+  arrowKnockbackDuration: 0.5
+  arrowStunTime: 0.5
+  healAmount: 5
+  healCooldown: 5
   speed: 5
   MaxHealth: 100
   CurrentHealth: 100
   MaxHealthPerLevel: 10
   damagePerLevel: 1
+  arrowDamagePerLevel: 1
+  healPerLevel: 1
 --- !u!4 &72138013
 Transform:
   m_ObjectHideFlags: 0
@@ -9704,6 +9713,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2021087225}
     m_Modifications:
+    - target: {fileID: 3559829879353769269, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
+      propertyPath: m_text
+      value: "\u6CBB\u7597:1"
+      objectReference: {fileID: 0}
     - target: {fileID: 5899432201855391387, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -16759,7 +16772,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647716605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d891a31a142e7354b8a846ede2a57d14, type: 3}
   m_Name: 
@@ -16792,7 +16805,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647716605}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b70d698b562739f4793dc7cf11a8f0aa, type: 3}
   m_Name: 
@@ -16997,8 +17010,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1647716613}
-  healAmount: 5
-  healCooldown: 1
 --- !u!1001 &1668624673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20443,6 +20454,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2021087225}
     m_Modifications:
+    - target: {fileID: 3559829879353769269, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
+      propertyPath: m_text
+      value: "\u7BAD\u4F24:1"
+      objectReference: {fileID: 0}
     - target: {fileID: 5899432201855391387, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

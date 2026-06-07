@@ -23,6 +23,14 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (StatsManager.Instance != null)
+        {
+            damage = StatsManager.Instance.arrowDamage;
+            speed = StatsManager.Instance.arrowSpeed;
+            knockbackForce = StatsManager.Instance.arrowKnockbackForce;
+            knockbackDuration = StatsManager.Instance.arrowKnockbackDuration;
+            stunTime = StatsManager.Instance.arrowStunTime;
+        }
         rb.velocity=direction*speed;
         RotateRow();
         Destroy(gameObject,lifetime);
