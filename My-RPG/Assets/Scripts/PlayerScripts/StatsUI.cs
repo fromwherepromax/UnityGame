@@ -47,23 +47,9 @@ public class StatsUI : MonoBehaviour
         statsSlots[1].GetComponentInChildren<TMP_Text>().text = "速度:" + StatsManager.Instance.speed;
     }
 
-    public void UpdateArrowDamage()
-    {
-        if (statsSlots.Length > 2)
-            statsSlots[2].GetComponentInChildren<TMP_Text>().text = "箭伤:" + StatsManager.Instance.arrowDamage;
-    }
-
-    public void UpdateHealAmount()
-    {
-        if (statsSlots.Length > 3)
-            statsSlots[3].GetComponentInChildren<TMP_Text>().text = "治疗:" + StatsManager.Instance.healAmount;
-    }
-
     public void UpdateAllStats()
     {
         UpdateDamage();
         UpdateSpeed();
-        UpdateArrowDamage();
-        UpdateHealAmount();
     }
 }
