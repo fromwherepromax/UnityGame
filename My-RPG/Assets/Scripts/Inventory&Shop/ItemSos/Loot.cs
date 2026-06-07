@@ -26,8 +26,17 @@ public class Loot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        TryPickUp(collision);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        TryPickUp(collision);
+    }
+    private void TryPickUp(Collider2D collision)
+    {
         if (collision.CompareTag("Player") && canBePickedUp)
         {
+            canBePickedUp = false; // 防止重复触发
             anim.Play("LootPickUp");
             OnItemLooted?.Invoke(itemSo, quantity);
             Destroy(gameObject, 0.5f);
@@ -46,6 +55,12 @@ public class Loot : MonoBehaviour
         this.quantity = quantity;
         canBePickedUp = false;
         UpdateAppearance();
+        StartCoroutine(EnablePickUpAfterDelay(0.3f));
+    }
+    private System.Collections.IEnumerator EnablePickUpAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        canBePickedUp = true;
     }
 
 }
