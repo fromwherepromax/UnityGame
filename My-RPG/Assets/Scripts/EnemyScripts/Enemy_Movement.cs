@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class Enemy_Movement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    public float speed;
 
+    public float speed;
     public float attackRange = 2;
     public float attackCooldown = 2;
     public float playerDetectRange = 5;
     public Transform detectionPiont;
     public LayerMask playerLayer;
 
-
     private float attackCooldownTimer;
     private int facingDirection=-1;
     private Transform player;
     private Animator anim;
     private EnemyState enemyState;
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -58,36 +57,21 @@ public class Enemy_Movement : MonoBehaviour
 
     void Chase()
     {
-
-
-
-
         if (player.position.x > transform.position.x && facingDirection == -1 ||
         player.position.x < transform.position.x && facingDirection == 1)
         {
             Flip();
 
         }
-
-
-
         Vector2 direction = (player.position - transform.position).normalized;
         rb.velocity = direction * speed;
 
     }
-
-
-
-
     void Flip()
     {
         facingDirection *= -1;
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y * 1, transform.localScale.z);
     }
-
-
-
-
 
     private void CheckForPlayer()
     {
@@ -106,7 +90,6 @@ public class Enemy_Movement : MonoBehaviour
             {
                 ChangeState(EnemyState.Chasing);
             }
-            
         }
         else
         {
@@ -114,8 +97,6 @@ public class Enemy_Movement : MonoBehaviour
             ChangeState(EnemyState.Idle);
         }
     }
-
-
 
     public void ChangeState(EnemyState newstate)
     {
