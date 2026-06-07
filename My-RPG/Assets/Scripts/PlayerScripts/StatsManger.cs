@@ -82,5 +82,19 @@ public class StatsManager : MonoBehaviour
             statsUI.UpdateAllStats();
         }
     }
+    public void UpdateDamage(int amount)
+    {
+        damage += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
 
 }

@@ -19,6 +19,10 @@ public class UseItem : MonoBehaviour
         {
             StatsManager.Instance.UpdateSpeed(itemSo.speed);
         }
+        if (itemSo.damage != 0)
+        {
+            StatsManager.Instance.UpdateDamage(itemSo.damage);
+        }
 
         if (itemSo.duration > 0)
         {
@@ -38,6 +42,10 @@ public class UseItem : MonoBehaviour
         if (itemSo.speed != 0)
         {
             StatsManager.Instance.UpdateSpeed(-itemSo.speed);
+        }
+        if (itemSo.damage != 0)
+        {
+            StatsManager.Instance.UpdateDamage(-itemSo.damage);
         }
     }
 }
