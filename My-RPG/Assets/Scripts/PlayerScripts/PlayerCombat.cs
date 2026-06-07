@@ -26,9 +26,6 @@ public class player_Combat : MonoBehaviour
         if (timer<=0)
         {
             anim.SetBool("isAttacking", true);
-
-
-
             timer = cooldown;
         }
     }
@@ -47,8 +44,6 @@ public class player_Combat : MonoBehaviour
     public void FinishAttack()
     {
         anim.SetBool("isAttacking", false);
-
-
     }
 
     private void OnDrawGizmosSelected()
@@ -56,6 +51,4 @@ public class player_Combat : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, StatsManager.Instance.weaponRange);
     }
-
-
 }
