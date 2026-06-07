@@ -11,16 +11,16 @@ public class En : MonoBehaviour
     public float stunTime;
     public LayerMask playerLayer;
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, playerLayer);
-        if (collision.gameObject.tag=="Player")
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().ChangHealth(-damage);
-            hits[0].GetComponent<PlayerMovemont>().Knockback(transform, knockbackForce, stunTime);
-        }
+    // public void OnCollisionEnter2D(Collision2D collision)  //触碰玩家时造成伤害
+    // {
+    //     Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, playerLayer);
+    //     if (collision.gameObject.tag=="Player")
+    //     {
+    //         collision.gameObject.GetComponent<PlayerHealth>().ChangHealth(-damage);
+    //         hits[0].GetComponent<PlayerMovemont>().Knockback(transform, knockbackForce, stunTime);
+    //     }
         
-    }
+    // }
 
     public void Attack()
     {
