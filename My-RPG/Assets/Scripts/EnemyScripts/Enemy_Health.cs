@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Enemy_Health : MonoBehaviour
 {
-    public int currentHealth;
-    public int maxHealth;
+    public int currentHealth=10;
+    public int maxHealth=10;
 
     private void Start()
     {
-        StatsManager.Instance.CurrentHealth = StatsManager.Instance.MaxHealth;
+        currentHealth = maxHealth;
     }
 
 
     public void ChangeHealth(int amount)
     {
-        StatsManager.Instance.CurrentHealth += amount;
-        if (StatsManager.Instance.CurrentHealth> StatsManager.Instance.MaxHealth)
+        currentHealth += amount;
+        if (currentHealth> maxHealth)
         {
-            StatsManager.Instance.CurrentHealth = StatsManager.Instance.MaxHealth;
+            currentHealth = maxHealth;
         }
 
-        else if (StatsManager.Instance.CurrentHealth <=0)
+        else if (currentHealth <=0)
         {
             Destroy(gameObject);
         }
