@@ -16,6 +16,18 @@ public class Explosion : MonoBehaviour
         float knockbackDuration = StatsManager.Instance != null ? StatsManager.Instance.explosionKnockbackDuration : 0.5f;
         float stunTime = StatsManager.Instance != null ? StatsManager.Instance.explosionStunTime : 0.5f;
 
+        // 缩放特效使其与爆炸半径匹配
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null && sr.sprite != null)
+        {
+            float spriteSize = sr.bounds.size.x; // 精灵当前的实际尺寸
+            if (spriteSize > 0)
+            {
+                float targetSize = radius * 2f; // 直径
+                float scale = targetSize / spriteSize;
+                transform.localScale = Vector3.one * scale;
+            }
+        }
         // 检测范围内所有敌人
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, radius, enemyLayer);
 
