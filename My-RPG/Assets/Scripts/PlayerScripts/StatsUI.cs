@@ -33,30 +33,23 @@ public class StatsUI : MonoBehaviour
                 statsCanvas.alpha = 1;
                 statsOpen = true;
             }
-
-
         }
     }
 
 
     public void UpdateDamage()
     {
-        statsSlots[0].GetComponentInChildren<TMP_Text>().text="Damage:" + StatsManager.Instance.damage;
+        statsSlots[0].GetComponentInChildren<TMP_Text>().text="攻击:" + StatsManager.Instance.damage;
     }
 
     public void UpdateSpeed()
     {
-        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed:" + StatsManager.Instance.speed;
+        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "速度:" + StatsManager.Instance.speed;
     }
-
-
-
 
     public void UpdateAllStats()
     {
         UpdateDamage();
         UpdateSpeed();
-
-
     }
 }
