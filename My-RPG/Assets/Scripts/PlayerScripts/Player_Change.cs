@@ -8,6 +8,7 @@ public class Player_Change : MonoBehaviour
     public Player_Bow bow;
     public Player_Monk monk;
     public PlayerPortraitUI portraitUI;
+    public Animator anim;
     public float switchCooldown = 0.5f;
     private float switchTimer;
 
@@ -31,9 +32,19 @@ public class Player_Change : MonoBehaviour
 
     private void ApplyMode()
     {
+        ResetAnimatorStates();
+
         if (combat != null) combat.enabled = (currentMode == PlayerMode.Combat);
         if (bow != null) bow.enabled = (currentMode == PlayerMode.Bow);
         if (monk != null) monk.enabled = (currentMode == PlayerMode.Monk);
         if (portraitUI != null) portraitUI.UpdatePortrait((int)currentMode);
+    }
+
+    private void ResetAnimatorStates()
+    {
+        if (anim == null) return;
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("isShooting", false);
+        anim.SetBool("isHealing", false);
     }
 }

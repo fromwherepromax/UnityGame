@@ -31,6 +31,7 @@ public class Player_Bow : MonoBehaviour
     }
     private void OnDisable()
     {
+        anim.SetBool("isShooting", false);
         anim.SetLayerWeight(0,1);
         anim.SetLayerWeight(1,0);
     }
