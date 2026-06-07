@@ -26,6 +26,7 @@ public class Player_Monk : MonoBehaviour
 
     private void OnDisable()
     {
+        anim.SetBool("isHealing", false);
         anim.SetLayerWeight(0, 1);
         anim.SetLayerWeight(2, 0);
     }

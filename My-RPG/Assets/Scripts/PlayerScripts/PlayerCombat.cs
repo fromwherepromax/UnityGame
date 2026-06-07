@@ -48,6 +48,11 @@ public class player_Combat : MonoBehaviour
         anim.SetBool("isAttacking", false);
     }
 
+    private void OnDisable()
+    {
+        if (anim != null) anim.SetBool("isAttacking", false);
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null || StatsManager.Instance == null) return;
