@@ -9,7 +9,6 @@ public class player_Combat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayer;
     public Animator anim;
-    public float cooldown = 2;
     private float timer;
 
 
@@ -26,7 +25,7 @@ public class player_Combat : MonoBehaviour
         if (timer<=0)
         {
             anim.SetBool("isAttacking", true);
-            timer = cooldown;
+            timer = StatsManager.Instance.cooldown;
         }
     }
 
