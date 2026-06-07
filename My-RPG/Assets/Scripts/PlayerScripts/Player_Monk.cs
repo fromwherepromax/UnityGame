@@ -5,13 +5,12 @@ using UnityEngine;
 public class Player_Monk : MonoBehaviour
 {
     public Animator anim;
-    public int healAmount = 5;
-    public float healCooldown = 5f;
     private float healTimer;
 
     void Update()
     {
         healTimer -= Time.deltaTime;
+        float cooldown = StatsManager.Instance != null ? StatsManager.Instance.healCooldown : 5f;
 
         if (Input.GetMouseButtonDown(0) && healTimer <= 0)
         {
@@ -35,12 +34,15 @@ public class Player_Monk : MonoBehaviour
     {
         if (healTimer <= 0)
         {
+            int amount = StatsManager.Instance != null ? StatsManager.Instance.healAmount : 5;
+            float cooldown = StatsManager.Instance != null ? StatsManager.Instance.healCooldown : 5f;
+
             PlayerHealth playerHealth = GetComponentInParent<PlayerHealth>();
             if (playerHealth != null && StatsManager.Instance.CurrentHealth < StatsManager.Instance.MaxHealth)
             {
-                playerHealth.ChangHealth(healAmount);
+                playerHealth.ChangHealth(amount);
             }
-            healTimer = healCooldown;
+            healTimer = cooldown;
         }
     }
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootEntries:
   - item: {fileID: 11400000, guid: cd0750b70a1189a49a99324fef34d7ab, type: 2}
-    minQuantity: 0
+    minQuantity: 1
     maxQuantity: 2
     dropChance: 0.5
   - item: {fileID: 11400000, guid: 9c5c98f11914f8d41a2cc09473b013d4, type: 2}
