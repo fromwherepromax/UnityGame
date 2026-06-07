@@ -7,37 +7,24 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int currentHealth;
-    public int maxHealth;
     public TMP_Text healthText;
     public Animator healthTextAnim;
 
     private void Start()
     {
-        healthText.text = "HP:" + currentHealth + "/" + maxHealth;
+        healthText.text = "HP:" + StatsManager.Instance.CurrentHealth + "/" + StatsManager.Instance.MaxHealth;
     }
-
-
-
-
-
-
-
 
     public void ChangHealth(int amount)
     {
-        currentHealth += amount;
+        StatsManager.Instance.CurrentHealth += amount;
         healthTextAnim.Play("TextUPdate");
 
 
-        healthText.text = "HP:" + currentHealth + "/" + maxHealth;
-        if (currentHealth<=0)
+        healthText.text = "HP:" + StatsManager.Instance.CurrentHealth + "/" + StatsManager.Instance.MaxHealth;
+        if (StatsManager.Instance.CurrentHealth<=0)
         {
             gameObject.SetActive(false);
         }
     }
-
-
-
-
 }

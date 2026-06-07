@@ -31,12 +31,7 @@ public class player_Combat : MonoBehaviour
 
             timer = cooldown;
         }
-        
-
-
     }
-
-
 
     public void DealDamage()
     {
@@ -47,9 +42,6 @@ public class player_Combat : MonoBehaviour
             enemies[0].GetComponent<Enemy_Health>().ChangeHealth(-StatsManager.Instance.damage);
             enemies[0].GetComponent<Enemy_knockBack>().knockback(transform, StatsManager.Instance.knockbackforce, StatsManager.Instance.knockbacktime, StatsManager.Instance.stuntime);
         }
-
-
-
     }
 
     public void FinishAttack()
@@ -58,8 +50,6 @@ public class player_Combat : MonoBehaviour
 
 
     }
-
-
 
     private void OnDrawGizmosSelected()
     {
