@@ -55,7 +55,7 @@ public class Enemy_Movement : MonoBehaviour
 
     }
 
-    void Chase()
+    void Chase()  //追踪玩家
     {
         if (player.position.x > transform.position.x && facingDirection == -1 ||
         player.position.x < transform.position.x && facingDirection == 1)
@@ -73,7 +73,7 @@ public class Enemy_Movement : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y * 1, transform.localScale.z);
     }
 
-    private void CheckForPlayer()
+    private void CheckForPlayer()  //检查玩家是否在范围内
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(detectionPiont.position, playerDetectRange, playerLayer);
 
@@ -98,7 +98,7 @@ public class Enemy_Movement : MonoBehaviour
         }
     }
 
-    public void ChangeState(EnemyState newstate)
+    public void ChangeState(EnemyState newstate) //改变状态机状态
     {
         if (enemyState==EnemyState.Idle)
         {
