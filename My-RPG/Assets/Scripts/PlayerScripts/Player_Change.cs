@@ -6,8 +6,12 @@ public class Player_Change : MonoBehaviour
 {
     public player_Combat combat;
     public Player_Bow bow;
+    public Player_Monk monk;
     public float switchCooldown = 0.5f;
     private float switchTimer;
+
+    private enum PlayerMode { Combat, Bow, Monk }
+    private PlayerMode currentMode = PlayerMode.Combat;
 
     void Update()
     {
@@ -19,16 +23,15 @@ public class Player_Change : MonoBehaviour
         if (Input.GetButtonDown("ChangeEquipment") && switchTimer <= 0)
         {
             switchTimer = switchCooldown;
-            if (combat.enabled)
-            {
-                combat.enabled = false;
-                bow.enabled = true;
-            }
-            else
-            {
-                combat.enabled = true;
-                bow.enabled = false;
-            }
+            currentMode = (PlayerMode)(((int)currentMode + 1) % 3);
+            ApplyMode();
         }
+    }
+
+    private void ApplyMode()
+    {
+        if (combat != null) combat.enabled = (currentMode == PlayerMode.Combat);
+        if (bow != null) bow.enabled = (currentMode == PlayerMode.Bow);
+        if (monk != null) monk.enabled = (currentMode == PlayerMode.Monk);
     }
 }
