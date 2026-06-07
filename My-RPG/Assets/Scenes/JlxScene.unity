@@ -7070,7 +7070,7 @@ Transform:
   m_GameObject: {fileID: 694586038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.480236, y: -0.029405013, z: -9.929774}
+  m_LocalPosition: {x: 2.050236, y: -0.48940504, z: -9.929774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18252,7 +18252,6 @@ GameObject:
   - component: {fileID: 1882276625}
   - component: {fileID: 1882276624}
   - component: {fileID: 1882276623}
-  - component: {fileID: 1882276628}
   - component: {fileID: 1882276629}
   - component: {fileID: 1882276633}
   - component: {fileID: 1882276631}
@@ -18409,7 +18408,7 @@ Transform:
   m_GameObject: {fileID: 1882276621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.43, y: -0.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18417,28 +18416,6 @@ Transform:
   - {fileID: 1592775726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1882276628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1882276621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2836c7902d84d6646840a7dd54ed1bcf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statsUI: {fileID: 0}
-  healthText: {fileID: 0}
-  damage: 0
-  weaponRange: 0
-  knockbackforce: 0
-  knockbacktime: 0
-  stuntime: 0
-  speed: 6
-  MaxHealth: 0
-  CurrentHealth: 0
 --- !u!114 &1882276629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18501,8 +18478,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac0324c32c8721458efd702e2b220d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 20
-  maxHealth: 20
   healthText: {fileID: 1525404257}
   healthTextAnim: {fileID: 1525404259}
 --- !u!114 &1882276634
@@ -19493,7 +19468,7 @@ Transform:
   m_GameObject: {fileID: 2024122455}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.480236, y: -0.029405013, z: -9.929774}
+  m_LocalPosition: {x: 2.050236, y: -0.48940504, z: -9.929774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20196,10 +20171,10 @@ MonoBehaviour:
   statsUI: {fileID: 0}
   healthText: {fileID: 0}
   damage: 1
-  weaponRange: 2
+  weaponRange: 0.7
   knockbackforce: 7
-  knockbacktime: 1
-  stuntime: 1
+  knockbacktime: 0.15
+  stuntime: 0.2
   speed: 5
   MaxHealth: 100
   CurrentHealth: 100
