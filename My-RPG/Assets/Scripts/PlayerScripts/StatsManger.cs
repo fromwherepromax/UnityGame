@@ -30,6 +30,14 @@ public class StatsManager : MonoBehaviour
     public int healAmount = 5;
     public float healCooldown = 5f;
 
+    [Header("Explosion Stats")]
+    public int explosionDamage = 15;
+    public float explosionRadius = 3f;
+    public float explosionCooldown = 8f;
+    public float explosionKnockbackForce = 8f;
+    public float explosionKnockbackDuration = 0.5f;
+    public float explosionStunTime = 0.5f;
+
     [Header("Movement Stats")]
     public int speed;
 
@@ -43,6 +51,7 @@ public class StatsManager : MonoBehaviour
     public int damagePerLevel = 1;
     public int arrowDamagePerLevel = 1;
     public int healPerLevel = 1;
+    public int explosionDamagePerLevel = 2;
 
     private void Awake()
     {
@@ -73,6 +82,7 @@ public class StatsManager : MonoBehaviour
         damage += damagePerLevel;
         arrowDamage += arrowDamagePerLevel;
         healAmount += healPerLevel;
+        explosionDamage += explosionDamagePerLevel;
 
         if (healthText != null)
         {
