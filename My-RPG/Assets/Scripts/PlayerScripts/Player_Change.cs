@@ -7,12 +7,13 @@ public class Player_Change : MonoBehaviour
     public player_Combat combat;
     public Player_Bow bow;
     public Player_Monk monk;
+    public Player_Caster caster;
     public PlayerPortraitUI portraitUI;
     public Animator anim;
     public float switchCooldown = 0.5f;
     private float switchTimer;
 
-    private enum PlayerMode { Combat, Bow, Monk }
+    private enum PlayerMode { Combat, Bow, Monk, Caster }
     private PlayerMode currentMode = PlayerMode.Combat;
 
     void Update()
@@ -25,7 +26,7 @@ public class Player_Change : MonoBehaviour
         if (Input.GetButtonDown("ChangeEquipment") && switchTimer <= 0)
         {
             switchTimer = switchCooldown;
-            currentMode = (PlayerMode)(((int)currentMode + 1) % 3);
+            currentMode = (PlayerMode)(((int)currentMode + 1) % 4);
             ApplyMode();
         }
     }
@@ -37,6 +38,7 @@ public class Player_Change : MonoBehaviour
         if (combat != null) combat.enabled = (currentMode == PlayerMode.Combat);
         if (bow != null) bow.enabled = (currentMode == PlayerMode.Bow);
         if (monk != null) monk.enabled = (currentMode == PlayerMode.Monk);
+        if (caster != null) caster.enabled = (currentMode == PlayerMode.Caster);
         if (portraitUI != null) portraitUI.UpdatePortrait((int)currentMode);
     }
 
@@ -46,5 +48,6 @@ public class Player_Change : MonoBehaviour
         anim.SetBool("isAttacking", false);
         anim.SetBool("isShooting", false);
         anim.SetBool("isHealing", false);
+        anim.SetBool("isCasting", false);
     }
 }

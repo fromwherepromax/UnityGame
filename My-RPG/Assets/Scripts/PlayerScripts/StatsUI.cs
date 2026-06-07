@@ -51,5 +51,26 @@ public class StatsUI : MonoBehaviour
     {
         UpdateDamage();
         UpdateSpeed();
+        UpdateArrowDamage();
+        UpdateHealAmount();
+        UpdateExplosionDamage();
+    }
+
+    public void UpdateArrowDamage()
+    {
+        if (statsSlots.Length > 2)
+            statsSlots[2].GetComponentInChildren<TMP_Text>().text = "箭伤:" + StatsManager.Instance.arrowDamage;
+    }
+
+    public void UpdateHealAmount()
+    {
+        if (statsSlots.Length > 3)
+            statsSlots[3].GetComponentInChildren<TMP_Text>().text = "治疗:" + StatsManager.Instance.healAmount;
+    }
+
+    public void UpdateExplosionDamage()
+    {
+        if (statsSlots.Length > 4)
+            statsSlots[4].GetComponentInChildren<TMP_Text>().text = "爆炸:" + StatsManager.Instance.explosionDamage;
     }
 }

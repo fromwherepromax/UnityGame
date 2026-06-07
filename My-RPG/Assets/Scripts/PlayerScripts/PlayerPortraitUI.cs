@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerPortraitUI : MonoBehaviour
 {
-    [Header("角色头像 (0=战士 1=弓箭手 2=僧侣)")]
+    [Header("角色头像 (0=战士 1=弓箭手 2=僧侣 3=法师)")]
     public Sprite[] characterSprites;
 
     [Header("UI 引用")]
