@@ -7,13 +7,20 @@ public class Player_Change : MonoBehaviour
     public player_Combat combat;
     public Player_Bow bow;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("ChangeEquipment"))
         {
-            combat.enabled = !combat.enabled;
-            bow.enabled = !bow.enabled;
+            if (combat.enabled)
+            {
+                combat.enabled = false;
+                bow.enabled = true;
+            }
+            else
+            {
+                combat.enabled = true;
+                bow.enabled = false;
+            }
         }
     }
 }

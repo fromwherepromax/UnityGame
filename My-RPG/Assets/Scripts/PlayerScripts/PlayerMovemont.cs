@@ -10,8 +10,6 @@ public class PlayerMovemont : MonoBehaviour
     public Animator anim;
     public int facingDirection=1;
     private bool isKnockback;
-    public bool isShooting;
-
     public player_Combat player_Combat;
     private void Update()
     {
@@ -26,11 +24,7 @@ public class PlayerMovemont : MonoBehaviour
     // FixedUpdate is called once per frame
     void FixedUpdate()
     {
-        if (isShooting==true)
-        {
-            rb.velocity = Vector2.zero;
-        }
-        else if (isKnockback==false)
+        if (isKnockback==false)
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
