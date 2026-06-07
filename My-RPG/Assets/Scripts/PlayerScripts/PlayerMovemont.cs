@@ -13,7 +13,7 @@ public class PlayerMovemont : MonoBehaviour
     public player_Combat player_Combat;
     private void Update()
     {
-        if (Input.GetButtonDown("Slash"))
+        if (Input.GetMouseButtonDown(0) && player_Combat.enabled)
         {
             player_Combat.Attack();
         }
