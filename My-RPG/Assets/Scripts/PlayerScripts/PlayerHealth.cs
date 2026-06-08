@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ChangHealth(int amount)
     {
+        if (amount < 0) MusicManager.Instance?.PlayFemaleHit();
         StatsManager.Instance.CurrentHealth += amount;
         StatsManager.Instance.CurrentHealth = Mathf.Clamp(StatsManager.Instance.CurrentHealth, 0, StatsManager.Instance.MaxHealth);
         healthTextAnim.Play("TextUPdate");

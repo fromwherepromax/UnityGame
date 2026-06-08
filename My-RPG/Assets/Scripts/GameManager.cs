@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public DialogueHistoryTracker dialogueHistoryTracker; //对话历史记录器引用
     public LocationHistoryTracker locationHistoryTracker; //地点历史记录器引用
     public QuestManager questManager; //任务管理器引用
+    public MusicManager musicManager; //音乐管理器引用
 
    [Header("Persistent Objects")]
    public GameObject[] persistentObjects;

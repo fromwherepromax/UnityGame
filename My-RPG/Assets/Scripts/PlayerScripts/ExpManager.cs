@@ -54,6 +54,7 @@ public class ExpManager : MonoBehaviour
         currentExp -= expToNextLevel;
         expToNextLevel = Mathf.RoundToInt(expToNextLevel * expMultiplier);
         OnLevelUp?.Invoke(1);
+        MusicManager.Instance?.PlayLevelUp();
     }
     public void UpdateUI()
     {

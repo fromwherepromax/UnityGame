@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -104,7 +103,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +116,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -163,9 +162,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -199,10 +206,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1954214523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954214525}
+  - component: {fileID: 1954214524}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1954214524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954214523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be80dc42b1848a48a63015374eae99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicLibrary: {fileID: 11400000, guid: 31ccc9dc87b3a5a4489bf392b0b64682, type: 2}
+  bgmSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  bgmVolume: 0.7
+  fadeDuration: 1.5
+  bgmMuted: 0
+  saberCombatClip: {fileID: 8300000, guid: 234ec3786184fa741b2dfbf05a757773, type: 3}
+  archerShootClip: {fileID: 8300000, guid: b1e150820464a4e49a833ba593820499, type: 3}
+  casterExplosionClip: {fileID: 8300000, guid: 57ad2ed33e806c0439eab24d3e5a08bd, type: 3}
+  casterExplosion2Clip: {fileID: 8300000, guid: c2b1b11df5aa78a4fb84c72c18081987, type: 3}
+  monkHealClip: {fileID: 8300000, guid: 38fe3c2ecda5bd948801416c29b612ae, type: 3}
+  monkHeal2Clip: {fileID: 8300000, guid: 418ba69e0a4f74b4594308ed64ca65c4, type: 3}
+  femaleHitClip: {fileID: 8300000, guid: b6d7f84f334902846add56d3047b7dcd, type: 3}
+  levelUpClip: {fileID: 8300000, guid: 915e30548d4b94d4d953cf86ffa582b2, type: 3}
+  pickUpClip: {fileID: 8300000, guid: 654b122fd7a300c4b9399de4ea70548d, type: 3}
+  completeTaskClip: {fileID: 8300000, guid: b762e02bcf4acc54ebca2d0d646c4d32, type: 3}
+  buttonClip: {fileID: 8300000, guid: 0273a2ce8b875204fba48409042cdaf5, type: 3}
+  clickClip: {fileID: 8300000, guid: 84152076ea1fd944081da83fecaed1a4, type: 3}
+  sfxVolume: 1
+  sfxMuted: 0
+--- !u!4 &1954214525
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954214523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.9537487, y: 1.3353968, z: -0.04775962}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 519420032}
+  - {fileID: 1954214525}

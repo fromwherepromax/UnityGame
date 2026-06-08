@@ -61,6 +61,7 @@ public class Player_Caster : MonoBehaviour
             Instantiate(explosionPrefab, mouseWorldPos, Quaternion.identity);
         }
 
+        MusicManager.Instance?.PlayCasterExplosion();
         castTimer = cooldown;
         anim.SetBool("isCasting", false);
 
