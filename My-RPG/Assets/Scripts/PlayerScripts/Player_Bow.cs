@@ -43,6 +43,7 @@ public class Player_Bow : MonoBehaviour
             arrow.direction=aimDirection;
             shootTimer=shootCooldown;
             anim.SetBool("isShooting",false);
+            MusicManager.Instance?.PlayArcherShoot();
         }
     }
     public void HandleAming() //根据输入更新瞄准方向

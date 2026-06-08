@@ -31,6 +31,7 @@ public class player_Combat : MonoBehaviour
 
     public void DealDamage()
     {
+        MusicManager.Instance?.PlaySaberCombat();
         Collider2D[] enemies = Physics2D.OverlapCircleAll(attackPoint.position, StatsManager.Instance.weaponRange, enemyLayer);
 
         if (enemies.Length > 0)

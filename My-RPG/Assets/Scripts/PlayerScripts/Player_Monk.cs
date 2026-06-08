@@ -42,6 +42,7 @@ public class Player_Monk : MonoBehaviour
             if (playerHealth != null && StatsManager.Instance.CurrentHealth < StatsManager.Instance.MaxHealth)
             {
                 playerHealth.ChangHealth(amount);
+                MusicManager.Instance?.PlayMonkHeal();
             }
             healTimer = cooldown;
         }
