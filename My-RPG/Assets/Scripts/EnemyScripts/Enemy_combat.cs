@@ -34,4 +34,12 @@ public class En : MonoBehaviour
         Debug.Log("Attacking Player Now!");
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+
+        // 攻击判定范围 —— 红色
+        Gizmos.color = new Color(1f, 0f, 0f, 0.4f);
+        Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
+    }
 }

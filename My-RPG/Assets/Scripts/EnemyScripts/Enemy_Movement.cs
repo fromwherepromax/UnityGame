@@ -73,6 +73,17 @@ public class Enemy_Movement : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y * 1, transform.localScale.z);
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        // 玩家检测范围 —— 黄色
+        Gizmos.color = new Color(1f, 1f, 0f, 0.3f);
+        Gizmos.DrawWireSphere(detectionPiont != null ? detectionPiont.position : transform.position, playerDetectRange);
+
+        // 进入攻击状态的距离 —— 青色
+        Gizmos.color = new Color(0f, 1f, 1f, 0.3f);
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
     private void CheckForPlayer()  //检查玩家是否在范围内
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(detectionPiont.position, playerDetectRange, playerLayer);
@@ -128,12 +139,12 @@ public class Enemy_Movement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(detectionPiont.position, playerDetectRange);
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(detectionPiont.position, playerDetectRange);
 
-    }
+    // }
 
 
 
