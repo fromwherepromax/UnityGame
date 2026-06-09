@@ -13,6 +13,13 @@ public class Enemy_Health : MonoBehaviour
     public delegate void EnemyDefeated(int expReward);
     public static event EnemyDefeated OnEnemyDefeated;
 
+    [Header("Regen")]
+    public int regenAmount = 1;          // 每次回血量
+    public float regenInterval = 2f;     // 回血间隔（秒）
+    public float regenDelay = 3f;        // 脱战后延迟多久开始回血
+
+    private Coroutine regenCoroutine;
+
     [Header("Health Bar")]
     public GameObject healthBarPrefab;
     public Vector3 healthBarOffset = new Vector3(0, 1f, 0);
@@ -106,6 +113,37 @@ public class Enemy_Health : MonoBehaviour
         }
 
         hitFlashCoroutine = StartCoroutine(HitFlashCoroutine());
+    }
+
+    public void StartRegen()
+    {
+        StopRegen();
+        if (currentHealth < maxHealth)
+        {
+            regenCoroutine = StartCoroutine(RegenCoroutine());
+        }
+    }
+
+    public void StopRegen()
+    {
+        if (regenCoroutine != null)
+        {
+            StopCoroutine(regenCoroutine);
+            regenCoroutine = null;
+        }
+    }
+
+    private IEnumerator RegenCoroutine()
+    {
+        yield return new WaitForSeconds(regenDelay);
+
+        while (currentHealth < maxHealth)
+        {
+            ChangeHealth(regenAmount);
+            yield return new WaitForSeconds(regenInterval);
+        }
+
+        regenCoroutine = null;
     }
 
     private IEnumerator HitFlashCoroutine()

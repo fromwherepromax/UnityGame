@@ -18,6 +18,7 @@ public class Enemy_Movement : MonoBehaviour
     private Animator anim;
     private EnemyState enemyState;
     private Rigidbody2D rb;
+    private Enemy_Health health;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class Enemy_Movement : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        health = GetComponent<Enemy_Health>();
         ChangeState(EnemyState.Idle);
     }
 
@@ -114,6 +116,7 @@ public class Enemy_Movement : MonoBehaviour
         if (enemyState==EnemyState.Idle)
         {
             anim.SetBool("isIdle", false);
+            health?.StopRegen();
         }
         else if (enemyState == EnemyState.Chasing)
         {
@@ -128,6 +131,7 @@ public class Enemy_Movement : MonoBehaviour
         if (enemyState == EnemyState.Idle)
         {
             anim.SetBool("isIdle", true);
+            health?.StartRegen();
         }
         else if (enemyState == EnemyState.Chasing)
         {
