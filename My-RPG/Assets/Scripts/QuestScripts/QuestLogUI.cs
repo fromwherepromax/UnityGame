@@ -101,6 +101,23 @@ public class QuestLogUI : MonoBehaviour
         canvasGroup.blocksRaycasts = state; //根据状态设置界面射线检测
     }
 
+    /// <summary>
+    /// 切换任务日志面板的显示/隐藏（供设置面板调用）
+    /// </summary>
+    public void ToggleQuestLog()
+    {
+        if (questCanvas == null) return;
+
+        bool isVisible = questCanvas.alpha > 0f;
+        SetCanvasState(questCanvas, !isVisible);
+
+        if (!isVisible)
+        {
+            RefreshQuestList();
+            HandleQuestclick(noAvailableQuest);
+        }
+    }
+
     public void RefreshQuestList() //刷新任务列表
     {
        List<QuestSO> activeQuests = questManager.GetActiveQuests(); //获取当前所有活跃的任务

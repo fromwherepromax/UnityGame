@@ -21,18 +21,30 @@ public class StatsUI : MonoBehaviour
     {
         if (Input.GetButtonDown("ToggleStats"))
         {
-            if (statsOpen)
-            {
-                Time.timeScale = 1;
-                statsCanvas.alpha = 0;
-                statsOpen = false;
-            }
-            else
-            {
-                Time.timeScale = 0;
-                statsCanvas.alpha = 1;
-                statsOpen = true;
-            }
+            ToggleStats();
+        }
+    }
+
+    /// <summary>
+    /// 切换属性面板的显示/隐藏（供设置面板和按键共用）
+    /// </summary>
+    public void ToggleStats()
+    {
+        if (statsOpen)
+        {
+            Time.timeScale = 1;
+            statsCanvas.alpha = 0;
+            statsCanvas.interactable = false;
+            statsCanvas.blocksRaycasts = false;
+            statsOpen = false;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            statsCanvas.alpha = 1;
+            statsCanvas.interactable = true;
+            statsCanvas.blocksRaycasts = true;
+            statsOpen = true;
         }
     }
 
