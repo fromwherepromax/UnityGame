@@ -12,6 +12,17 @@ public class Player_Bow : MonoBehaviour
     private float shootTimer;
     public Animator anim;
 
+    /// <summary>
+    /// 冷却进度：0 = 就绪，1 = 刚释放完（冷却最长）
+    /// </summary>
+    public float CooldownProgress
+    {
+        get
+        {
+            return shootCooldown > 0 ? Mathf.Clamp01(shootTimer / shootCooldown) : 0f;
+        }
+    }
+
     // Update is called once per frame
     void Update()  
     {   

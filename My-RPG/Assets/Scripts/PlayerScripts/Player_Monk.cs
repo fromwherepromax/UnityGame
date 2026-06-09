@@ -7,6 +7,18 @@ public class Player_Monk : MonoBehaviour
     public Animator anim;
     private float healTimer;
 
+    /// <summary>
+    /// 冷却进度：0 = 就绪，1 = 刚释放完（冷却最长）
+    /// </summary>
+    public float CooldownProgress
+    {
+        get
+        {
+            float max = StatsManager.Instance != null ? StatsManager.Instance.healCooldown : 5f;
+            return max > 0 ? Mathf.Clamp01(healTimer / max) : 0f;
+        }
+    }
+
     void Update()
     {
         healTimer -= Time.deltaTime;

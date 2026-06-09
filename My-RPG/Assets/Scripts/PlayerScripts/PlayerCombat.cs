@@ -11,6 +11,17 @@ public class player_Combat : MonoBehaviour
     public Animator anim;
     private float timer;
 
+    /// <summary>
+    /// 冷却进度：0 = 就绪，1 = 刚释放完（冷却最长）
+    /// </summary>
+    public float CooldownProgress
+    {
+        get
+        {
+            float max = StatsManager.Instance != null ? StatsManager.Instance.cooldown : 1f;
+            return max > 0 ? Mathf.Clamp01(timer / max) : 0f;
+        }
+    }
 
     private void Update()
     {
