@@ -125,6 +125,7 @@ public class InventoryManager : MonoBehaviour
             {
                 goldText.text = gold.ToString();
             }
+            MusicManager.Instance?.PlayPickUp();
             return;
         }
 
@@ -146,6 +147,7 @@ public class InventoryManager : MonoBehaviour
 
                 if (quantity <= 0)
                 {
+                    MusicManager.Instance?.PlayPickUp();
                     inventoryDetailsUI?.RefreshSelection();
                     return;
                 }
@@ -160,6 +162,7 @@ public class InventoryManager : MonoBehaviour
                 slot.itemSo = itemSo;
                 slot.quantity = amountToAdd;
                 slot.UpdateUI();
+                MusicManager.Instance?.PlayPickUp();
                 inventoryDetailsUI?.RefreshSelection();
                 return;
             }

@@ -10,8 +10,6 @@ public class StatsUI : MonoBehaviour
     public CanvasGroup statsCanvas;
     private bool statsOpen = false;
 
-
-
     private void Start()
     {
         UpdateAllStats();
@@ -48,17 +46,6 @@ public class StatsUI : MonoBehaviour
         }
     }
 
-
-    public void UpdateDamage()
-    {
-        statsSlots[0].GetComponentInChildren<TMP_Text>().text="攻击:" + StatsManager.Instance.damage;
-    }
-
-    public void UpdateSpeed()
-    {
-        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "速度:" + StatsManager.Instance.speed;
-    }
-
     public void UpdateAllStats()
     {
         UpdateDamage();
@@ -66,6 +53,15 @@ public class StatsUI : MonoBehaviour
         UpdateArrowDamage();
         UpdateHealAmount();
         UpdateExplosionDamage();
+    }
+    public void UpdateDamage()
+    {
+        statsSlots[0].GetComponentInChildren<TMP_Text>().text="近战攻击:" + StatsManager.Instance.damage;
+    }
+
+    public void UpdateSpeed()
+    {
+        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "速度:" + StatsManager.Instance.speed;
     }
 
     public void UpdateArrowDamage()

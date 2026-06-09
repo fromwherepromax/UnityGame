@@ -519,7 +519,7 @@ MonoBehaviour:
   stuntime: 0.2
   cooldown: 0.5
   arrowDamage: 2
-  arrowSpeed: 10
+  arrowSpeed: 20
   arrowKnockbackForce: 5
   arrowKnockbackDuration: 0.5
   arrowStunTime: 0.5
@@ -527,18 +527,18 @@ MonoBehaviour:
   healCooldown: 5
   explosionDamage: 100
   explosionRadius: 100
-  explosionCooldown: 8
+  explosionCooldown: 10
   explosionKnockbackForce: 8
   explosionKnockbackDuration: 0.5
-  explosionStunTime: 0.5
+  explosionStunTime: 3
   speed: 5
   MaxHealth: 100
   CurrentHealth: 100
   MaxHealthPerLevel: 10
-  damagePerLevel: 1
+  damagePerLevel: 0
   arrowDamagePerLevel: 1
   healPerLevel: 1
-  explosionDamagePerLevel: 2
+  explosionDamagePerLevel: 100
 --- !u!4 &72138013
 Transform:
   m_ObjectHideFlags: 0
@@ -12275,11 +12275,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5899432201855391387, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 160
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 5899432201855391387, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 90
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 5899432201855391387, guid: 6e1f71b7e89391745a22034ffdb42b68, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
