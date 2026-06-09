@@ -9,10 +9,12 @@ public class Enemy_Movement : MonoBehaviour
     public float attackRange = 2;
     public float attackCooldown = 2;
     public float playerDetectRange = 5;
+    public float detectionPauseTime = 1.5f; // 击退后暂停检测的时间
     public Transform detectionPiont;
     public LayerMask playerLayer;
 
     private float attackCooldownTimer;
+    private float detectionPauseTimer;
     private int facingDirection=-1;
     private Transform player;
     private Animator anim;
@@ -35,8 +37,15 @@ public class Enemy_Movement : MonoBehaviour
     {
         if (enemyState!=EnemyState.knockback)
         {
+            if (detectionPauseTimer > 0)
+            {
+                detectionPauseTimer -= Time.deltaTime;
+            }
+            else
+            {
+                CheckForPlayer();
+            }
 
-            CheckForPlayer();
             if (attackCooldownTimer > 0)
             {
                 attackCooldownTimer -= Time.deltaTime;
@@ -125,6 +134,11 @@ public class Enemy_Movement : MonoBehaviour
         else if (enemyState == EnemyState.Attacking)
         {
             anim.SetBool("isAttacking", false);
+        }
+        // 击退结束时，暂停检测让敌人有时间进入回血
+        if (newstate == EnemyState.Idle && enemyState == EnemyState.knockback)
+        {
+            detectionPauseTimer = detectionPauseTime;
         }
         enemyState = newstate;
 
