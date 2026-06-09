@@ -9,6 +9,7 @@ public class Player_Change : MonoBehaviour
     public Player_Monk monk;
     public Player_Caster caster;
     public PlayerPortraitUI portraitUI;
+    public SkillCoolDownUI skillCoolDownUI;
     public Animator anim;
     public float switchCooldown = 0.5f;
     private float switchTimer;
@@ -40,6 +41,7 @@ public class Player_Change : MonoBehaviour
         if (monk != null) monk.enabled = (currentMode == PlayerMode.Monk);
         if (caster != null) caster.enabled = (currentMode == PlayerMode.Caster);
         if (portraitUI != null) portraitUI.UpdatePortrait((int)currentMode);
+        if (skillCoolDownUI != null) skillCoolDownUI.OnClassChanged((int)currentMode);
     }
 
     private void ResetAnimatorStates()

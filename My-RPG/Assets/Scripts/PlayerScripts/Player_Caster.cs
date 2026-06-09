@@ -8,6 +8,18 @@ public class Player_Caster : MonoBehaviour
     public GameObject explosionPrefab;
     private float castTimer;
 
+    /// <summary>
+    /// 冷却进度：0 = 就绪，1 = 刚释放完（冷却最长）
+    /// </summary>
+    public float CooldownProgress
+    {
+        get
+        {
+            float max = StatsManager.Instance != null ? StatsManager.Instance.explosionCooldown : 8f;
+            return max > 0 ? Mathf.Clamp01(castTimer / max) : 0f;
+        }
+    }
+
     [Header("生命值消耗")]
     [Tooltip("释放爆炸扣除的生命值比例（0.9 = 90%）")]
     public float hpCostRatio = 0.9f;

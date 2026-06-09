@@ -15,7 +15,7 @@ MonoBehaviour:
   sceneBGMs:
   - sceneName: MainScenne
     bgmClip: {fileID: 8300000, guid: 0641e6aa8de68cd48bfe7d3adf726075, type: 3}
-    volume: 0
+    volume: 0.5
   - sceneName: zktScene
     bgmClip: {fileID: 8300000, guid: c402eaf96ac0a894f87c7b1f3302cdef, type: 3}
-    volume: 0
+    volume: 0.5
