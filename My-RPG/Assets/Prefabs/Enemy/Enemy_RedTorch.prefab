@@ -234,6 +234,9 @@ MonoBehaviour:
   maxHealth: 10
   hitFlashDuration: 0.1
   expReward: 3
+  regenAmount: 2
+  regenInterval: 0.1
+  regenDelay: 1
   healthBarPrefab: {fileID: 0}
   healthBarOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &1068912547174603053
