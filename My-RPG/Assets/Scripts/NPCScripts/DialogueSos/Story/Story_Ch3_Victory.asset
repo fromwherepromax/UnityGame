@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch3_Victory
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 就是现在！
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: 什么？！我居然被治愈术吸引了注意力...可恶！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 你中计了！
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: 咳咳...没想到...我居然会输给这样的队伍...我...不甘心...
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 我们...赢了？真的赢了？！
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 哼！这就是爆裂魔法...呃，虽然这次没起到什么作用...
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: 我的骑士突击也...呃...总之我们赢了！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: ...你们真的什么忙都没帮上啊。
+  dialogueOptions:
+  - optionText: 继续前进，讨伐魔王！
+    nextDialogue: {fileID: 0}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}

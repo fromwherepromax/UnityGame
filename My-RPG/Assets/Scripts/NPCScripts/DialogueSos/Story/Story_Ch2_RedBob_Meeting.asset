@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch2_RedBob_Meeting
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 站住！不许动！你们是什么人！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 我们只是路过的冒险者...
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 冒险者？太好了！你们来得正好！快看那边那座山！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 那座山怎么了？
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 我要用爆裂魔法把它炸掉！但是...我体力不够了，需要有人帮我把魔法书搬到山顶。
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 等等，你为什么要炸山啊？！
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 因为！爆裂魔法是最强的！只有爆裂魔法才是魔法的真谛！其他魔法都是邪道！
+  dialogueOptions:
+  - optionText: 帮她搬魔法书
+    nextDialogue: {fileID: 11400000, guid: e5f6a7b8c9d0e1f2a3b4c5d6a7b8c9d0, type: 2}
+  - optionText: 这人好奇怪，走吧
+    nextDialogue: {fileID: 11400000, guid: e5f6a7b8c9d0e1f2a3b4c5d6a7b8c9d0, type: 2}
+  requiredNPC: []
+  requiredLocations:
+  - {fileID: 11400000, guid: f57fe6d3bad7c174d8ee38020eb40324, type: 2}
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 11400000, guid: 2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e, type: 2}
+  requireCompleteQuests:
+  - {fileID: 11400000, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d, type: 2}
+  turnInQuest: {fileID: 0}
