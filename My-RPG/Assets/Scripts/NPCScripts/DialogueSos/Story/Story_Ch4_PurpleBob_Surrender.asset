@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch4_PurpleBob_Surrender
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 其实...我是被手下们推上去当魔王的。我本来只是个普通的宅男...
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 哈？魔王是个宅男？
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 他们说我长得像魔王，就硬把我推上王座了。其实我只想在家看漫画...
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 那你为什么要派NightRunner来攻打我们？！
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 那是手下们自作主张！我根本不知道！而且...而且你们的队伍太吵了！每天在我城外放爆裂魔法！我都睡不好觉！
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: 那是红发Bob干的，不是我们...
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 总之！我投降！我不想当魔王了！请让我加入你们吧！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: ...我们队伍已经够奇葩了，再加一个社恐魔王？
+  dialogueOptions:
+  - optionText: 欢迎加入...吧
+    nextDialogue: {fileID: 11400000, guid: a3b4c5d6a7b8c9d0e1f2a3b4c5d6a7b9, type: 2}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}

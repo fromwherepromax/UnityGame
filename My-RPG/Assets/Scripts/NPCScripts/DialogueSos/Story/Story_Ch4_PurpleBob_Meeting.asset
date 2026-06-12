@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch4_PurpleBob_Meeting
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 这里就是魔王城？怎么...看起来像个小图书馆？
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 好多漫画书...还有手办？！
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 啊啊啊啊！！你们是谁？！为什么闯进我的房间！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 你就是魔王？怎么看起来...
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 不、不要看我！我社恐！你们快出去！
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 这就是魔王？我还以为是个可怕的大恶魔呢...
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: 魔王！接受我的挑战！
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 等等等等！我不想打架！其实...其实我根本不想当魔王啊！
+  dialogueOptions:
+  - optionText: 什么？！
+    nextDialogue: {fileID: 11400000, guid: f2a3b4c5d6a7b8c9d0e1f2a3b4c5d6a7, type: 2}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 11400000, guid: 4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a, type: 2}
+  requireCompleteQuests:
+  - {fileID: 11400000, guid: 3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f, type: 2}
+  turnInQuest: {fileID: 0}
