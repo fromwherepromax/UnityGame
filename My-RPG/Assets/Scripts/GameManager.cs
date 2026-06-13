@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public QuestManager questManager; //任务管理器引用
     public MusicManager musicManager; //音乐管理器引用
     public SettingManager settingManager; //设置管理器引用
+    public BattleManager battleManager; //战斗管理器引用
 
    [Header("Persistent Objects")]
    public GameObject[] persistentObjects;
