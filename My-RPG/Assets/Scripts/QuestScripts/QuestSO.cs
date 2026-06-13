@@ -22,6 +22,9 @@ public class QuestSO : ScriptableObject //任务数据类
 
     public List<QuestObjective> objectives; //任务目标列表
     public List<QuestReward> rewards; //任务奖励列表
+
+    [Header("Battle Trigger (optional)")] //接受任务时触发的战斗
+    public BattleEncounter battleEncounter; //接受任务时触发的战斗配置（可选）
 }
 
 [System.Serializable]

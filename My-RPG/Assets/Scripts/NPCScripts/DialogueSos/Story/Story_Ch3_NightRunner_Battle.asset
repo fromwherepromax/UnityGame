@@ -14,30 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
-    line: 接招吧！爆裂魔法！！
+    line: "\u63A5\u62DB\u5427\uFF01\u7206\u88C2\u9B54\u6CD5\uFF01\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
-    line: 哼！雕虫小技！
+    line: "\u54FC\uFF01\u96D5\u866B\u5C0F\u6280\uFF01"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 她的魔法被挡下来了！
+    line: "\u5979\u7684\u9B54\u6CD5\u88AB\u6321\u4E0B\u6765\u4E86\uFF01"
   - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
-    line: 哈...哈...体力...用尽了...我站不起来了...
+    line: "\u54C8...\u54C8...\u4F53\u529B...\u7528\u5C3D\u4E86...\u6211\u7AD9\u4E0D\u8D77\u6765\u4E86..."
   - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
-    line: 接下来交给我！看我的骑士突击！
+    line: "\u63A5\u4E0B\u6765\u4EA4\u7ED9\u6211\uFF01\u770B\u6211\u7684\u9A91\u58EB\u7A81\u51FB\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
-    line: 什么？！
+    line: "\u4EC0\u4E48\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
-    line: 呃...打偏了...
+    line: "\u5443...\u6253\u504F\u4E86..."
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
-    line: 哈！就这？
+    line: "\u54C8\uFF01\u5C31\u8FD9\uFF1F"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 让我来！水之女神的祝福——治愈之术！
+    line: "\u8BA9\u6211\u6765\uFF01\u6C34\u4E4B\u5973\u795E\u7684\u795D\u798F\u2014\u2014\u6CBB\u6108\u4E4B\u672F\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 她治愈了NightRunner？！
+    line: "\u5979\u6CBB\u6108\u4E86NightRunner\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 呜呜呜...手滑了...
+    line: "\u545C\u545C\u545C...\u624B\u6ED1\u4E86..."
   dialogueOptions:
-  - optionText: "[趁机攻击！]"
-    nextDialogue: {fileID: 11400000, guid: d0e1f2a3b4c5d6a7b8c9d0e1f2a3b4c5, type: 2}
+  - optionText: "[\u8D81\u673A\u653B\u51FB\uFF01]"
+    nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 0}
   requiredNPC: []
   requiredLocations: []
   requiredItems: []
@@ -46,3 +47,9 @@ MonoBehaviour:
   offerQuestOnEnd: {fileID: 0}
   requireCompleteQuests: []
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
