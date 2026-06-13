@@ -33,12 +33,29 @@ public class QuestLogUI : MonoBehaviour
 
     public void ShowQuestOffer(QuestSO incomingQuest) //显示任务提供界面
     {   
-        if(questManager.IsQuestAccepted(incomingQuest) || questManager.GetCompleteQuest(incomingQuest)) //如果任务已经被接受
+        if(questManager.GetCompleteQuest(incomingQuest)) //如果任务已经完成
         {
             questSo=noAvailableQuest; //显示没有可用任务的默认数据
-            SetCanvasState(acceptCanvas, false); //显示任务接受界面
-            SetCanvasState(declineCanvas, true); //显示任务拒绝界面
-            SetCanvasState(completeCanvas, false); //隐藏任务完成界面
+            SetCanvasState(acceptCanvas, false); //隐藏接受按钮
+            SetCanvasState(declineCanvas, true); //显示拒绝按钮（关闭用）
+            SetCanvasState(completeCanvas, false); //隐藏完成按钮
+        }
+        else if(questManager.IsQuestAccepted(incomingQuest)) //如果任务已接受但未完成
+        {
+            questSo=incomingQuest; //显示传入的任务数据
+            if(questManager.IsQuestComplete(incomingQuest)) //如果任务目标已全部完成
+            {
+                SetCanvasState(acceptCanvas, false); //隐藏接受按钮
+                SetCanvasState(declineCanvas, false); //隐藏拒绝按钮
+                SetCanvasState(completeCanvas, true); //显示完成按钮
+            }
+            else
+            {
+                questSo=noAvailableQuest; //显示没有可用任务的默认数据
+                SetCanvasState(acceptCanvas, false); //隐藏接受按钮
+                SetCanvasState(declineCanvas, true); //显示拒绝按钮（关闭用）
+                SetCanvasState(completeCanvas, false); //隐藏完成按钮
+            }
         }
         else
         {   
@@ -89,10 +106,21 @@ public class QuestLogUI : MonoBehaviour
 
     public void OnCompleteQuestClick() //当点击完成任务按钮时
     {
-        questManager.CompleteQuest(questSo); //完成当前任务
+        QuestSO completedQuest = questSo; //保存当前完成的任务
+        questManager.CompleteQuest(completedQuest); //完成当前任务（可能触发下一章任务提供事件）
         RefreshQuestList(); //刷新任务列表，移除已完成任务
-        HandleQuestclick(noAvailableQuest); //更新任务详情显示
-        SetCanvasState(completeCanvas, false); //隐藏任务提供界面
+        
+        // 如果CompleteQuest触发了新的任务提供（questSo被ShowQuestOffer更新为新任务），则保留新任务
+        // 否则回退到无任务状态
+        if (questSo == completedQuest || questSo == null)
+        {
+            HandleQuestclick(noAvailableQuest); //更新任务详情显示
+        }
+        else
+        {
+            // questSo已被ShowQuestOffer更新为新任务，保持当前UI状态
+        }
+        SetCanvasState(completeCanvas, false); //隐藏完成按钮
     }
     private void SetCanvasState(CanvasGroup canvasGroup, bool state) //设置界面状态
     {
@@ -141,6 +169,42 @@ public class QuestLogUI : MonoBehaviour
         questDescriptionText.text = questSO.questDescription; //更新任务描述文本
         DisplayObjective(); //显示任务目标
         DisplayRewards(); //显示任务奖励
+        
+        // 根据任务状态显示对应按钮
+        if (questSO == noAvailableQuest) //如果是无任务状态
+        {
+            SetCanvasState(acceptCanvas, false);
+            SetCanvasState(declineCanvas, false);
+            SetCanvasState(completeCanvas, false);
+        }
+        else if (questManager.GetCompleteQuest(questSO)) //如果任务已交付完成
+        {
+            SetCanvasState(acceptCanvas, false);
+            SetCanvasState(declineCanvas, false);
+            SetCanvasState(completeCanvas, false);
+        }
+        else if (questManager.IsQuestAccepted(questSO)) //如果任务已接受
+        {
+            if (questManager.IsQuestComplete(questSO)) //如果任务目标已全部完成
+            {
+                SetCanvasState(acceptCanvas, false);
+                SetCanvasState(declineCanvas, false);
+                SetCanvasState(completeCanvas, true); //显示完成按钮
+            }
+            else //任务进行中
+            {
+                SetCanvasState(acceptCanvas, false);
+                SetCanvasState(declineCanvas, false);
+                SetCanvasState(completeCanvas, false);
+            }
+        }
+        else //任务未接受
+        {
+            SetCanvasState(acceptCanvas, true);
+            SetCanvasState(declineCanvas, true);
+            SetCanvasState(completeCanvas, false);
+        }
+        SetCanvasState(questCanvas, true); //显示任务面板
     }
     private void DisplayObjective() //显示任务目标
     {

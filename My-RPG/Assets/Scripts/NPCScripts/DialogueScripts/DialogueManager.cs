@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
                     optionButtons[i].gameObject.SetActive(true); //显示按钮
                     optionButtons[i].GetComponentInChildren<TMP_Text>().text = currentDialogue.dialogueOptions[i].optionText; //设置按钮文本
 
-                    optionButtons[i].onClick.AddListener(() => ChooseOption(option.nextDialogue)); //添加按钮点击事件，选择当前选项
+                    optionButtons[i].onClick.AddListener(() => ChooseOption(option.nextDialogue, option)); //添加按钮点击事件，选择当前选项
                    
                 }
                 else
@@ -88,7 +88,7 @@ public class DialogueManager : MonoBehaviour
                 QuestEvents.OnQuestTurnInRequested?.Invoke(currentDialogue.turnInQuest); //触发任务交付事件
                 EndDialogue(); //结束当前对话
             }
-            else if(currentDialogue.offerQuestOnEnd != null) //如果没有选项但有提供的任务
+            else if(currentDialogue.offerQuestOnEnd != null && ShouldOfferQuest(currentDialogue.offerQuestOnEnd)) //如果有提供的任务且应该提供（世界任务或未自动接取的主线任务）
             {
                 QuestSO questToOffer = currentDialogue.offerQuestOnEnd; //先缓存任务，避免 EndDialogue 清空 currentDialogue
                 Debug.Log("Offering quest: " + questToOffer.questName); //日志输出提供的任务名称
@@ -104,8 +104,19 @@ public class DialogueManager : MonoBehaviour
             }
         }
         
-    }    private void ChooseOption(DialogueSO dialogueSo)
+    }    private void ChooseOption(DialogueSO dialogueSo, DialogueOption option = null)
     {
+        // 如果当前对话有提供任务，在选择选项时触发（仅世界任务或未自动接取的主线任务）
+        if (currentDialogue != null && currentDialogue.offerQuestOnEnd != null && ShouldOfferQuest(currentDialogue.offerQuestOnEnd))
+        {
+            QuestEvents.OnQuestofferRequested?.Invoke(currentDialogue.offerQuestOnEnd);
+        }
+        // 如果选项本身有提供任务，也触发
+        if (option != null && option.offerQuest != null && ShouldOfferQuest(option.offerQuest))
+        {
+            QuestEvents.OnQuestofferRequested?.Invoke(option.offerQuest);
+        }
+
         if (dialogueSo == null)
         {
             EndDialogue(); //如果选项没有下一个对话，结束对话
@@ -138,7 +149,27 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvasGroup.blocksRaycasts = true; //阻挡射线
         dialogueIndex++; //推进对话索引
     }
-     private void EndDialogue()
+     /// <summary>
+    /// 判断是否应该通过对话提供该任务
+    /// 主线任务已自动接取，不需要再弹出任务面板；世界任务需要NPC发放
+    /// </summary>
+    private bool ShouldOfferQuest(QuestSO quest)
+    {
+        if (quest == null) return false;
+        // 如果是主线任务且已被自动接取，不需要再弹出面板
+        if (quest.questType == QuestType.MainQuest && GameManager.Instance.questManager.IsQuestAccepted(quest))
+        {
+            return false;
+        }
+        // 如果任务已完成，不需要再提供
+        if (GameManager.Instance.questManager.GetCompleteQuest(quest))
+        {
+            return false;
+        }
+        return true;
+    }
+
+    private void EndDialogue()
     {
         isDialogueActive = false; //禁用对话
         currentDialogue = null; //清除当前对话
