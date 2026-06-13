@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4909ba643e56e4c944e755dd3424dc, type: 3}
   m_Name: Quest_Ch3_DefeatNightRunner
   m_EditorClassIdentifier: 
-  questName: 魔王军来袭
+  questName: "\u9B54\u738B\u519B\u6765\u88AD"
   questLevel: 3
-  questDescription: 魔王军四天王之一的暗夜行者NightRunner率军进攻绿丘之地！你的废柴队伍能战胜他吗？
+  questDescription: "\u9B54\u738B\u519B\u56DB\u5929\u738B\u4E4B\u4E00\u7684\u6697\u591C\u884C\u8005NightRunner\u7387\u519B\u8FDB\u653B\u7EFF\u4E18\u4E4B\u5730\uFF01\u4F60\u7684\u5E9F\u67F4\u961F\u4F0D\u80FD\u6218\u80DC\u4ED6\u5417\uFF1F"
+  questType: 0
+  nextChapterQuest: {fileID: 11400000, guid: 4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a, type: 2}
   objectives:
-  - description: 击败魔王军干部·暗夜行者
+  - description: "\u51FB\u8D25\u9B54\u738B\u519B\u5E72\u90E8\xB7\u6697\u591C\u884C\u8005"
     target: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
     requiredAmount: 1
   rewards:

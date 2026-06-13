@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4909ba643e56e4c944e755dd3424dc, type: 3}
   m_Name: Quest_Ch1_GoddessBlessing
   m_EditorClassIdentifier: 
-  questName: 女神的诅咒
+  questName: "\u5973\u795E\u7684\u8BC5\u5492"
   questLevel: 1
-  questDescription: 在绿丘之地遇到了自称女神的蓝发Bob，她似乎很想跟你一起冒险。做出你的选择吧。
+  questDescription: "\u5728\u7EFF\u4E18\u4E4B\u5730\u9047\u5230\u4E86\u81EA\u79F0\u5973\u795E\u7684\u84DD\u53D1Bob\uFF0C\u5979\u4F3C\u4E4E\u5F88\u60F3\u8DDF\u4F60\u4E00\u8D77\u5192\u9669\u3002\u505A\u51FA\u4F60\u7684\u9009\u62E9\u5427\u3002"
+  questType: 0
+  nextChapterQuest: {fileID: 11400000, guid: 2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e, type: 2}
   objectives:
-  - description: 与女神对话，决定是否带她一起走
+  - description: "\u4E0E\u5973\u795E\u5BF9\u8BDD\uFF0C\u51B3\u5B9A\u662F\u5426\u5E26\u5979\u4E00\u8D77\u8D70"
     target: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
     requiredAmount: 1
   rewards:
