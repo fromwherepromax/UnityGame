@@ -32,6 +32,15 @@ public class DialogueManager : MonoBehaviour
             button.gameObject.SetActive(false);
         }
     }
+
+    private void Update()
+    {
+        // 按交互键推进对话（统一处理，无需依赖NPC_Talk）
+        if (isDialogueActive && Input.GetButtonDown("Interact"))
+        {
+            AdvanceDialogue();
+        }
+    }
      public bool CanStartDialogue() //检查是否可以开始对话
     {
        return Time.time - lastDialogueTime >= dialogueCooldown; //如果距离上次推进对话的时间大于等于冷却时间，返回true
@@ -178,6 +187,13 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        // 缓存当前对话的战斗配置（在清空 currentDialogue 之前）
+        BattleEncounter battleToStart = null;
+        if (currentDialogue != null && currentDialogue.battleEncounter != null)
+        {
+            battleToStart = currentDialogue.battleEncounter;
+        }
+
         isDialogueActive = false; //禁用对话
         currentDialogue = null; //清除当前对话
         dialogueIndex = 0; //重置对话索引
@@ -190,6 +206,11 @@ public class DialogueManager : MonoBehaviour
         dialogueCanvasGroup.blocksRaycasts = false; //不阻挡射线
         lastDialogueTime = Time.time; //记录结束对话的时间
 
+        // 对话结束后触发战斗
+        if (battleToStart != null && BattleManager.Instance != null)
+        {
+            BattleManager.Instance.StartBattle(battleToStart);
+        }
     }
 
 }

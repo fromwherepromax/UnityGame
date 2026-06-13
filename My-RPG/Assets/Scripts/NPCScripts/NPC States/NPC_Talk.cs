@@ -46,9 +46,9 @@ public class NPC_Talk : MonoBehaviour
                 return;
             }
 
-            if(GameManager.Instance.dialogueManager.isDialogueActive) //如果对话已经激活
+            if(GameManager.Instance.dialogueManager.isDialogueActive) //如果对话已经激活，由DialogueManager自行处理推进
             {
-               GameManager.Instance.dialogueManager.AdvanceDialogue(); //推进对话
+               // 推进对话已移至 DialogueManager.Update()，此处不再重复调用
             }
             else
             {   
