@@ -14,23 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 哇啊啊啊——！！
+    line: "\u54C7\u554A\u554A\u554A\u2014\u2014\uFF01\uFF01"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 哇啊啊啊——！！
+    line: "\u54C7\u554A\u554A\u554A\u2014\u2014\uFF01\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 等等，你为什么也在叫？！
+    line: "\u7B49\u7B49\uFF0C\u4F60\u4E3A\u4EC0\u4E48\u4E5F\u5728\u53EB\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 因为、因为传送的时候很吓人嘛！呜呜呜...到了到了...
+    line: "\u56E0\u4E3A\u3001\u56E0\u4E3A\u4F20\u9001\u7684\u65F6\u5019\u5F88\u5413\u4EBA\u561B\uFF01\u545C\u545C\u545C...\u5230\u4E86\u5230\u4E86..."
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 这里就是异世界？看起来...就是一片普通的草地啊。
+    line: "\u8FD9\u91CC\u5C31\u662F\u5F02\u4E16\u754C\uFF1F\u770B\u8D77\u6765...\u5C31\u662F\u4E00\u7247\u666E\u901A\u7684\u8349\u5730\u554A\u3002"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 嗯~这就是绿丘之地！一个和平的小村庄。好了，我们先去冒险者公会报到吧！
+    line: "\u55EF~\u8FD9\u5C31\u662F\u7EFF\u4E18\u4E4B\u5730\uFF01\u4E00\u4E2A\u548C\u5E73\u7684\u5C0F\u6751\u5E84\u3002\u597D\u4E86\uFF0C\u6211\u4EEC\u5148\u53BB\u5192\u9669\u8005\u516C\u4F1A\u62A5\u5230\u5427\uFF01"
   dialogueOptions:
-  - optionText: 出发吧
+  - optionText: "\u51FA\u53D1\u5427"
     nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 0}
   requiredNPC: []
-  requiredLocations:
-  - {fileID: 11400000, guid: f57fe6d3bad7c174d8ee38020eb40324, type: 2}
+  requiredLocations: []
   requiredItems: []
   removeAfterPlay: 1
   removeTheseOnPlay: []

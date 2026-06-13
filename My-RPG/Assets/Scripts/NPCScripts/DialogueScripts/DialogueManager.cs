@@ -156,16 +156,23 @@ public class DialogueManager : MonoBehaviour
     private bool ShouldOfferQuest(QuestSO quest)
     {
         if (quest == null) return false;
-        // 如果是主线任务且已被自动接取，不需要再弹出面板
-        if (quest.questType == QuestType.MainQuest && GameManager.Instance.questManager.IsQuestAccepted(quest))
+        
+        QuestManager qm = GameManager.Instance.questManager;
+        
+        // 如果任务已被接取（不论主线还是世界任务），不需要再弹出提供面板
+        if (qm.IsQuestAccepted(quest))
         {
+            Debug.Log($"[ShouldOfferQuest] '{quest.questName}' 已被接取，跳过");
             return false;
         }
-        // 如果任务已完成，不需要再提供
-        if (GameManager.Instance.questManager.GetCompleteQuest(quest))
+        // 如果任务已交付完成，不需要再提供
+        if (qm.GetCompleteQuest(quest))
         {
+            Debug.Log($"[ShouldOfferQuest] '{quest.questName}' 已完成，跳过");
             return false;
         }
+        
+        Debug.Log($"[ShouldOfferQuest] '{quest.questName}' 可以提供");
         return true;
     }
 

@@ -114,6 +114,12 @@ public class NPC_Talk : MonoBehaviour
             return;
         }
 
+        // 只在当前正在对话的NPC上移除对话，避免影响其他NPC
+        if (!this.enabled)
+        {
+            return; //如果当前NPC不在交互范围内，不移除对话
+        }
+
         for (int i = conversations.Count - 1; i >= 0; i--)
         {
             var convo = conversations[i];

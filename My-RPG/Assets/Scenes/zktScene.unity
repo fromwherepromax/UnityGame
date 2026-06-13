@@ -3847,6 +3847,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAnim: {fileID: 1313943139}
   conversations:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 11400000, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 2}
   currentDialogue: {fileID: 11400000, guid: cbbe67280c0ec954dada6f178353e8b4, type: 2}
 --- !u!114 &346618392
@@ -9249,7 +9253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c0dbddf925bda4a9081e703df6b8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questToOffer: {fileID: 11400000, guid: 909a1b3cc80b62944a412b547ce30118, type: 2}
+  questToOffer: {fileID: 0}
   questToTurnIn: {fileID: 0}
 --- !u!58 &743741794
 CircleCollider2D:
@@ -11058,9 +11062,9 @@ MonoBehaviour:
   musicLibrary: {fileID: 11400000, guid: 31ccc9dc87b3a5a4489bf392b0b64682, type: 2}
   bgmSource: {fileID: 0}
   sfxSource: {fileID: 0}
-  bgmVolume: 0.7
+  bgmVolume: 0.274
   fadeDuration: 1.5
-  bgmMuted: 1
+  bgmMuted: 0
   saberCombatClip: {fileID: 8300000, guid: 234ec3786184fa741b2dfbf05a757773, type: 3}
   archerShootClip: {fileID: 8300000, guid: b1e150820464a4e49a833ba593820499, type: 3}
   casterExplosionClip: {fileID: 8300000, guid: 57ad2ed33e806c0439eab24d3e5a08bd, type: 3}
@@ -11073,7 +11077,7 @@ MonoBehaviour:
   completeTaskClip: {fileID: 8300000, guid: b762e02bcf4acc54ebca2d0d646c4d32, type: 3}
   buttonClip: {fileID: 8300000, guid: 0273a2ce8b875204fba48409042cdaf5, type: 3}
   clickClip: {fileID: 8300000, guid: 84152076ea1fd944081da83fecaed1a4, type: 3}
-  sfxVolume: 1
+  sfxVolume: 0.355
   sfxMuted: 0
 --- !u!4 &864735735
 Transform:
@@ -14492,8 +14496,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: hahhahahahhhahahahahahahahhahahahhahahaahahhahahahah
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 69fbf78fcbbd5ae4ca651e75e8c55a50, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: fb4cdeabd094b8c4b809bc5c3d611925, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18413,8 +18417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: QuestName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 8dcc2e7780fb5e84a933f4f7ba0c7d18, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
+  m_sharedMaterial: {fileID: 2396495847551353265, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20873,6 +20877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a97865acaad82145afd508d2ea40a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialMainQuest: {fileID: 0}
 --- !u!225 &1722189166
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21181,7 +21186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAnim: {fileID: 1092014649}
   conversations:
-  - {fileID: 11400000, guid: c3d4e5f6a7b8c9d0e1f2a3b4c5d6a7b8, type: 2}
+  - {fileID: 11400000, guid: b8c9d0e1f2a3b4c5d6a7b8c9d0e1f2a3, type: 2}
   currentDialogue: {fileID: 11400000, guid: cbbe67280c0ec954dada6f178353e8b4, type: 2}
 --- !u!114 &1736190142
 MonoBehaviour:
@@ -24067,9 +24072,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAnim: {fileID: 986452121}
   conversations:
-  - {fileID: 11400000, guid: 9db2f8eeaf00f134d982eb1f9b437a56, type: 2}
-  - {fileID: 11400000, guid: 025368c20e8b94e46b854ca0bbf54d4b, type: 2}
-  currentDialogue: {fileID: 11400000, guid: 9db2f8eeaf00f134d982eb1f9b437a56, type: 2}
+  - {fileID: 11400000, guid: f6a7b8c9d0e1f2a3b4c5d6a7b8c9d0e1, type: 2}
+  currentDialogue: {fileID: 0}
 --- !u!114 &1985371601
 MonoBehaviour:
   m_ObjectHideFlags: 0
