@@ -81,9 +81,12 @@ public class NPC_Talk : MonoBehaviour
         for(int i=0;i<conversations.Count;i++)
         {
            var convo = conversations[i];
-           if(convo!=null && convo.CheckConditions()) //如果对话存在且满足条件
+           if(convo == null) continue;
+           
+           if(convo.CheckConditions()) //如果对话存在且满足条件
            {    
                 currentDialogue = convo; //设置当前对话
+                Debug.Log($"[NPC_Talk] '{gameObject.name}' 选择了对话: '{convo.name}'");
                 if(convo.removeAfterPlay) //如果需要播放后移除
                 {
                     conversations.RemoveAt(i); //从列表中移除这个对话，确保每个对话只触发一次
@@ -97,6 +100,11 @@ public class NPC_Talk : MonoBehaviour
                 }
                 break; //退出循环，优先使用满足条件的第一个对话
            }
+        }
+        
+        if (currentDialogue == null)
+        {
+            Debug.LogWarning($"[NPC_Talk] '{gameObject.name}' 没有找到满足条件的对话！共 {conversations.Count} 个对话待检查。");
         }
     }
     private void OnQuestAccepted_RemoveOfferings(QuestSO acceptedQuest) //当任务被接受时检查是否需要移除提供的对话
