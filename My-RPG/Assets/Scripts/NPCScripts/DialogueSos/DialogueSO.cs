@@ -26,6 +26,9 @@ public class DialogueSO : ScriptableObject
     [Header("Complete Turn-In Quest (optional)")] //交付的任务
     public QuestSO turnInQuest; //交付的任务数据
 
+    [Header("Battle Trigger (optional) (optional)")] //战斗触发
+    public BattleEncounter battleEncounter; //对话结束后触发的战斗配置
+
     public bool CheckConditions() //检查条件是否满足
     {
         if (requiredNPC != null && requiredNPC.Length > 0)
