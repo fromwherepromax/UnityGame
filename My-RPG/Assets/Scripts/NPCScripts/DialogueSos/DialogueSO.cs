@@ -62,7 +62,7 @@ public class DialogueSO : ScriptableObject
         {
             foreach (var quest in requireCompleteQuests) //遍历需要完成的任务
             {
-                if (!GameManager.Instance.questManager.IsQuestComplete(quest)) //如果没有完成某个任务
+                if (!GameManager.Instance.questManager.GetCompleteQuest(quest)) //如果没有完成某个任务（检查已完成列表）
                 {
                     return false; //条件不满足
                 }

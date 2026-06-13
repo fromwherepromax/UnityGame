@@ -19,11 +19,10 @@ public class QuestBoard : MonoBehaviour
             {
                 QuestEvents.OnQuestTurnInRequested?.Invoke(questForTurnIn); //触发任务交付事件
             }
-            else
+            else if(questToOffer != null && !GameManager.Instance.questManager.IsQuestAccepted(questToOffer) && !GameManager.Instance.questManager.GetCompleteQuest(questToOffer))
             {
-                QuestEvents.OnQuestofferRequested?.Invoke(questToOffer);
+                QuestEvents.OnQuestofferRequested?.Invoke(questToOffer); //只对未接取且未完成的任务触发提供事件
             }
-           
         }
     }
 

@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum QuestType //任务类型枚举
+{
+    MainQuest, //主线任务
+    WorldQuest //世界任务
+}
+
 [CreateAssetMenu(fileName = "QuestSO", menuName = "QuestSO")]
 public class QuestSO : ScriptableObject //任务数据类
 {
@@ -9,6 +15,10 @@ public class QuestSO : ScriptableObject //任务数据类
     public int questLevel; //任务等级
     [TextArea(3, 10)]
     public string questDescription; //任务描述
+
+    [Header("Quest Type Settings")]
+    public QuestType questType = QuestType.WorldQuest; //任务类型，默认为世界任务
+    public QuestSO nextChapterQuest; //下一章主线任务（仅主线任务使用）
 
     public List<QuestObjective> objectives; //任务目标列表
     public List<QuestReward> rewards; //任务奖励列表
