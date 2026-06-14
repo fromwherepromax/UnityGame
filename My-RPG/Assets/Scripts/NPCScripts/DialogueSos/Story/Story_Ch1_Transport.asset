@@ -37,3 +37,11 @@ MonoBehaviour:
   offerQuestOnEnd: {fileID: 0}
   requireCompleteQuests: []
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 1
+  teleportPosition: {x: 0, y: 0}
