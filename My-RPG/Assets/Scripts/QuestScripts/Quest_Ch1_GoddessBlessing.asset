@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4909ba643e56e4c944e755dd3424dc, type: 3}
   m_Name: Quest_Ch1_GoddessBlessing
   m_EditorClassIdentifier: 
-  questName: "\u5973\u795E\u7684\u8BC5\u5492"
+  questName: "\u5973\u795E\u7684\u795D\u798F"
   questLevel: 1
-  questDescription: "\u5728\u7EFF\u4E18\u4E4B\u5730\u9047\u5230\u4E86\u81EA\u79F0\u5973\u795E\u7684\u84DD\u53D1Bob\uFF0C\u5979\u4F3C\u4E4E\u5F88\u60F3\u8DDF\u4F60\u4E00\u8D77\u5192\u9669\u3002\u505A\u51FA\u4F60\u7684\u9009\u62E9\u5427\u3002"
+  questDescription: "\u5728\u672A\u77E5\u7A7A\u95F4\u9047\u5230\u4E86\u81EA\u79F0\u5973\u795E\u7684\u84DD\u53D1Bob\uFF0C\u5979\u4F3C\u4E4E\u5F88\u6B20\u6253\uFF0C\u800C\u4E14\u667A\u5546\u53EF\u80FD\u4E0D\u9AD8\u3002\u8BF7\u9009\u62E9\u548C\u5979\u4E00\u8D77\u8F6C\u751F\u5427\u3002"
   questType: 0
   nextChapterQuest: {fileID: 11400000, guid: 2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e, type: 2}
   objectives:
@@ -26,3 +26,9 @@ MonoBehaviour:
     amount: 50
   - itemSo: {fileID: 11400000, guid: 024cc61549536824da5f66fc0cf15c17, type: 2}
     amount: 100
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
