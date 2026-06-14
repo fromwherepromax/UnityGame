@@ -194,6 +194,15 @@ public class DialogueManager : MonoBehaviour
             battleToStart = currentDialogue.battleEncounter;
         }
 
+        // 缓存传送配置（在清空 currentDialogue 之前）
+        bool shouldTeleport = false;
+        Vector2 teleportPos = Vector2.zero;
+        if (currentDialogue != null && currentDialogue.shouldTeleport)
+        {
+            shouldTeleport = true;
+            teleportPos = currentDialogue.teleportPosition;
+        }
+
         isDialogueActive = false; //禁用对话
         currentDialogue = null; //清除当前对话
         dialogueIndex = 0; //重置对话索引
@@ -210,6 +219,17 @@ public class DialogueManager : MonoBehaviour
         if (battleToStart != null && BattleManager.Instance != null)
         {
             BattleManager.Instance.StartBattle(battleToStart);
+        }
+
+        // 对话结束后传送玩家
+        if (shouldTeleport)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                player.transform.position = teleportPos;
+                Debug.Log($"[DialogueManager] 玩家已传送到 {teleportPos}");
+            }
         }
     }
 
