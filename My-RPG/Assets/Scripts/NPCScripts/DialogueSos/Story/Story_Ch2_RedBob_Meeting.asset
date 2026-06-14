@@ -16,7 +16,7 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
     line: "\u7AD9\u4F4F\uFF01\u4E0D\u8BB8\u52A8\uFF01\u4F60\u4EEC\u662F\u4EC0\u4E48\u4EBA\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: "\u6211\u4EEC\u53EA\u662F\u8DEF\u8FC7\u7684\u5192\u9669\u8005..."
+    line: "\u554A\uFF0C\u6211\u4EEC\u53EA\u662F\u8DEF\u8FC7\u7684\u5192\u9669\u8005..."
   - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
     line: "\u5192\u9669\u8005\uFF1F\u592A\u597D\u4E86\uFF01\u4F60\u4EEC\u6765\u5F97\u6B63\u597D\uFF01\u5FEB\u770B\u90A3\u8FB9\u90A3\u5EA7\u5C71\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
@@ -44,3 +44,11 @@ MonoBehaviour:
   requireCompleteQuests:
   - {fileID: 11400000, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d, type: 2}
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

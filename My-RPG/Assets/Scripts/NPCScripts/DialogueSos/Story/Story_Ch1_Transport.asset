@@ -24,9 +24,9 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u8FD9\u91CC\u5C31\u662F\u5F02\u4E16\u754C\uFF1F\u770B\u8D77\u6765...\u5C31\u662F\u4E00\u7247\u666E\u901A\u7684\u8349\u5730\u554A\u3002"
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: "\u55EF~\u8FD9\u5C31\u662F\u7EFF\u4E18\u4E4B\u5730\uFF01\u4E00\u4E2A\u548C\u5E73\u7684\u5C0F\u6751\u5E84\u3002\u597D\u4E86\uFF0C\u6211\u4EEC\u5148\u53BB\u5192\u9669\u8005\u516C\u4F1A\u62A5\u5230\u5427\uFF01"
+    line: "\u55EF~\u8FD9\u5C31\u662F\u65B0\u624B\u6751\u4E86\uFF01\u4E00\u4E2A\u548C\u5E73\u7684\u5C0F\u6751\u5E84\u3002\u54ED\u6CE3\u54ED\u6CE3\u3002"
   dialogueOptions:
-  - optionText: "\u51FA\u53D1\u5427"
+  - optionText: "\u54FC\uFF0C\u7B28\u86CB\u3002"
     nextDialogue: {fileID: 0}
     offerQuest: {fileID: 0}
   requiredNPC: []
