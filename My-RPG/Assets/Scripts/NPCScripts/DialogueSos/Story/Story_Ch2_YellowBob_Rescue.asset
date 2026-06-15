@@ -31,7 +31,8 @@ MonoBehaviour:
   - optionText: "\u6551\u5979\uFF01"
     nextDialogue: {fileID: 0}
     offerQuest: {fileID: 0}
-  requiredNPC: []
+  requiredNPC:
+  - {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
   requiredLocations:
   - {fileID: 11400000, guid: 85f104bf33d75e54c95572ae1172cea7, type: 2}
   requiredItems: []

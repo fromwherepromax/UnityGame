@@ -13,14 +13,6 @@ public class StatsUI : MonoBehaviour
         UpdateAllStats();
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("ToggleStats"))
-        {
-            ToggleStats();
-        }
-    }
-
     private void OnEnable()
     {
         if (UIManager.Instance != null)
