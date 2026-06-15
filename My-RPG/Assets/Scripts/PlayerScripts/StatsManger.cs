@@ -113,6 +113,8 @@ public class StatsManager : MonoBehaviour
     public void UpdateHealth(int amount)
     {
         MaxHealth += amount;
+        CurrentHealth += amount;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
 
         if (healthText == null)
         {

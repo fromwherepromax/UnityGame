@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     [Header("快捷键设置")]
     [Tooltip("任务日志快捷键")]
     public KeyCode questLogKey = KeyCode.J;
+    [Tooltip("属性面板快捷键")]
+    public KeyCode statsKey = KeyCode.C;
 
     // ═══════════════════════ 内部状态 ═══════════════════════
     private Dictionary<UIPanelType, CanvasGroup> panelMap;
@@ -78,6 +80,12 @@ public class UIManager : MonoBehaviour
         {
             TogglePanel(UIPanelType.Quest);
         }
+
+        // C 键切换属性面板
+        if (Input.GetKeyDown(statsKey))
+        {
+            TogglePanel(UIPanelType.Stats);
+        }
     }
 
     // ═══════════════════════ 公开方法 ═══════════════════════
@@ -87,7 +95,11 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void OpenPanel(UIPanelType panelType)
     {
-        if (!panelMap.TryGetValue(panelType, out CanvasGroup cg) || cg == null) return;
+        if (!panelMap.TryGetValue(panelType, out CanvasGroup cg) || cg == null)
+        {
+            Debug.LogWarning($"[UIManager] OpenPanel 失败：面板 {panelType} 的 CanvasGroup 未赋值，请在 Inspector 中检查 UIManager 的面板引用！");
+            return;
+        }
 
         if (!openPanels.Contains(panelType))
         {
