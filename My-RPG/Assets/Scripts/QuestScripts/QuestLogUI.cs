@@ -15,18 +15,21 @@ public class QuestLogUI : MonoBehaviour
     private QuestSO questSo; //当前显示的任务数据
     [SerializeField] private QuestSO noAvailableQuest; //没有可用任务时显示的默认任务数据
     [SerializeField] private QuestLogSlot[] questLogSlots; //任务日志槽位数组
-    [SerializeField] private CanvasGroup questCanvas; //任务提供界面
     [SerializeField] private CanvasGroup acceptCanvas; //任务接受界面
     [SerializeField] private CanvasGroup declineCanvas; //任务拒绝界面
     [SerializeField] private CanvasGroup completeCanvas; //任务完成界面
 
     public void OnEnable() //当脚本启用时
     {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed += HandlePanelClosed;
         QuestEvents.OnQuestofferRequested += ShowQuestOffer; //订阅任务提供事件
         QuestEvents.OnQuestTurnInRequested += ShowQuestTurnIn; //订阅任务交付事件
     }
     public void OnDisable() //当脚本禁用时
     {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
         QuestEvents.OnQuestofferRequested -= ShowQuestOffer; //取消订阅任务提供事件
         QuestEvents.OnQuestTurnInRequested -= ShowQuestTurnIn; //取消订阅任务交付事件
     }
@@ -65,7 +68,9 @@ public class QuestLogUI : MonoBehaviour
             SetCanvasState(completeCanvas, false); //隐藏任务完成界面
         }
         HandleQuestclick(questSo); //处理任务点击事件
-        SetCanvasState(questCanvas, true); //显示任务提供界面
+        // 通过 UIManager 显示任务面板（自动关闭其他面板）
+        if (UIManager.Instance != null)
+            UIManager.Instance.OpenPanel(UIPanelType.Quest);
     }
     private void ShowQuestTurnIn(QuestSO incomingQuestSo) //显示任务交付界面
     {
@@ -74,7 +79,9 @@ public class QuestLogUI : MonoBehaviour
         SetCanvasState(acceptCanvas, false); //隐藏任务接受界面
         SetCanvasState(declineCanvas, false); //隐藏任务拒绝界面
         SetCanvasState(completeCanvas, true); //显示任务完成界面
-        SetCanvasState(questCanvas, true); //显示任务提供界面
+        // 通过 UIManager 显示任务面板
+        if (UIManager.Instance != null)
+            UIManager.Instance.OpenPanel(UIPanelType.Quest);
     }
     public void OnAcceptQuestClick() //当点击接受任务按钮时
     {
@@ -101,7 +108,9 @@ public class QuestLogUI : MonoBehaviour
     }
     public void OnDeclineQuestClick() //当点击拒绝任务按钮时
     {
-        SetCanvasState(questCanvas, false); //隐藏任务提供界面
+        // 通过 UIManager 关闭任务面板
+        if (UIManager.Instance != null)
+            UIManager.Instance.ClosePanel(UIPanelType.Quest);
     }
 
     public void OnCompleteQuestClick() //当点击完成任务按钮时
@@ -122,27 +131,43 @@ public class QuestLogUI : MonoBehaviour
         }
         SetCanvasState(completeCanvas, false); //隐藏完成按钮
     }
-    private void SetCanvasState(CanvasGroup canvasGroup, bool state) //设置界面状态
+    private void SetCanvasState(CanvasGroup canvasGroup, bool state) //设置子界面状态
     {
+        if (canvasGroup == null) return;
         canvasGroup.alpha = state ? 1 : 0; //根据状态设置界面透明度
         canvasGroup.interactable = state; //根据状态设置界面交互
         canvasGroup.blocksRaycasts = state; //根据状态设置界面射线检测
     }
 
     /// <summary>
-    /// 切换任务日志面板的显示/隐藏（供设置面板调用）
+    /// 切换任务日志面板的显示/隐藏（通过 UIManager 管理，J 键快捷键也调用此方法）
     /// </summary>
     public void ToggleQuestLog()
     {
-        if (questCanvas == null) return;
+        if (UIManager.Instance == null) return;
 
-        bool isVisible = questCanvas.alpha > 0f;
-        SetCanvasState(questCanvas, !isVisible);
-
-        if (!isVisible)
+        if (UIManager.Instance.IsPanelOpen(UIPanelType.Quest))
         {
+            UIManager.Instance.ClosePanel(UIPanelType.Quest);
+        }
+        else
+        {
+            UIManager.Instance.OpenPanel(UIPanelType.Quest);
             RefreshQuestList();
             HandleQuestclick(noAvailableQuest);
+        }
+    }
+
+    /// <summary>
+    /// 当面板被 UIManager 关闭时重置子界面状态
+    /// </summary>
+    private void HandlePanelClosed(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Quest)
+        {
+            SetCanvasState(acceptCanvas, false);
+            SetCanvasState(declineCanvas, false);
+            SetCanvasState(completeCanvas, false);
         }
     }
 
@@ -204,7 +229,6 @@ public class QuestLogUI : MonoBehaviour
             SetCanvasState(declineCanvas, true);
             SetCanvasState(completeCanvas, false);
         }
-        SetCanvasState(questCanvas, true); //显示任务面板
     }
     private void DisplayObjective() //显示任务目标
     {

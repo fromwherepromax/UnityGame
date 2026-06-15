@@ -12,13 +12,11 @@ public class InventoryManager : MonoBehaviour
     public TMP_Text goldText;
     public GameObject lootPrefab;
     public Transform player;
-    public CanvasGroup canvasGroup;
     public UseItem useItem;
     [SerializeField] private KeyCode toggleInventoryKey = KeyCode.B;
     [SerializeField] private InventoryDetailsUI inventoryDetailsUI;
 
     public static event Action<int> OnExpGained;
-    private bool isInventoryOpen = false;
 
     private void Awake()
     {
@@ -38,23 +36,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(toggleInventoryKey))
-        {
-            ToggleInventory();
-        }
-    }
-
     private void Start()
     {
-        isInventoryOpen = canvasGroup != null && canvasGroup.alpha > 0f;
-
-        if (canvasGroup != null)
-        {
-            SetInventoryVisible(isInventoryOpen);
-        }
-
         foreach (var slot in inventorySlots)
         {
             slot.UpdateUI();
@@ -63,52 +46,86 @@ public class InventoryManager : MonoBehaviour
         inventoryDetailsUI?.RefreshSelection();
     }
 
-    public void ToggleInventory()
+    private void Update()
     {
-        SetInventoryVisible(!isInventoryOpen);
-    }
-
-    public void SetInventoryVisible(bool isVisible)
-    {
-        isInventoryOpen = isVisible;
-
-        if (canvasGroup == null)
+        if (Input.GetKeyDown(toggleInventoryKey))
         {
-            Debug.LogWarning("InventoryManager: canvasGroup is not assigned.");
-            return;
-        }
-
-        canvasGroup.alpha = isVisible ? 1f : 0f;
-        canvasGroup.interactable = isVisible;
-        canvasGroup.blocksRaycasts = isVisible;
-
-        if (inventoryDetailsUI != null)
-        {
-            if (isVisible)
-            {
-                inventoryDetailsUI.ClearSelection();
-                inventoryDetailsUI.RefreshSelection();
-            }
-            else
-            {
-                inventoryDetailsUI.HidePanel();
-            }
-        }
-
-        if (!isVisible && EventSystem.current != null)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
+            ToggleInventory();
         }
     }
 
     private void OnEnable()
     {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed += HandlePanelClosed;
         Loot.OnItemLooted += AddItem;
     }
 
     private void OnDisable()
     {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
         Loot.OnItemLooted -= AddItem;
+    }
+
+    /// <summary>
+    /// 切换背包面板（通过 UIManager 管理）
+    /// </summary>
+    public void ToggleInventory()
+    {
+        if (UIManager.Instance == null) return;
+
+        if (UIManager.Instance.IsPanelOpen(UIPanelType.Inventory))
+            CloseInventory();
+        else
+            OpenInventory();
+    }
+
+    /// <summary>
+    /// 打开背包面板
+    /// </summary>
+    public void OpenInventory()
+    {
+        if (UIManager.Instance == null) return;
+
+        UIManager.Instance.OpenPanel(UIPanelType.Inventory);
+
+        if (inventoryDetailsUI != null)
+        {
+            inventoryDetailsUI.ClearSelection();
+            inventoryDetailsUI.RefreshSelection();
+        }
+    }
+
+    /// <summary>
+    /// 关闭背包面板
+    /// </summary>
+    public void CloseInventory()
+    {
+        if (UIManager.Instance == null) return;
+
+        UIManager.Instance.ClosePanel(UIPanelType.Inventory);
+    }
+
+    /// <summary>
+    /// 背包是否打开
+    /// </summary>
+    public bool IsInventoryOpen()
+    {
+        return UIManager.Instance != null && UIManager.Instance.IsPanelOpen(UIPanelType.Inventory);
+    }
+
+    /// <summary>
+    /// 当面板被 UIManager 关闭时清理 UI 状态
+    /// </summary>
+    private void HandlePanelClosed(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Inventory)
+        {
+            inventoryDetailsUI?.HidePanel();
+            if (EventSystem.current != null)
+                EventSystem.current.SetSelectedGameObject(null);
+        }
     }
 
     public void AddItem(ItemSo itemSo, int quantity)
