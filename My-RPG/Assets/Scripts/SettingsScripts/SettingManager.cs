@@ -11,8 +11,6 @@ public class SettingManager : MonoBehaviour
     [Header("按键设置")]
     public KeyCode toggleKey = KeyCode.Escape;
 
-    private float previousTimeScale = 1f; // 保存暂停前的时间缩放
-
     private void Awake()
     {
         if (Instance == null)
@@ -68,8 +66,6 @@ public class SettingManager : MonoBehaviour
     {
         if (UIManager.Instance == null) return;
 
-        previousTimeScale = Time.timeScale;
-        Time.timeScale = 0f; // 暂停游戏
         UIManager.Instance.OpenPanel(UIPanelType.Settings);
 
         // 刷新音量 UI
@@ -86,7 +82,6 @@ public class SettingManager : MonoBehaviour
     {
         if (UIManager.Instance == null) return;
 
-        Time.timeScale = previousTimeScale; // 恢复游戏
         UIManager.Instance.ClosePanel(UIPanelType.Settings);
 
         Debug.Log("[SettingManager] 设置面板已关闭");
@@ -110,7 +105,7 @@ public class SettingManager : MonoBehaviour
     {
         if (panelType == UIPanelType.Settings)
         {
-            Time.timeScale = previousTimeScale;
+            // 暂停逻辑已由 UIManager 统一管理
         }
     }
 }

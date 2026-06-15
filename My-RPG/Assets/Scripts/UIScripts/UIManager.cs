@@ -94,6 +94,9 @@ public class UIManager : MonoBehaviour
             SetCanvasGroupVisible(cg, true);
             openPanels.Add(panelType);
             OnPanelOpened?.Invoke(panelType);
+
+            // 有任何面板打开时暂停游戏
+            Time.timeScale = 0f;
         }
     }
 
@@ -110,6 +113,12 @@ public class UIManager : MonoBehaviour
         }
         openPanels.Remove(panelType);
         OnPanelClosed?.Invoke(panelType);
+
+        // 所有面板关闭时恢复游戏
+        if (openPanels.Count == 0)
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     /// <summary>
