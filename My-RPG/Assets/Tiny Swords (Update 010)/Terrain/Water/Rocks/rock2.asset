@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: rock2
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 2862029037877996251, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: -4126361948409846652, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: -6114119745383797528, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: -4320779918174636466, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: 5983309156901035349, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: 380509257637482562, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: -3064062377165886614, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  - {fileID: 6838556818901843596, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
