@@ -8,7 +8,6 @@ public class ShopKeeper : MonoBehaviour
     public static ShopKeeper currentShopKeeper; //当前活跃的商店老板实例
     public Animator anim;
     private bool playerInRange;
-    public CanvasGroup shopCanvasGroup;
     private bool isShopOpen;
     public ShopManager shopManager;
     [SerializeField] private List<ShopItem> shopItems;  //商店物品列表，包含物品和价格
@@ -18,10 +17,23 @@ public class ShopKeeper : MonoBehaviour
     [SerializeField] private Vector3 CameraOffset=new Vector3(0,0,-1); //商店界面相机偏移量
     public static event Action<ShopManager,bool> OnShopStateChanged; //商店状态改变事件，参数为商店管理器和商店是否打开
 
-     private void Start()
+    private void Start()
     {
         shopManager.PopulateShopItems(shopItems);
     }
+
+    private void OnEnable()
+    {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed += HandlePanelClosed;
+    }
+
+    private void OnDisable()
+    {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
+    }
+
     public void Update()
     {
         if(playerInRange)
@@ -30,32 +42,60 @@ public class ShopKeeper : MonoBehaviour
             {   
                 if(!isShopOpen)
                 {   
-                    // Time.timeScale = 0f; // Pause the game
-                    currentShopKeeper = this;
-                    shopCanvasGroup.alpha = 1f;
-                    OnShopStateChanged?.Invoke(shopManager, true);
-                    shopCanvasGroup.interactable = true;
-                    shopCanvasGroup.blocksRaycasts = true;
-                    isShopOpen = true;
-                    shopKeeperCam.transform.position = transform.position + CameraOffset;
-                    shopKeeperCam.gameObject.SetActive(true);
-                    OpenItemShop();
+                    OpenShop();
                 }
                 else
                 {   
-                    // Time.timeScale = 1f; // Resume the game
-                    currentShopKeeper = null;
-                    shopCanvasGroup.alpha = 0f;
-                    OnShopStateChanged?.Invoke(shopManager, false);
-                    shopCanvasGroup.interactable = false;
-                    shopCanvasGroup.blocksRaycasts = false;
-                    isShopOpen = false;
-                    shopKeeperCam.gameObject.SetActive(false);
+                    CloseShop();
                 }
             }
-            
         }
     }
+
+    /// <summary>
+    /// 打开商店（通过 UIManager 管理面板可见性）
+    /// </summary>
+    public void OpenShop()
+    {
+        if (UIManager.Instance == null) return;
+
+        currentShopKeeper = this;
+        UIManager.Instance.OpenPanel(UIPanelType.Shop);
+        isShopOpen = true;
+        shopKeeperCam.transform.position = transform.position + CameraOffset;
+        shopKeeperCam.gameObject.SetActive(true);
+        OpenItemShop();
+        OnShopStateChanged?.Invoke(shopManager, true);
+    }
+
+    /// <summary>
+    /// 关闭商店
+    /// </summary>
+    public void CloseShop()
+    {
+        if (UIManager.Instance == null) return;
+
+        currentShopKeeper = null;
+        UIManager.Instance.ClosePanel(UIPanelType.Shop);
+        isShopOpen = false;
+        shopKeeperCam.gameObject.SetActive(false);
+        OnShopStateChanged?.Invoke(shopManager, false);
+    }
+
+    /// <summary>
+    /// 当面板被 UIManager 关闭时清理商店状态
+    /// </summary>
+    private void HandlePanelClosed(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Shop && isShopOpen)
+        {
+            currentShopKeeper = null;
+            isShopOpen = false;
+            shopKeeperCam.gameObject.SetActive(false);
+            OnShopStateChanged?.Invoke(shopManager, false);
+        }
+    }
+
     public void OpenItemShop()
     {
         shopManager.PopulateShopItems(shopItems);

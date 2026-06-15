@@ -29,6 +29,10 @@ public class DialogueSO : ScriptableObject
     [Header("Battle Trigger (optional) (optional)")] //战斗触发
     public BattleEncounter battleEncounter; //对话结束后触发的战斗配置
 
+    [Header("Teleport (optional)")] //传送
+    public bool shouldTeleport; //对话结束后是否传送
+    public Vector2 teleportPosition; //传送目标坐标
+
     public bool CheckConditions() //检查条件是否满足
     {
         if (requiredNPC != null && requiredNPC.Length > 0)

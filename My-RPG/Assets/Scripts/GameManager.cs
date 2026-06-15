@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public UIManager uiManager; //UI管理器引用
     public DialogueManager dialogueManager; //对话管理器引用
     public DialogueHistoryTracker dialogueHistoryTracker; //对话历史记录器引用
     public LocationHistoryTracker locationHistoryTracker; //地点历史记录器引用

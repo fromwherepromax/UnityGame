@@ -2,20 +2,15 @@ using UnityEngine;
 
 /// <summary>
 /// 设置管理器（单例）—— 按 Esc 键打开/关闭设置面板。
-/// 挂载到一个持久化的 GameObject 上，面板打开时暂停游戏。
+/// 面板显示/隐藏由 UIManager 统一管理，本脚本只负责快捷键和暂停逻辑。
 /// </summary>
 public class SettingManager : MonoBehaviour
 {
     public static SettingManager Instance;
 
-    [Header("引用")]
-    [Tooltip("拖入设置面板的 CanvasGroup 组件")]
-    public CanvasGroup settingsPanel; // 设置面板 CanvasGroup
-
     [Header("按键设置")]
     public KeyCode toggleKey = KeyCode.Escape;
 
-    private bool isOpen = false;
     private float previousTimeScale = 1f; // 保存暂停前的时间缩放
 
     private void Awake()
@@ -29,9 +24,22 @@ public class SettingManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
 
-        // 启动时隐藏面板
-        SetPanelVisible(false);
+    private void OnEnable()
+    {
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.OnPanelClosed += HandlePanelClosed;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
+        }
     }
 
     private void Update()
@@ -47,7 +55,7 @@ public class SettingManager : MonoBehaviour
     /// </summary>
     public void ToggleSettings()
     {
-        if (isOpen)
+        if (UIManager.Instance != null && UIManager.Instance.IsPanelOpen(UIPanelType.Settings))
             CloseSettings();
         else
             OpenSettings();
@@ -58,19 +66,15 @@ public class SettingManager : MonoBehaviour
     /// </summary>
     public void OpenSettings()
     {
-        if (settingsPanel == null) return;
+        if (UIManager.Instance == null) return;
 
-        isOpen = true;
         previousTimeScale = Time.timeScale;
         Time.timeScale = 0f; // 暂停游戏
-        SetPanelVisible(true);
+        UIManager.Instance.OpenPanel(UIPanelType.Settings);
 
         // 刷新音量 UI
-        SettingsPanelUI panelUI = settingsPanel.GetComponent<SettingsPanelUI>();
-        if (panelUI != null)
-        {
-            panelUI.RefreshUI();
-        }
+        SettingsPanelUI panelUI = UIManager.Instance.settingsPanel?.GetComponent<SettingsPanelUI>();
+        panelUI?.RefreshUI();
 
         Debug.Log("[SettingManager] 设置面板已打开");
     }
@@ -80,11 +84,10 @@ public class SettingManager : MonoBehaviour
     /// </summary>
     public void CloseSettings()
     {
-        if (settingsPanel == null) return;
+        if (UIManager.Instance == null) return;
 
-        isOpen = false;
         Time.timeScale = previousTimeScale; // 恢复游戏
-        SetPanelVisible(false);
+        UIManager.Instance.ClosePanel(UIPanelType.Settings);
 
         Debug.Log("[SettingManager] 设置面板已关闭");
     }
@@ -94,18 +97,20 @@ public class SettingManager : MonoBehaviour
     /// </summary>
     public bool IsOpen()
     {
-        return isOpen;
+        return UIManager.Instance != null && UIManager.Instance.IsPanelOpen(UIPanelType.Settings);
     }
 
-    /// <summary>
-    /// 通过 CanvasGroup 控制面板显示/隐藏
-    /// </summary>
-    private void SetPanelVisible(bool visible)
-    {
-        if (settingsPanel == null) return;
+    // ────── 事件处理 ──────
 
-        settingsPanel.alpha = visible ? 1f : 0f;
-        settingsPanel.interactable = visible;
-        settingsPanel.blocksRaycasts = visible;
+    /// <summary>
+    /// 当面板被 UIManager 关闭时（例如打开其他面板导致设置面板自动关闭），
+    /// 恢复游戏时间缩放。
+    /// </summary>
+    private void HandlePanelClosed(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Settings)
+        {
+            Time.timeScale = previousTimeScale;
+        }
     }
 }
