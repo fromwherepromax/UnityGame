@@ -48,12 +48,10 @@ public class StatsUI : MonoBehaviour
 
         if (UIManager.Instance.IsPanelOpen(UIPanelType.Stats))
         {
-            Time.timeScale = 1;
             UIManager.Instance.ClosePanel(UIPanelType.Stats);
         }
         else
         {
-            Time.timeScale = 0;
             UIManager.Instance.OpenPanel(UIPanelType.Stats);
             UpdateAllStats();
         }
@@ -65,7 +63,6 @@ public class StatsUI : MonoBehaviour
     {
         if (panelType == UIPanelType.Stats)
         {
-            Time.timeScale = 0f;
             UpdateAllStats();
         }
     }
@@ -74,7 +71,7 @@ public class StatsUI : MonoBehaviour
     {
         if (panelType == UIPanelType.Stats)
         {
-            Time.timeScale = 1f;
+            // 暂停逻辑已由 UIManager 统一管理
         }
     }
 

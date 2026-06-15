@@ -38,7 +38,8 @@ MonoBehaviour:
   removeAfterPlay: 1
   removeTheseOnPlay: []
   offerQuestOnEnd: {fileID: 0}
-  requireCompleteQuests: []
+  requireCompleteQuests:
+  - {fileID: 11400000, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d, type: 2}
   turnInQuest: {fileID: 0}
   battleEncounter:
     enemies:
