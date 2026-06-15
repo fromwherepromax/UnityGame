@@ -18,8 +18,11 @@ MonoBehaviour:
   isGold: 0
   isExp: 0
   stackSize: 100
-  currentHealth: 0
-  maxHealth: 0
-  speed: 0
+  currentHealth: 1
+  maxHealth: 1
+  speed: 1
   damage: 0
-  duration: 0
+  arrowDamage: 1
+  explosionDamage: 1
+  healAmount: 1
+  duration: 10

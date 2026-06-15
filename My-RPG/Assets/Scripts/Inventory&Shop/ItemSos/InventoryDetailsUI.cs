@@ -135,6 +135,7 @@ public class InventoryDetailsUI : MonoBehaviour
 
     public void HidePanel()
     {
+        MusicManager.Instance?.PlayClick();
         if (panel != null)
         {
             panel.alpha = 0f;
@@ -151,6 +152,7 @@ public class InventoryDetailsUI : MonoBehaviour
 
     public void OnUseClicked()
     {
+        MusicManager.Instance?.PlayClick();
         if (inventoryManager != null && currentSlot != null)
         {
             inventoryManager.UseItem(currentSlot);
@@ -159,6 +161,7 @@ public class InventoryDetailsUI : MonoBehaviour
 
     public void OnDropClicked()
     {
+        MusicManager.Instance?.PlayClick();
         if (inventoryManager != null && currentSlot != null)
         {
             inventoryManager.DropItem(currentSlot);

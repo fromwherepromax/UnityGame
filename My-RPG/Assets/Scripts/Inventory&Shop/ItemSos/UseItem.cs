@@ -24,6 +24,21 @@ public class UseItem : MonoBehaviour
             StatsManager.Instance.UpdateDamage(itemSo.damage);
         }
 
+        if (itemSo.arrowDamage != 0)
+        {
+            StatsManager.Instance.UpdateArrowDamage(itemSo.arrowDamage);
+        }
+
+        if (itemSo.explosionDamage != 0)
+        {
+            StatsManager.Instance.UpdateExplosionDamage(itemSo.explosionDamage);
+        }
+
+        if (itemSo.healAmount != 0)
+        {
+            StatsManager.Instance.UpdateHealAmount(itemSo.healAmount);
+        }
+
         if (itemSo.duration > 0)
         {
             StartCoroutine(EffectTimer(itemSo, itemSo.duration));
@@ -46,6 +61,21 @@ public class UseItem : MonoBehaviour
         if (itemSo.damage != 0)
         {
             StatsManager.Instance.UpdateDamage(-itemSo.damage);
+        }
+
+        if (itemSo.arrowDamage != 0)
+        {
+            StatsManager.Instance.UpdateArrowDamage(-itemSo.arrowDamage);
+        }
+
+        if (itemSo.explosionDamage != 0)
+        {
+            StatsManager.Instance.UpdateExplosionDamage(-itemSo.explosionDamage);
+        }
+
+        if (itemSo.healAmount != 0)
+        {
+            StatsManager.Instance.UpdateHealAmount(-itemSo.healAmount);
         }
     }
 }

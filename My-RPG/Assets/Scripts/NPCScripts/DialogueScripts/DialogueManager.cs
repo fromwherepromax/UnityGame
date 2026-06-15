@@ -124,6 +124,7 @@ public class DialogueManager : MonoBehaviour
         
     }    private void ChooseOption(DialogueSO dialogueSo, DialogueOption option = null)
     {
+        MusicManager.Instance?.PlayClick();
         // 如果当前对话有提供任务，在选择选项时触发（仅世界任务或未自动接取的主线任务）
         if (currentDialogue != null && currentDialogue.offerQuestOnEnd != null && ShouldOfferQuest(currentDialogue.offerQuestOnEnd))
         {
