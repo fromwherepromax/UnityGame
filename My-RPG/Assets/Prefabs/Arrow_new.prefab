@@ -173,17 +173,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7629646259370505991}
   direction: {x: 1, y: 0}
-  lifeSpawn: 5
+  lifetime: 5
   speed: 10
   damage: 1
-  obstaclleLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  sr: {fileID: 3267885936550034474}
-  buriedSprite: {fileID: -1605243624, guid: ae52090395309614eb7a1b0481b78634, type: 3}
+  knockbackForce: 5
+  knockbackDuration: 0.5
+  stunTime: 0
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  knckbackForce: 5
-  knockbackTime: 0.5
-  stunTime: 0
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  sr: {fileID: 3267885936550034474}
+  burnedSprite: {fileID: 0}
