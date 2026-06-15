@@ -8,8 +8,6 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
-    public CanvasGroup dialogueCanvasGroup; //对话UI的CanvasGroup组件
-
     [Header("UI References")]  //UI引用
     public Image portraitImage;//角色头像
     public TMP_Text actorName; //角色名字文本
@@ -23,14 +21,22 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        dialogueCanvasGroup.alpha = 0; //初始时隐藏对话UI
-        dialogueCanvasGroup.interactable = false; //初始时禁用对话UI交互
-        dialogueCanvasGroup.blocksRaycasts = false; //初始时不阻挡射线
-
         foreach (var button in optionButtons) //禁用所有选项按钮
         {
             button.gameObject.SetActive(false);
         }
+    }
+
+    private void OnEnable()
+    {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed += HandlePanelClosed;
+    }
+
+    private void OnDisable()
+    {
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
     }
 
     private void Update()
@@ -55,6 +61,9 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = dialogueSO; //设置当前对话
         dialogueIndex = 0; //重置对话索引
         isDialogueActive = true; //激活对话
+        // 通过 UIManager 显示对话面板（自动关闭其他面板）
+        if (UIManager.Instance != null)
+            UIManager.Instance.OpenPanel(UIPanelType.Dialogue);
         ShowDialogue(); //显示第一行对话
     }
     public void AdvanceDialogue() //推进对话
@@ -153,9 +162,7 @@ public class DialogueManager : MonoBehaviour
         portraitImage.sprite = line.speaker.portrait; //设置角色头像
         actorName.text = line.speaker.actorName; //设置角色名字
         dialogueText.text = line.line; //设置对话内容
-        dialogueCanvasGroup.alpha = 1; //显示对话UI
-        dialogueCanvasGroup.interactable = true; //启用对话UI交互
-        dialogueCanvasGroup.blocksRaycasts = true; //阻挡射线
+        // 面板可见性由 UIManager 管理，此处只更新内容
         dialogueIndex++; //推进对话索引
     }
      /// <summary>
@@ -187,6 +194,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        if (!isDialogueActive) return; //防止重复调用
+
         // 缓存当前对话的战斗配置（在清空 currentDialogue 之前）
         BattleEncounter battleToStart = null;
         if (currentDialogue != null && currentDialogue.battleEncounter != null)
@@ -210,9 +219,9 @@ public class DialogueManager : MonoBehaviour
         actorName.text = ""; //清除角色名字
         dialogueText.text = ""; //清除对话内容
         clearOptionButtons(); //清除之前的选项按钮事件
-        dialogueCanvasGroup.alpha = 0; //隐藏对话UI
-        dialogueCanvasGroup.interactable = false; //禁用对话UI交互
-        dialogueCanvasGroup.blocksRaycasts = false; //不阻挡射线
+        // 通过 UIManager 关闭对话面板
+        if (UIManager.Instance != null && UIManager.Instance.IsPanelOpen(UIPanelType.Dialogue))
+            UIManager.Instance.ClosePanel(UIPanelType.Dialogue);
         lastDialogueTime = Time.time; //记录结束对话的时间
 
         // 对话结束后触发战斗
@@ -230,6 +239,17 @@ public class DialogueManager : MonoBehaviour
                 player.transform.position = teleportPos;
                 Debug.Log($"[DialogueManager] 玩家已传送到 {teleportPos}");
             }
+        }
+    }
+
+    /// <summary>
+    /// 当面板被 UIManager 关闭时清理对话状态
+    /// </summary>
+    private void HandlePanelClosed(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Dialogue && isDialogueActive)
+        {
+            EndDialogue();
         }
     }
 

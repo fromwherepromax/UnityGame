@@ -40,7 +40,7 @@ MonoBehaviour:
   requiredItems: []
   removeAfterPlay: 1
   removeTheseOnPlay: []
-  offerQuestOnEnd: {fileID: 11400000, guid: 2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e, type: 2}
+  offerQuestOnEnd: {fileID: 0}
   requireCompleteQuests:
   - {fileID: 11400000, guid: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d, type: 2}
   turnInQuest: {fileID: 0}

@@ -2428,7 +2428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1010291578}
-  shopCanvasGroup: {fileID: 953771478}
   shopManager: {fileID: 953771477}
   shopItems:
   - itemSo: {fileID: 11400000, guid: 9c5c98f11914f8d41a2cc09473b013d4, type: 2}
@@ -3847,10 +3846,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAnim: {fileID: 1313943139}
   conversations:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 11400000, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 2}
   currentDialogue: {fileID: 11400000, guid: cbbe67280c0ec954dada6f178353e8b4, type: 2}
 --- !u!114 &346618392
@@ -4053,6 +4048,7 @@ Transform:
   - {fileID: 864735735}
   - {fileID: 654654180}
   - {fileID: 1081750258}
+  - {fileID: 1249657086}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &372000066
@@ -6508,7 +6504,7 @@ MonoBehaviour:
     TextNew TextNew TextNew TextNew TextNew Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: fb4cdeabd094b8c4b809bc5c3d611925, type: 2}
+  m_sharedMaterial: {fileID: 2396495847551353265, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7776,7 +7772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6bfbde0d9a47f4996e9b0687aea922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPanel: {fileID: 1234081247}
   toggleKey: 27
 --- !u!4 &654654180
 Transform:
@@ -8495,6 +8490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95883912cf1d534e87101fc90182a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 1249657087}
   dialogueManager: {fileID: 740902295}
   dialogueHistoryTracker: {fileID: 740902296}
   locationHistoryTracker: {fileID: 740902297}
@@ -9087,7 +9083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f9856f8f282df24ea8cfe5dbdaef7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueCanvasGroup: {fileID: 740902294}
   portraitImage: {fileID: 207399220}
   actorName: {fileID: 1134524481}
   dialogueText: {fileID: 540438788}
@@ -9709,7 +9704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 530942071}
-  shopCanvasGroup: {fileID: 953771478}
   shopManager: {fileID: 953771477}
   shopItems:
   - itemSo: {fileID: 11400000, guid: 9c5c98f11914f8d41a2cc09473b013d4, type: 2}
@@ -10578,7 +10572,6 @@ MonoBehaviour:
   - {fileID: 90418564}
   - {fileID: 1178954868}
   - {fileID: 1806802108}
-  questCanvas: {fileID: 1722189166}
   acceptCanvas: {fileID: 399853338}
   declineCanvas: {fileID: 312665078}
   completeCanvas: {fileID: 1029954095}
@@ -14543,7 +14536,7 @@ MonoBehaviour:
   m_text: hahhahahahhhahahahahahahahhahahahhahahaahahhahahahah
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: fb4cdeabd094b8c4b809bc5c3d611925, type: 2}
+  m_sharedMaterial: {fileID: 2396495847551353265, guid: 091a25caf8b469a42b808a87d966a80e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15189,6 +15182,57 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 575859019896347904, guid: 3eb066fe8454e4145a96932383c199b2, type: 3}
   m_PrefabInstance: {fileID: 8262931018697765455}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1249657085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1249657086}
+  - component: {fileID: 1249657087}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1249657086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249657085}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 370793015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249657087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249657085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fd19930c483cc4c95f084e4f084cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsPanel: {fileID: 1234081247}
+  inventoryPanel: {fileID: 1705684397}
+  statsPanel: {fileID: 1698338772}
+  questPanel: {fileID: 1722189166}
+  shopPanel: {fileID: 953771478}
+  dialoguePanel: {fileID: 740902294}
+  questLogKey: 106
 --- !u!1 &1257132860
 GameObject:
   m_ObjectHideFlags: 0
@@ -15447,7 +15491,6 @@ MonoBehaviour:
   - {fileID: 266082535}
   - {fileID: 701399793}
   - {fileID: 1815591094}
-  statsCanvas: {fileID: 1698338772}
 --- !u!114 &1284129140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20313,7 +20356,6 @@ MonoBehaviour:
   - {fileID: 701399793}
   - {fileID: 1815591094}
   - {fileID: 1896163121}
-  statsCanvas: {fileID: 1698338772}
 --- !u!225 &1698338772
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20483,7 +20525,6 @@ MonoBehaviour:
   goldText: {fileID: 647730063}
   lootPrefab: {fileID: 4622356984233209990, guid: 340aac20d92ccb6449f6ee9ae25e8787, type: 3}
   player: {fileID: 0}
-  canvasGroup: {fileID: 1705684397}
   useItem: {fileID: 1705684402}
   toggleInventoryKey: 98
   inventoryDetailsUI: {fileID: 506014023}
@@ -24460,8 +24501,6 @@ MonoBehaviour:
   openStatsBtn: {fileID: 170746121}
   openQuestLogBtn: {fileID: 1835030226}
   closeBtn: {fileID: 1631273655}
-  statsUI: {fileID: 0}
-  questLogUI: {fileID: 0}
 --- !u!114 &1998042396
 MonoBehaviour:
   m_ObjectHideFlags: 0

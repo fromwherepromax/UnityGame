@@ -27,11 +27,6 @@ public class SettingsPanelUI : MonoBehaviour
     [Header("系统设置")]
     public Button closeBtn;           // 关闭面板按钮
 
-    // ═══════════════════════ 外部引用 ═══════════════════════
-    [Header("外部引用（可选，不设置则自动查找）")]
-    public StatsUI statsUI;
-    public QuestLogUI questLogUI;
-
     private bool initialized = false;
 
     private void OnEnable()
@@ -76,12 +71,6 @@ public class SettingsPanelUI : MonoBehaviour
         // --- 系统设置 ---
         if (closeBtn != null)
             closeBtn.onClick.AddListener(OnClosePanel);
-
-        // 自动查找引用
-        if (statsUI == null)
-            statsUI = FindObjectOfType<StatsUI>();
-        if (questLogUI == null)
-            questLogUI = FindObjectOfType<QuestLogUI>();
     }
 
     /// <summary>
@@ -126,39 +115,33 @@ public class SettingsPanelUI : MonoBehaviour
     // ═══════════════════════ 快捷功能回调 ═══════════════════════
 
     /// <summary>
-    /// 打开背包 —— 先关闭设置面板，再切换背包
+    /// 打开背包 —— 先关闭设置面板，再打开背包
     /// </summary>
     private void OnOpenInventory()
     {
         OnClosePanel();
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.ToggleInventory();
-        }
+        if (UIManager.Instance != null)
+            UIManager.Instance.OpenPanel(UIPanelType.Inventory);
     }
 
     /// <summary>
-    /// 打开属性面板 —— 先关闭设置面板，再切换属性面板
+    /// 打开属性面板 —— 先关闭设置面板，再打开属性面板
     /// </summary>
     private void OnOpenStats()
     {
         OnClosePanel();
-        if (statsUI != null)
-        {
-            statsUI.ToggleStats();
-        }
+        if (UIManager.Instance != null)
+            UIManager.Instance.OpenPanel(UIPanelType.Stats);
     }
 
     /// <summary>
-    /// 打开任务日志 —— 先关闭设置面板，再显示任务日志
+    /// 打开任务日志 —— 先关闭设置面板，再打开任务日志
     /// </summary>
     private void OnOpenQuestLog()
     {
         OnClosePanel();
-        if (questLogUI != null)
-        {
-            questLogUI.ToggleQuestLog();
-        }
+        if (UIManager.Instance != null)
+            UIManager.Instance.OpenPanel(UIPanelType.Quest);
     }
 
     // ═══════════════════════ 系统设置回调 ═══════════════════════
@@ -169,8 +152,6 @@ public class SettingsPanelUI : MonoBehaviour
     private void OnClosePanel()
     {
         if (SettingManager.Instance != null)
-        {
             SettingManager.Instance.CloseSettings();
-        }
     }
 }
