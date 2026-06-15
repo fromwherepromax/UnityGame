@@ -17,6 +17,9 @@ public class ItemSo : ScriptableObject
     public int maxHealth;
     public int speed;
     public int damage;
+    public int arrowDamage;
+    public int explosionDamage;
+    public int healAmount;
 
     [Header("For Temporary Items")]
     public float duration;

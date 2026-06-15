@@ -153,4 +153,49 @@ public class StatsManager : MonoBehaviour
         }
     }
 
+    public void UpdateArrowDamage(int amount)
+    {
+        arrowDamage += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
+
+    public void UpdateExplosionDamage(int amount)
+    {
+        explosionDamage += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
+
+    public void UpdateHealAmount(int amount)
+    {
+        healAmount += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
+
 }
