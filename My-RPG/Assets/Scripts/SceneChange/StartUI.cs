@@ -17,6 +17,7 @@ public class StartUI : MonoBehaviour
 
     private void OnStartGame()
     {
+        MusicManager.Instance?.PlayClick();
         SceneManager.LoadScene(gameSceneName);
     }
 

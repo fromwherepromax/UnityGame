@@ -119,6 +119,7 @@ public class SettingsPanelUI : MonoBehaviour
     /// </summary>
     private void OnOpenInventory()
     {
+        MusicManager.Instance?.PlayClick();
         OnClosePanel();
         if (UIManager.Instance != null)
             UIManager.Instance.OpenPanel(UIPanelType.Inventory);
@@ -129,6 +130,7 @@ public class SettingsPanelUI : MonoBehaviour
     /// </summary>
     private void OnOpenStats()
     {
+        MusicManager.Instance?.PlayClick();
         OnClosePanel();
         if (UIManager.Instance != null)
             UIManager.Instance.OpenPanel(UIPanelType.Stats);
@@ -139,6 +141,7 @@ public class SettingsPanelUI : MonoBehaviour
     /// </summary>
     private void OnOpenQuestLog()
     {
+        MusicManager.Instance?.PlayClick();
         OnClosePanel();
         if (UIManager.Instance != null)
             UIManager.Instance.OpenPanel(UIPanelType.Quest);
@@ -151,6 +154,7 @@ public class SettingsPanelUI : MonoBehaviour
     /// </summary>
     private void OnClosePanel()
     {
+        MusicManager.Instance?.PlayClick();
         if (SettingManager.Instance != null)
             SettingManager.Instance.CloseSettings();
     }
