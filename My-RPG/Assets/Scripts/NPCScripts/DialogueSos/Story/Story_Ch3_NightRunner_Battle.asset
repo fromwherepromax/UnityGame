@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch3_NightRunner_Battle
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u63A5\u62DB\u5427\uFF01\u7206\u88C2\u9B54\u6CD5\uFF01\uFF01"
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: "\u54FC\uFF01\u96D5\u866B\u5C0F\u6280\uFF01"
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: "\u5979\u7684\u9B54\u6CD5\u88AB\u6321\u4E0B\u6765\u4E86\uFF01"
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u54C8...\u54C8...\u4F53\u529B...\u7528\u5C3D\u4E86...\u6211\u7AD9\u4E0D\u8D77\u6765\u4E86..."
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: "\u63A5\u4E0B\u6765\u4EA4\u7ED9\u6211\uFF01\u770B\u6211\u7684\u9A91\u58EB\u7A81\u51FB\uFF01"
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: "\u4EC0\u4E48\uFF1F\uFF01"
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: "\u5443...\u6253\u504F\u4E86..."
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: "\u54C8\uFF01\u5C31\u8FD9\uFF1F"
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: "\u8BA9\u6211\u6765\uFF01\u6C34\u4E4B\u5973\u795E\u7684\u795D\u798F\u2014\u2014\u6CBB\u6108\u4E4B\u672F\uFF01"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u5979\u6CBB\u6108\u4E86NightRunner\uFF1F\uFF01"
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: "\u545C\u545C\u545C...\u624B\u6ED1\u4E86..."
+  dialogueOptions:
+  - optionText: "[\u8D81\u673A\u653B\u51FB\uFF01]"
+    nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 0}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}

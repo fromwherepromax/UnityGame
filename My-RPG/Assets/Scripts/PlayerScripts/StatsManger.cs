@@ -113,6 +113,8 @@ public class StatsManager : MonoBehaviour
     public void UpdateHealth(int amount)
     {
         MaxHealth += amount;
+        CurrentHealth += amount;
+        CurrentHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
 
         if (healthText == null)
         {
@@ -141,6 +143,51 @@ public class StatsManager : MonoBehaviour
     public void UpdateDamage(int amount)
     {
         damage += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
+
+    public void UpdateArrowDamage(int amount)
+    {
+        arrowDamage += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
+
+    public void UpdateExplosionDamage(int amount)
+    {
+        explosionDamage += amount;
+
+        if (statsUI == null)
+        {
+            BindUIReferences();
+        }
+
+        if (statsUI != null)
+        {
+            statsUI.UpdateAllStats();
+        }
+    }
+
+    public void UpdateHealAmount(int amount)
+    {
+        healAmount += amount;
 
         if (statsUI == null)
         {

@@ -237,7 +237,7 @@ MonoBehaviour:
   regenAmount: 2
   regenInterval: 0.1
   regenDelay: 1
-  healthBarPrefab: {fileID: 0}
+  healthBarPrefab: {fileID: 7156065850209550203, guid: f26a528d333a6f442b05e787bdc8f47a, type: 3}
   healthBarOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &1068912547174603053
 MonoBehaviour:
@@ -275,6 +275,7 @@ MonoBehaviour:
   attackRange: 1.6
   attackCooldown: 1.5
   playerDetectRange: 5
+  detectionPauseTime: 1.5
   detectionPiont: {fileID: 82299039721564558}
   playerLayer:
     serializedVersion: 2

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca4909ba643e56e4c944e755dd3424dc, type: 3}
+  m_Name: Quest_Ch2_AssembleTeam
+  m_EditorClassIdentifier: 
+  questName: "\u5947\u8469\u961F\u4F0D\u96C6\u7ED3"
+  questLevel: 2
+  questDescription: "\u5728\u7EFF\u4E18\u4E4B\u5730\u548C\u6C99\u4E4B\u6D77\u5CB8\u5BFB\u627E\u613F\u610F\u52A0\u5165\u961F\u4F0D\u7684\u4F19\u4F34\u3002\u867D\u7136\u8FD9\u4E9B\u4F19\u4F34\u770B\u8D77\u6765\u90FD...\u6709\u70B9\u95EE\u9898\u3002"
+  questType: 0
+  nextChapterQuest: {fileID: 11400000, guid: 3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f, type: 2}
+  objectives:
+  - description: "\u627E\u5230\u7EA2\u53D1Bob\u5E76\u8BF4\u670D\u5979\u52A0\u5165"
+    target: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    requiredAmount: 1
+  - description: "\u5728\u6C99\u4E4B\u6D77\u5CB8\u6551\u51FA\u9EC4\u53D1Bob"
+    target: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    requiredAmount: 1
+  rewards:
+  - itemSo: {fileID: 11400000, guid: d6c6e5943cd7c2d4780f00f098397a60, type: 2}
+    amount: 100
+  - itemSo: {fileID: 11400000, guid: 024cc61549536824da5f66fc0cf15c17, type: 2}
+    amount: 200

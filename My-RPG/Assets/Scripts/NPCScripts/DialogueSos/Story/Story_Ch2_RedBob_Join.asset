@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch2_RedBob_Join
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u611F\u8C22\u4F60\u4EEC\u7684\u5E2E\u52A9\uFF01\u73B0\u5728...\u770B\u597D\u4E86\uFF01"
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u9ED1\u6697\u7684\u529B\u91CF\u554A\uFF0C\u5728\u6211\u624B\u4E2D\u805A\u96C6\uFF01e-x-p-l-o-s-i-o-n\u2014\u2014\u2014\u2014\uFF01\uFF01"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u54C7\u554A\u554A\u554A\uFF01\uFF01\u5C71...\u5C71\u88AB\u70B8\u6389\u4E86\uFF01\uFF01"
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: "\u534A\u5EA7\u5C71\u90FD\u6CA1\u4E86\uFF01\uFF01\u4F60\u75AF\u4E86\u5417\uFF1F\uFF01"
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u54C8...\u54C8...\u4F53\u529B\u7528\u5C3D\u4E86...\u6211\u7AD9\u4E0D\u8D77\u6765\u4E86..."
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u4F46\u662F\uFF01\u8FD9\u5C31\u662F\u7206\u88C2\u9B54\u6CD5\u7684\u6D6A\u6F2B\uFF01\u4ECE\u4ECA\u5929\u8D77\uFF0C\u6211\u7EA2\u53D1Bob\u5C31\u8DDF\u7740\u4F60\u4EEC\u4E86\uFF01\u6BCF\u5929\u4E00\u53D1\u7206\u88C2\u9B54\u6CD5\uFF0C\u8FD9\u5C31\u662F\u6211\u7684\u627F\u8BFA\uFF01"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u7B49\u7B49\uFF0C\u6211\u4EEC\u6CA1\u8BF4\u8981\u6536\u4F60\u554A..."
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: "\u7B97\u4E86\u7B97\u4E86\uFF0C\u770B\u5979\u8FD9\u6837\u5B50\u4E0D\u5E26\u4E0A\u5979\u4F30\u8BA1\u4F1A\u997F\u6B7B\u5728\u8FD9\u91CC..."
+  dialogueOptions:
+  - optionText: "\u6B22\u8FCE\u52A0\u5165"
+    nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 0}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

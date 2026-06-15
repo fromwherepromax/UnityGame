@@ -7,42 +7,63 @@ using TMPro;
 public class StatsUI : MonoBehaviour
 {
     public GameObject[] statsSlots;
-    public CanvasGroup statsCanvas;
-    private bool statsOpen = false;
 
     private void Start()
     {
         UpdateAllStats();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (Input.GetButtonDown("ToggleStats"))
+        if (UIManager.Instance != null)
         {
-            ToggleStats();
+            UIManager.Instance.OnPanelOpened += HandlePanelOpened;
+            UIManager.Instance.OnPanelClosed += HandlePanelClosed;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (UIManager.Instance != null)
+        {
+            UIManager.Instance.OnPanelOpened -= HandlePanelOpened;
+            UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
         }
     }
 
     /// <summary>
-    /// 切换属性面板的显示/隐藏（供设置面板和按键共用）
+    /// 切换属性面板的显示/隐藏（通过 UIManager 管理）
     /// </summary>
     public void ToggleStats()
     {
-        if (statsOpen)
+        if (UIManager.Instance == null) return;
+
+        if (UIManager.Instance.IsPanelOpen(UIPanelType.Stats))
         {
-            Time.timeScale = 1;
-            statsCanvas.alpha = 0;
-            statsCanvas.interactable = false;
-            statsCanvas.blocksRaycasts = false;
-            statsOpen = false;
+            UIManager.Instance.ClosePanel(UIPanelType.Stats);
         }
         else
         {
-            Time.timeScale = 0;
-            statsCanvas.alpha = 1;
-            statsCanvas.interactable = true;
-            statsCanvas.blocksRaycasts = true;
-            statsOpen = true;
+            UIManager.Instance.OpenPanel(UIPanelType.Stats);
+            UpdateAllStats();
+        }
+    }
+
+    // ────── 事件处理 ──────
+
+    private void HandlePanelOpened(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Stats)
+        {
+            UpdateAllStats();
+        }
+    }
+
+    private void HandlePanelClosed(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Stats)
+        {
+            // 暂停逻辑已由 UIManager 统一管理
         }
     }
 

@@ -18,6 +18,8 @@ public class ExpManager : MonoBehaviour
 
     public void Start()
     {
+        // 禁用经验条的键盘导航，防止 AD 键操控滑动条
+        expSlider.navigation = new Navigation { mode = Navigation.Mode.None };
         UpdateUI();
     }
     public void Update()
@@ -41,7 +43,7 @@ public class ExpManager : MonoBehaviour
     public void GainExp(int amount)
     {
         currentExp += amount;
-        if (currentExp >= expToNextLevel)
+        while (currentExp >= expToNextLevel) // 用 while 循环支持连续升级
         {
             LevelUp();
         }

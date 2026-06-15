@@ -39,6 +39,7 @@ public class InventorySlot : MonoBehaviour, IPointerClickHandler
             return;
         }
 
+        MusicManager.Instance?.PlayClick();
         detailsUI.SelectSlot(this);
     }
 

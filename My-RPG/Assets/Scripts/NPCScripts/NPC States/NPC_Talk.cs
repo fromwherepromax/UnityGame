@@ -46,9 +46,9 @@ public class NPC_Talk : MonoBehaviour
                 return;
             }
 
-            if(GameManager.Instance.dialogueManager.isDialogueActive) //如果对话已经激活
+            if(GameManager.Instance.dialogueManager.isDialogueActive) //如果对话已经激活，由DialogueManager自行处理推进
             {
-               GameManager.Instance.dialogueManager.AdvanceDialogue(); //推进对话
+               // 推进对话已移至 DialogueManager.Update()，此处不再重复调用
             }
             else
             {   
@@ -81,9 +81,12 @@ public class NPC_Talk : MonoBehaviour
         for(int i=0;i<conversations.Count;i++)
         {
            var convo = conversations[i];
-           if(convo!=null && convo.CheckConditions()) //如果对话存在且满足条件
+           if(convo == null) continue;
+           
+           if(convo.CheckConditions()) //如果对话存在且满足条件
            {    
                 currentDialogue = convo; //设置当前对话
+                Debug.Log($"[NPC_Talk] '{gameObject.name}' 选择了对话: '{convo.name}'");
                 if(convo.removeAfterPlay) //如果需要播放后移除
                 {
                     conversations.RemoveAt(i); //从列表中移除这个对话，确保每个对话只触发一次
@@ -98,12 +101,23 @@ public class NPC_Talk : MonoBehaviour
                 break; //退出循环，优先使用满足条件的第一个对话
            }
         }
+        
+        if (currentDialogue == null)
+        {
+            Debug.LogWarning($"[NPC_Talk] '{gameObject.name}' 没有找到满足条件的对话！共 {conversations.Count} 个对话待检查。");
+        }
     }
     private void OnQuestAccepted_RemoveOfferings(QuestSO acceptedQuest) //当任务被接受时检查是否需要移除提供的对话
     {
         if (acceptedQuest == null)
         {
             return;
+        }
+
+        // 只在当前正在对话的NPC上移除对话，避免影响其他NPC
+        if (!this.enabled)
+        {
+            return; //如果当前NPC不在交互范围内，不移除对话
         }
 
         for (int i = conversations.Count - 1; i >= 0; i--)

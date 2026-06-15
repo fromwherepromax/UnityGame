@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch3_NightRunner_Appear
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: "\u54FC\u54FC\u54FC...\u7EC8\u4E8E\u627E\u5230\u4F60\u4EEC\u4E86\uFF0C\u52C7\u8005\u4E00\u884C\u4EBA\u3002"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u4F60\u662F\u8C01\uFF1F\uFF01"
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: "\u6211\u4E43\u9B54\u738B\u519B\u56DB\u5929\u738B\u4E4B\u4E00\u2014\u2014\u6697\u591C\u884C\u8005\xB7NightRunner\uFF01\u5949\u9B54\u738B\u4E4B\u547D\uFF0C\u524D\u6765\u6D88\u706D\u4F60\u4EEC\uFF01"
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: "\u9B54\u3001\u9B54\u738B\u519B\uFF1F\uFF01\u5B8C\u4E86\u5B8C\u4E86\u5B8C\u4E86\uFF01\u6211\u4EEC\u6B7B\u5B9A\u4E86\uFF01"
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: "\u7EC8\u4E8E\u6765\u4E86\u5417...\u90AA\u6076\u7684\u5B58\u5728\uFF01\u5C31\u8BA9\u4F60\u89C1\u8BC6\u4E00\u4E0B\u7206\u88C2\u9B54\u6CD5\u7684\u5A01\u529B\uFF01"
+  - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
+    line: "\u5C31\u51ED\u4F60\u4EEC\uFF1F\u4E00\u4E2A\u54ED\u54ED\u557C\u557C\u7684\u5973\u795E\u3001\u4E00\u4E2A\u653E\u5B8C\u9B54\u6CD5\u5C31\u5012\u7684\u6CD5\u5E08\u3001\u4E00\u4E2A\u6253\u4E0D\u4E2D\u7684\u9A91\u58EB\uFF1F"
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: "\u4F60\u3001\u4F60\u8BF4\u4EC0\u4E48\uFF01\u6211\u8981\u8BA9\u4F60\u89C1\u8BC6\u9A91\u58EB\u7684\u8363\u8000\uFF01"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u5168\u5458\u51C6\u5907\u6218\u6597\uFF01"
+  dialogueOptions:
+  - optionText: "[\u5F00\u6218\uFF01]"
+    nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 0}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests:
+  - {fileID: 11400000, guid: 2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e, type: 2}
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies:
+    - enemyPrefab: {fileID: 7376836435337527455, guid: b99e4130abe266949b962cf58e871a2d, type: 3}
+      spawnPosition: {x: 0, y: 0}
+      count: 3
+      spawnSpacing: 0
+      isMainEnemy: 0
+    - enemyPrefab: {fileID: 3825666443612976404, guid: 4e29d79b23b212a4f872122cd1cf2a1c, type: 3}
+      spawnPosition: {x: 0, y: 0}
+      count: 1
+      spawnSpacing: 0
+      isMainEnemy: 1
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 11400000, guid: c9d0e1f2a3b4c5d6a7b8c9d0e1f2a3b4, type: 2}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 11400000, guid: d0e1f2a3b4c5d6a7b8c9d0e1f2a3b4c5, type: 2}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

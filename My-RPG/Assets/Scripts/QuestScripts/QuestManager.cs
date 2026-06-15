@@ -7,13 +7,48 @@ public class QuestManager : MonoBehaviour
 {
     private Dictionary<QuestSO,Dictionary<QuestObjective,int>> questProgress = new Dictionary<QuestSO, Dictionary<QuestObjective, int>>(); //任务进度数据结构
     private List<QuestSO> completedQuests = new List<QuestSO>(); //已完成任务列表
+    
+    [Header("Main Quest Settings")]
+    [SerializeField] private QuestSO initialMainQuest; //初始主线任务（第一章）
+    private bool mainQuestInitialized = false; //主线任务是否已初始化
+
     public void OnEnable() //当脚本启用时
     {
         QuestEvents.IsQuestComplete += IsQuestComplete; //订阅任务完成检查事件
+        QuestEvents.OnQuestCompleted += OnQuestCompletedHandler; //订阅任务完成事件
     }
     public void OnDisable()
     {
         QuestEvents.IsQuestComplete -= IsQuestComplete; //取消订阅任务完成检查事件
+        QuestEvents.OnQuestCompleted -= OnQuestCompletedHandler; //取消订阅任务完成事件
+    }
+    
+    private void Start()
+    {
+        InitializeMainQuest(); //初始化主线任务
+    }
+    
+    private void InitializeMainQuest() //初始化主线任务
+    {
+        if (initialMainQuest != null && !mainQuestInitialized) //如果有初始主线任务且未初始化
+        {
+            AcceptQuest(initialMainQuest); //自动接受第一章主线任务
+            mainQuestInitialized = true; //标记已初始化
+            Debug.Log("Auto-accepted main quest: " + initialMainQuest.questName);
+        }
+    }
+    
+    private void OnQuestCompletedHandler(QuestSO completedQuest) //任务完成事件处理
+    {
+        if (completedQuest.questType == QuestType.MainQuest && completedQuest.nextChapterQuest != null) //如果是主线任务且有下一章任务
+        {
+            QuestSO nextQuest = completedQuest.nextChapterQuest; //获取下一章任务
+            if (!IsQuestAccepted(nextQuest) && !GetCompleteQuest(nextQuest)) //如果下一章任务未被接受且未完成
+            {
+                QuestEvents.OnQuestofferRequested?.Invoke(nextQuest); //自动提供下一章任务
+                Debug.Log("Auto-offering next chapter quest: " + nextQuest.questName);
+            }
+        }
     }
     #region  Quest Accept Logic
     public bool IsQuestAccepted(QuestSO questSO) //检查任务是否已接受
@@ -118,6 +153,7 @@ public class QuestManager : MonoBehaviour
         {
             InventoryManager.Instance.AddItem(reward.itemSo, reward.amount); //给予奖励物品
         }
+        QuestEvents.OnQuestCompleted?.Invoke(questSO); //触发任务完成事件
     }
     public bool GetCompleteQuest(QuestSO questSO) //检查任务是否已完成
     {

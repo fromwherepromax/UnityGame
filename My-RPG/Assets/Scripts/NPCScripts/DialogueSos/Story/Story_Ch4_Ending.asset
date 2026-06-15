@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Story_Ch4_Ending
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 太好了！魔王投降了！世界和平了！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 虽然过程一言难尽...但总算是结束了。
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 等等！我因为犯了太多错，天界把我除名了！我回不去了！
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: ...你这是要赖在我身边一辈子？
+  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+    line: 嘿嘿~你不是说要带我一起走吗？这就是命运的安排~
+  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+    line: 以后我会继续用爆裂魔法守护这个世界的！每天一发！
+  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+    line: 我会成为王国最强的骑士！虽然现在还是打不中...
+  - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
+    line: 我...我能继续在家看漫画吗？
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: 这就是我的冒险队伍——一个废柴女神、一个爆裂狂、一个被虐骑士、一个社恐魔王。虽然都是问题儿童...但这就是我们的故事。
+  dialogueOptions:
+  - optionText: "[冒险继续...]"
+    nextDialogue: {fileID: 0}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}

@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public UIManager uiManager; //UI管理器引用
     public DialogueManager dialogueManager; //对话管理器引用
     public DialogueHistoryTracker dialogueHistoryTracker; //对话历史记录器引用
     public LocationHistoryTracker locationHistoryTracker; //地点历史记录器引用
     public QuestManager questManager; //任务管理器引用
     public MusicManager musicManager; //音乐管理器引用
     public SettingManager settingManager; //设置管理器引用
+    public BattleManager battleManager; //战斗管理器引用
 
    [Header("Persistent Objects")]
    public GameObject[] persistentObjects;

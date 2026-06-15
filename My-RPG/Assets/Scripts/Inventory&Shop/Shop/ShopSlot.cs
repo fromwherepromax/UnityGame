@@ -27,6 +27,7 @@ public class ShopSlot : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,I
     }
     public void OnBuyButtonClicked()
     {
+       MusicManager.Instance?.PlayClick();
        shopManager.TryBuyItem(itemSo, price);
     }
 
