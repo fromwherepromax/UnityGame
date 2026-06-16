@@ -9,11 +9,11 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("【PlayerInteraction】你按下了E键！");
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             // 使用 OverlapCircle 检测玩家周围一圈的所有碰撞体
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, interactRange);
@@ -25,7 +25,7 @@ public class PlayerInteraction : MonoBehaviour
                 hitCollider.gameObject.SendMessage("Interact", SendMessageOptions.DontRequireReceiver);
             }
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             // 检查一下检测范围
             Debug.Log("你按了E，检测范围是: " + interactRange);
