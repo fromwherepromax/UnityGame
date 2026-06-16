@@ -45,7 +45,7 @@ MonoBehaviour:
   battleEncounter:
     enemies:
     - enemyPrefab: {fileID: 7376836435337527455, guid: b99e4130abe266949b962cf58e871a2d, type: 3}
-      spawnPosition: {x: 0, y: 0}
+      spawnPosition: {x: -3, y: -23.4}
       count: 3
       spawnSpacing: 0
       isMainEnemy: 0

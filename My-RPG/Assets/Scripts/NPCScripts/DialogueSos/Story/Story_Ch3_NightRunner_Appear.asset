@@ -45,12 +45,12 @@ MonoBehaviour:
   battleEncounter:
     enemies:
     - enemyPrefab: {fileID: 7376836435337527455, guid: b99e4130abe266949b962cf58e871a2d, type: 3}
-      spawnPosition: {x: 0, y: 0}
+      spawnPosition: {x: 5.6, y: -25}
       count: 3
       spawnSpacing: 0
       isMainEnemy: 0
     - enemyPrefab: {fileID: 3825666443612976404, guid: 4e29d79b23b212a4f872122cd1cf2a1c, type: 3}
-      spawnPosition: {x: 0, y: 0}
+      spawnPosition: {x: 5.6, y: -25}
       count: 1
       spawnSpacing: 0
       isMainEnemy: 1
