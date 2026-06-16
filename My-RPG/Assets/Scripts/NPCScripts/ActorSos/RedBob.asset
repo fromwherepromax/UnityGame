@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RedBob
   m_EditorClassIdentifier: 
   actorName: RedBob
-  portrait: {fileID: -1415411809, guid: 346fc9cb3252e714cb1b6fe9b97f73dd, type: 3}
+  portrait: {fileID: -1415411809, guid: fed023d5f6a5dcb4989610281ec6245b, type: 3}
   dialogues: []

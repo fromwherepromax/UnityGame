@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PurpleBob
   m_EditorClassIdentifier: 
   actorName: PurpleBob
-  portrait: {fileID: -994593986, guid: c1358ca2f67cfab41aa7c4670bb18c1f, type: 3}
+  portrait: {fileID: -994593986, guid: 1398ebad3bef5fb4e81e86b7740bac68, type: 3}
   dialogues: []

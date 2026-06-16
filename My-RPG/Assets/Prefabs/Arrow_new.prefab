@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1770702313, guid: ae52090395309614eb7a1b0481b78634, type: 3}
+  m_Sprite: {fileID: 1770702313, guid: 9cf8a2cdf7a82c14fbdc4cede953d69a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -186,4 +186,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   sr: {fileID: 3267885936550034474}
-  burnedSprite: {fileID: 0}
+  burnedSprite: {fileID: -1605243624, guid: 9cf8a2cdf7a82c14fbdc4cede953d69a, type: 3}

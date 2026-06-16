@@ -690,7 +690,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1188688010, guid: 3eb4704986ca82e418b1719b84f4c46b, type: 3}
+  m_Sprite: {fileID: -1188688010, guid: 2b8e16c4d11968b4082039e57a16f1a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5038,7 +5038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSprites:
-  - {fileID: 21300000, guid: 2334fa2b3b6b3492281b0993c123cfac, type: 3}
+  - {fileID: 21300000, guid: ee6b934f068f644c1a3b9333862df010, type: 3}
   - {fileID: 21300000, guid: 8fd2d0449599e4f7a9a1f1f170b6a2b0, type: 3}
   - {fileID: 21300000, guid: f846c6072ceb0445bbcb59c41b57a5cb, type: 3}
   - {fileID: 21300000, guid: 46fe4a83a5f9d46b8852dad0d6ddf0c4, type: 3}
@@ -9381,7 +9381,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &743741797
@@ -9644,7 +9644,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1462803664, guid: 84a7345dad24fc3468c29f3935cc4cc9, type: 3}
+  m_Sprite: {fileID: 1462803664, guid: 92b1d0f0863084f4785561574c2e521f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15298,6 +15298,7 @@ MonoBehaviour:
   shopPanel: {fileID: 953771478}
   dialoguePanel: {fileID: 740902294}
   questLogKey: 106
+  statsKey: 99
 --- !u!1 &1257132860
 GameObject:
   m_ObjectHideFlags: 0
@@ -19742,7 +19743,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1415411809, guid: 346fc9cb3252e714cb1b6fe9b97f73dd, type: 3}
+  m_Sprite: {fileID: -1415411809, guid: fed023d5f6a5dcb4989610281ec6245b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20257,12 +20258,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1492717535, guid: a107c653fab8b2343ba9721c0a41fc27, type: 3}
+  m_Sprite: {fileID: 1492717535, guid: 5cb6f03bd0832ce4db0a46542d6da7da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.92, y: 1.92}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Exp
   itemDescription: great
-  itemIcon: {fileID: 21300000, guid: 9dcff87032ab1ea4ba20b5f2d36d6d1b, type: 3}
+  itemIcon: {fileID: 21300000, guid: e3fec0857f94f7e43900b7875271ef4d, type: 3}
   isGold: 0
   isExp: 1
   stackSize: 10
@@ -22,4 +22,7 @@ MonoBehaviour:
   maxHealth: 0
   speed: 0
   damage: 0
+  arrowDamage: 0
+  explosionDamage: 0
+  healAmount: 0
   duration: 0

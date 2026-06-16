@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlueBob
   m_EditorClassIdentifier: 
   actorName: BlueBob
-  portrait: {fileID: -1188688010, guid: 3eb4704986ca82e418b1719b84f4c46b, type: 3}
+  portrait: {fileID: -1188688010, guid: 2b8e16c4d11968b4082039e57a16f1a7, type: 3}
   dialogues: []

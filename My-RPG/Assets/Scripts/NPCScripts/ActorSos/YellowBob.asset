@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: YellowBob
   m_EditorClassIdentifier: 
   actorName: YellowBob
-  portrait: {fileID: 1462803664, guid: 84a7345dad24fc3468c29f3935cc4cc9, type: 3}
+  portrait: {fileID: 1462803664, guid: 92b1d0f0863084f4785561574c2e521f, type: 3}
   dialogues: []

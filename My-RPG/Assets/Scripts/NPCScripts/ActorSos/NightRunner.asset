@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NightRunner
   m_EditorClassIdentifier: 
   actorName: NightRunner
-  portrait: {fileID: -1645922107, guid: 13db7f7876b09614bb13430f0f73a12c, type: 3}
+  portrait: {fileID: 7384290322352760091, guid: 63555c658eb534f48acbb1ba682fbec3, type: 3}
   dialogues: []
