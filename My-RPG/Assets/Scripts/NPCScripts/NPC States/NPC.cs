@@ -10,8 +10,12 @@ public class NPC : MonoBehaviour
     public NPC_Patrol patrol;
     public NPC_Wander wander;
     public NPC_Talk talk;
+    private Rigidbody2D rb;
+    private Animator anim;
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
         defaultState = currentState; //记录初始状态
         SwitchState(currentState); //根据初始状态启用对应的行为
     }
@@ -22,6 +26,13 @@ public class NPC : MonoBehaviour
         patrol.enabled = (currentState == NPCState.Patrol);
         wander.enabled = (currentState == NPCState.Wander);
         talk.enabled = (currentState == NPCState.Talk);
+
+        // 当切换到 Idle 或 Default 状态时，停止移动并播放 Idle 动画
+        if (currentState == NPCState.Idle || currentState == NPCState.Default)
+        {
+            if (rb != null) rb.velocity = Vector2.zero;
+            if (anim != null) anim.Play("Idle");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision) //当玩家进入NPC的触发范围时，切换到交互状态

@@ -23,6 +23,11 @@ public class NPC_Wander : MonoBehaviour
     {
         StartCoroutine(WanderRoutine()); //启用时开始漫游
     }
+    private void OnDisable()
+    {
+        StopAllCoroutines(); //禁用时停止所有协程
+        if (rb != null) rb.velocity = Vector2.zero; //禁用时停止移动
+    }
     private void Update()
     {   
         if (isWaiting)

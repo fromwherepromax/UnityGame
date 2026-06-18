@@ -20,7 +20,11 @@ public class NPC_Patrol : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         StartCoroutine(SetPatrolPoint());
     }
-
+    private void OnDisable()
+    {
+        StopAllCoroutines(); //禁用时停止所有协程
+        if (rb != null) rb.velocity = Vector2.zero; //禁用时停止移动
+    }
     void Update()
     {   
         if (isWaiting)
