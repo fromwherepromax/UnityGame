@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 758030df16788654298c07011fdb86da, type: 3}
-  m_Name: BlackArcher
+  m_Name: Black_lyfgz
   m_EditorClassIdentifier: 
-  actorName: lyf
-  portrait: {fileID: 7257567913506708742, guid: 2a0fcb2f11a4d496d9d10417bc8e1ab1, type: 3}
+  actorName: lyfgz
+  portrait: {fileID: -5948806968594788206, guid: f06e2727e33304d9d86114733c00ba84, type: 3}
   dialogues: []

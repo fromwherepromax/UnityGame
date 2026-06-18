@@ -14,24 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 就是现在！
+    line: "\u5C31\u662F\u73B0\u5728\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
-    line: 什么？！我居然被治愈术吸引了注意力...可恶！
+    line: "\u4EC0\u4E48\uFF1F\uFF01man! \u6211\u5C45\u7136\u88AB\u6CBB\u6108\u672F\u5438\u5F15\u4E86\u6CE8\u610F\u529B...\u53EF\u6076\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 你中计了！
+    line: "\u4F60\u4E2D\u8BA1\u4E86\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
-    line: 咳咳...没想到...我居然会输给这样的队伍...我...不甘心...
+    line: "\u54B3\u54B3...\u6CA1\u60F3\u5230...\u6211\u5C45\u7136\u4F1A\u8F93\u7ED9\u8FD9\u6837\u7684\u961F\u4F0D...\u6211...\u4E0D\u7518\u5FC3..."
   - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 我们...赢了？真的赢了？！
+    line: "\u6211\u4EEC...\u8D62\u4E86\uFF1F\u771F\u7684\u8D62\u4E86\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
-    line: 哼！这就是爆裂魔法...呃，虽然这次没起到什么作用...
+    line: "\u54FC\uFF01\u8FD9\u5C31\u662F\u7206\u88C2\u9B54\u6CD5...\u5443\uFF0C\u867D\u7136\u8FD9\u6B21\u6CA1\u8D77\u5230\u4EC0\u4E48\u4F5C\u7528..."
   - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
-    line: 我的骑士突击也...呃...总之我们赢了！
+    line: "\u6211\u7684\u9A91\u58EB\u7A81\u51FB\u4E5F...\u5443...\u603B\u4E4B\u6211\u4EEC\u8D62\u4E86\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: ...你们真的什么忙都没帮上啊。
+    line: "...\u4F60\u4EEC\u771F\u7684\u4EC0\u4E48\u5FD9\u90FD\u6CA1\u5E2E\u4E0A\u554A\u3002\u8FD8\u51C0\u6DFB\u4E71\uFF01"
   dialogueOptions:
-  - optionText: 继续前进，讨伐魔王！
+  - optionText: "\u7EE7\u7EED\u524D\u8FDB\uFF0C\u8BA8\u4F10\u9B54\u738B\uFF01"
     nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 0}
   requiredNPC: []
   requiredLocations: []
   requiredItems: []
@@ -40,3 +41,11 @@ MonoBehaviour:
   offerQuestOnEnd: {fileID: 0}
   requireCompleteQuests: []
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}
