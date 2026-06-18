@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Blue_Lancer_go
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 48475a8b033ffdd44aa53d42f411b89d, type: 2}
+    line: "\u5582\uFF01\u5C0F\u5B50\u3002\u8FD9\u91CC\u662F\u5371\u9669\u7684\u77FF\u6D1E\u4F20\u9001\uFF0C\u975E\u5FC5\u8981\u4E0D\u8981\u63A5\u8FD1\u3002"
+  - speaker: {fileID: 11400000, guid: 48475a8b033ffdd44aa53d42f411b89d, type: 2}
+    line: "\u53EA\u6709\u50CF\u6211\u4EEC\u8FD9\u6837\u7684\uFF0C\u624D\u6709\u5B9E\u529B\u8FDB\u53BB\u3002\u54C8\u54C8\u54C8\u54C8"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u3002"
+  - speaker: {fileID: 11400000, guid: 007cce4cfd24da447ad9f1351a6f8d9a, type: 2}
+    line: "\u7ED9\u94B1\u4E5F\u662F\u53EF\u4EE5\u7684\u54E6\uFF0C\u563F\u563F\u563F"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u54E6\uFF1F"
+  dialogueOptions: []
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 0
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}
