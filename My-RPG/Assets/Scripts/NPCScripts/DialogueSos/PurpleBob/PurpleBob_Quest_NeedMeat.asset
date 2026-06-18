@@ -21,3 +21,14 @@ MonoBehaviour:
   requiredItems: []
   removeAfterPlay: 0
   removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 11400000, guid: 5a30799f186a1bf4dad47431d5a203fc, type: 2}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}
