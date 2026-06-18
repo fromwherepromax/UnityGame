@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: BlackSimple_greeting
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: fe8d780e0099acb4aa0d60e28d1106b7, type: 2}
+    line: "\u5411\u7740\u661F\u8FB0\u4E0E......"
+  - speaker: {fileID: 11400000, guid: fe8d780e0099acb4aa0d60e28d1106b7, type: 2}
+    line: "\u6B22\u8FCE\u6765\u5230\u5192......"
+  dialogueOptions: []
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 0
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}
