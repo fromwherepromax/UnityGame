@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.XR;
 
 public class QuestLogUI : MonoBehaviour
 {   
@@ -140,6 +139,8 @@ public class QuestLogUI : MonoBehaviour
     private void SetCanvasState(CanvasGroup canvasGroup, bool state) //设置子界面状态
     {
         if (canvasGroup == null) return;
+        // 强制更新布局，避免 "BeginLayoutGroup must be called first" 错误
+        Canvas.ForceUpdateCanvases();
         canvasGroup.alpha = state ? 1 : 0; //根据状态设置界面透明度
         canvasGroup.interactable = state; //根据状态设置界面交互
         canvasGroup.blocksRaycasts = state; //根据状态设置界面射线检测
