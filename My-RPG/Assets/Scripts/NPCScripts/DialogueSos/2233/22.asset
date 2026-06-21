@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: 22
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u8BF7\u95EE\uFF0C\u4F60\u662F22\u5417"
+  - speaker: {fileID: 11400000, guid: e9ed000e9f1897a4890c1c3de4198385, type: 2}
+    line: "\u55EF\uFF0C\u4F60\u662F\uFF1F"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u4F60\u7684\u59B9\u59B933\u548C\u4F60\u8D70\u6563\u4E86\uFF0C\u59D4\u6258\u6211\u6765\u627E\u4F60"
+  - speaker: {fileID: 11400000, guid: e9ed000e9f1897a4890c1c3de4198385, type: 2}
+    line: "\u554A\uFF1F\u6CA1\u6CE8\u610F\u7ADF\u7136\u628A\u59B9\u59B9\u4E22\u4E86\uFF01"
+  - speaker: {fileID: 11400000, guid: e9ed000e9f1897a4890c1c3de4198385, type: 2}
+    line: "\u8C22\u8C22\u4F60\u4E86"
+  dialogueOptions: []
+  requiredNPC:
+  - {fileID: 11400000, guid: d172d2b4617666649943496a6dfc3b3a, type: 2}
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

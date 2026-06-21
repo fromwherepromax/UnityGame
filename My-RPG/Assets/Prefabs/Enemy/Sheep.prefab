@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dbfe7660dcd6ac469c608559e136aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 10
-  maxHealth: 10
+  currentHealth: 5
+  maxHealth: 5
   hitFlashDuration: 0.1
-  expReward: 3
+  expReward: 1
   regenAmount: 0
   regenInterval: 0
   regenDelay: 100
@@ -297,6 +297,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  wanderRadius: 3
+  wanderSpeed: 1
+  wanderWaitTime: 5
+  showWanderRange: 1
+  wanderRangeColor: {r: 0, g: 1, b: 0, a: 0.5}
 --- !u!1 &6064936298570920594
 GameObject:
   m_ObjectHideFlags: 0
