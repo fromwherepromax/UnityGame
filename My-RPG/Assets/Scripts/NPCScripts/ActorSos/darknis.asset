@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: darknis
   m_EditorClassIdentifier: 
   actorName: darknis
-  portrait: {fileID: -5948806968594788206, guid: 8b6a23df7f30944529516d97c0a97158, type: 3}
+  portrait: {fileID: 1462803664, guid: 92b1d0f0863084f4785561574c2e521f, type: 3}
   dialogues: []

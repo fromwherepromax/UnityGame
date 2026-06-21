@@ -19,7 +19,7 @@ MonoBehaviour:
   nextChapterQuest: {fileID: 0}
   objectives:
   - description: "\u8FDB\u5165\u9B54\u738B\u57CE"
-    target: {fileID: 11400000, guid: f57fe6d3bad7c174d8ee38020eb40324, type: 2}
+    target: {fileID: 11400000, guid: 1c43226148c8c8c419946451deeca467, type: 2}
     requiredAmount: 1
   - description: "\u4E0E\u9B54\u738B\u7D2B\u53D1Bob\u5BF9\u8BDD"
     target: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
@@ -29,3 +29,9 @@ MonoBehaviour:
     amount: 500
   - itemSo: {fileID: 11400000, guid: 024cc61549536824da5f66fc0cf15c17, type: 2}
     amount: 1000
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: akuya
   m_EditorClassIdentifier: 
   actorName: akuya
-  portrait: {fileID: -5948806968594788206, guid: 4c87a6310f87c47f1b785669e6191f00, type: 3}
+  portrait: {fileID: -1188688010, guid: 2b8e16c4d11968b4082039e57a16f1a7, type: 3}
   dialogues: []
