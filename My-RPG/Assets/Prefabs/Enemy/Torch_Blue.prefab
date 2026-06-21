@@ -313,6 +313,11 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  wanderRadius: 3
+  wanderSpeed: 1
+  wanderWaitTime: 33
+  showWanderRange: 0
+  wanderRangeColor: {r: 0, g: 1, b: 0, a: 0.5}
 --- !u!114 &663819734856179743
 MonoBehaviour:
   m_ObjectHideFlags: 0

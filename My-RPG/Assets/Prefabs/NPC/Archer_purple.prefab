@@ -276,7 +276,7 @@ MonoBehaviour:
   wanderWith: 5
   wanderHeight: 5
   startPosition: {x: -8.1, y: 0.85}
-  WaitingInterval: 1.5
+  WaitingInterval: 3
   speed: 1
   target: {x: 0, y: 0}
 --- !u!114 &1551880558410818071
