@@ -19,13 +19,13 @@ MonoBehaviour:
     line: "\u4F60\u662F\u8C01\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
     line: "\u6211\u4E43\u9B54\u738B\u519B\u56DB\u5929\u738B\u4E4B\u4E00\u2014\u2014\u6697\u591C\u884C\u8005\xB7NightRunner\uFF01\u5949\u9B54\u738B\u4E4B\u547D\uFF0C\u524D\u6765\u6D88\u706D\u4F60\u4EEC\uFF01"
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u9B54\u3001\u9B54\u738B\u519B\uFF1F\uFF01\u5B8C\u4E86\u5B8C\u4E86\u5B8C\u4E86\uFF01\u6211\u4EEC\u6B7B\u5B9A\u4E86\uFF01"
-  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+  - speaker: {fileID: 11400000, guid: 6294632fcfe225249ac5a8d248827d1b, type: 2}
     line: "\u7EC8\u4E8E\u6765\u4E86\u5417...\u90AA\u6076\u7684\u5B58\u5728\uFF01\u5C31\u8BA9\u4F60\u89C1\u8BC6\u4E00\u4E0B\u7206\u88C2\u9B54\u6CD5\u7684\u5A01\u529B\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
     line: "\u5C31\u51ED\u4F60\u4EEC\uFF1F\u4E00\u4E2A\u54ED\u54ED\u557C\u557C\u7684\u5973\u795E\u3001\u4E00\u4E2A\u653E\u5B8C\u9B54\u6CD5\u5C31\u5012\u7684\u6CD5\u5E08\u3001\u4E00\u4E2A\u6253\u4E0D\u4E2D\u7684\u9A91\u58EB\uFF1F"
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
     line: "\u4F60\u3001\u4F60\u8BF4\u4EC0\u4E48\uFF01\u6211\u8981\u8BA9\u4F60\u89C1\u8BC6\u9A91\u58EB\u7684\u8363\u8000\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u5168\u5458\u51C6\u5907\u6218\u6597\uFF01"

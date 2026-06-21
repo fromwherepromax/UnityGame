@@ -13,19 +13,21 @@ MonoBehaviour:
   m_Name: Story_Ch1_BlueBob_Curse
   m_EditorClassIdentifier: 
   dialogueLines:
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 哦~最强的武器啊？没问题，给你！
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
+    line: "\u54E6~\u6700\u5F3A\u7684\u6B66\u5668\u554A\uFF1F\u6CA1\u95EE\u9898\uFF0C\u7ED9\u4F60\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 这...这不是一根树枝吗？！
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 哈哈哈！被骗了！这可是女神的恶作剧~ 作为惩罚，我还要附赠你一个诅咒！
+    line: "\u8FD9...\u8FD9\u4E0D\u662F\u4E00\u6839\u6811\u679D\u5417\uFF1F\uFF01"
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
+    line: "\u54C8\u54C8\u54C8\uFF01\u88AB\u9A97\u4E86\uFF01\u8FD9\u53EF\u662F\u5973\u795E\u7684\u6076\u4F5C\u5267~
+      \u4F5C\u4E3A\u60E9\u7F5A\uFF0C\u6211\u8FD8\u8981\u9644\u8D60\u4F60\u4E00\u4E2A\u8BC5\u5492\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 什么诅咒？！
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 从今天起，你每次见到青蛙都会被吓得尖叫！哈哈哈哈哈！
+    line: "\u4EC0\u4E48\u8BC5\u5492\uFF1F\uFF01"
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
+    line: "\u4ECE\u4ECA\u5929\u8D77\uFF0C\u4F60\u6BCF\u6B21\u89C1\u5230\u9752\u86D9\u90FD\u4F1A\u88AB\u5413\u5F97\u5C16\u53EB\uFF01\u54C8\u54C8\u54C8\u54C8\u54C8\uFF01"
   dialogueOptions:
-  - optionText: "[传送开始]"
+  - optionText: "[\u4F20\u9001\u5F00\u59CB]"
     nextDialogue: {fileID: 11400000, guid: a3b4c5d6a7b8c9d0e1f2a3b4c5d6a7b8, type: 2}
+    offerQuest: {fileID: 0}
   requiredNPC: []
   requiredLocations: []
   requiredItems: []
@@ -34,3 +36,11 @@ MonoBehaviour:
   offerQuestOnEnd: {fileID: 0}
   requireCompleteQuests: []
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

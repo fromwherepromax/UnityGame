@@ -14,24 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 这里就是魔王城？怎么...看起来像个小图书馆？
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 好多漫画书...还有手办？！
+    line: "\u8FD9\u91CC\u5C31\u662F\u9B54\u738B\u57CE\uFF1F\u600E\u4E48...\u770B\u8D77\u6765\u50CF\u4E2A\u5C0F\u56FE\u4E66\u9986\uFF1F"
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
+    line: "\u597D\u591A\u6F2B\u753B\u4E66...\u8FD8\u6709\u624B\u529E\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 啊啊啊啊！！你们是谁？！为什么闯进我的房间！
+    line: "\u554A\u554A\u554A\u554A\uFF01\uFF01\u4F60\u4EEC\u662F\u8C01\uFF1F\uFF01\u4E3A\u4EC0\u4E48\u95EF\u8FDB\u6211\u7684\u623F\u95F4\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: 你就是魔王？怎么看起来...
+    line: "\u4F60\u5C31\u662F\u9B54\u738B\uFF1F\u600E\u4E48\u770B\u8D77\u6765..."
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 不、不要看我！我社恐！你们快出去！
-  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
-    line: 这就是魔王？我还以为是个可怕的大恶魔呢...
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
-    line: 魔王！接受我的挑战！
+    line: "\u4E0D\u3001\u4E0D\u8981\u770B\u6211\uFF01\u6211\u793E\u6050\uFF01\u4F60\u4EEC\u5FEB\u51FA\u53BB\uFF01"
+  - speaker: {fileID: 11400000, guid: 6294632fcfe225249ac5a8d248827d1b, type: 2}
+    line: "\u8FD9\u5C31\u662F\u9B54\u738B\uFF1F\u6211\u8FD8\u4EE5\u4E3A\u662F\u4E2A\u53EF\u6015\u7684\u5927\u6076\u9B54\u5462..."
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
+    line: "\u9B54\u738B\uFF01\u63A5\u53D7\u6211\u7684\u6311\u6218\uFF01"
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 等等等等！我不想打架！其实...其实我根本不想当魔王啊！
+    line: "\u7B49\u7B49\u7B49\u7B49\uFF01\u6211\u4E0D\u60F3\u6253\u67B6\uFF01\u5176\u5B9E...\u5176\u5B9E\u6211\u6839\u672C\u4E0D\u60F3\u5F53\u9B54\u738B\u554A\uFF01"
   dialogueOptions:
-  - optionText: 什么？！
+  - optionText: "\u4EC0\u4E48\uFF1F\uFF01"
     nextDialogue: {fileID: 11400000, guid: f2a3b4c5d6a7b8c9d0e1f2a3b4c5d6a7, type: 2}
+    offerQuest: {fileID: 0}
   requiredNPC: []
   requiredLocations: []
   requiredItems: []
@@ -41,3 +42,11 @@ MonoBehaviour:
   requireCompleteQuests:
   - {fileID: 11400000, guid: 3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f, type: 2}
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

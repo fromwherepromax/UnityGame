@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Story_Ch2_YellowBob_Rescue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u7B49\u7B49\uFF01\u4F60\u4EEC\u542C\u5230\u4E86\u5417\uFF1F\u6709\u4EBA\u5728\u558A\u6551\u547D\uFF01"
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
     line: "\u6551...\u6551\u547D\u554A\uFF01\u6709\u8C01\u6765\u6551\u6551\u6211\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u90A3\u8FB9\uFF01\u6709\u4E2A\u9A91\u58EB\u88AB\u54E5\u5E03\u6797\u56F4\u4F4F\u4E86\uFF01"
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
     line: "\u54FC\uFF01\u6765\u5427\uFF01\u4F60\u4EEC\u8FD9\u4E9B\u5C0F\u602A\u7269\uFF01\u6211\u53EF\u662F\u738B\u56FD\u9A91\u58EB\xB7\u9EC4\u53D1Bob\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u5979\u5728\u6325\u5251...\u4F46\u662F\u5B8C\u5168\u6253\u4E0D\u4E2D\u554A\uFF1F"
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u4E0D\u4EC5\u6253\u4E0D\u4E2D\uFF0C\u5979\u597D\u50CF\u8FD8\u5728\u7B11\uFF1F\u88AB\u54E5\u5E03\u6797\u6253\u4E86\u8FD8\u8138\u7EA2\uFF1F\uFF01"
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
     line: "\u554A...\u88AB\u8FD9\u6837\u56F4\u653B...\u597D\u3001\u597D\u7F9E\u803B...\u4F46\u662F...\u597D\u5174\u594B..."
   dialogueOptions:
   - optionText: "\u6551\u5979\uFF01"

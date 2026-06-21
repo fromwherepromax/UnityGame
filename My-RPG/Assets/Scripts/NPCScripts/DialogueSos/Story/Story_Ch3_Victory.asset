@@ -21,11 +21,11 @@ MonoBehaviour:
     line: "\u4F60\u4E2D\u8BA1\u4E86\uFF01"
   - speaker: {fileID: 11400000, guid: 7aadde4735a01f445883d832e772c293, type: 2}
     line: "\u54B3\u54B3...\u6CA1\u60F3\u5230...\u6211\u5C45\u7136\u4F1A\u8F93\u7ED9\u8FD9\u6837\u7684\u961F\u4F0D...\u6211...\u4E0D\u7518\u5FC3..."
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u6211\u4EEC...\u8D62\u4E86\uFF1F\u771F\u7684\u8D62\u4E86\uFF1F\uFF01"
-  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
+  - speaker: {fileID: 11400000, guid: 6294632fcfe225249ac5a8d248827d1b, type: 2}
     line: "\u54FC\uFF01\u8FD9\u5C31\u662F\u7206\u88C2\u9B54\u6CD5...\u5443\uFF0C\u867D\u7136\u8FD9\u6B21\u6CA1\u8D77\u5230\u4EC0\u4E48\u4F5C\u7528..."
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
     line: "\u6211\u7684\u9A91\u58EB\u7A81\u51FB\u4E5F...\u5443...\u603B\u4E4B\u6211\u4EEC\u8D62\u4E86\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "...\u4F60\u4EEC\u771F\u7684\u4EC0\u4E48\u5FD9\u90FD\u6CA1\u5E2E\u4E0A\u554A\u3002\u8FD8\u51C0\u6DFB\u4E71\uFF01"

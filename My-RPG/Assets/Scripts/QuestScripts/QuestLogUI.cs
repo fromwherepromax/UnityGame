@@ -36,6 +36,9 @@ public class QuestLogUI : MonoBehaviour
 
     public void ShowQuestOffer(QuestSO incomingQuest) //显示任务提供界面
     {   
+        Debug.Log("[QuestLogUI] ShowQuestOffer called for: " + incomingQuest.questName);
+        Debug.Log("[QuestLogUI] IsQuestAccepted: " + questManager.IsQuestAccepted(incomingQuest) + ", GetCompleteQuest: " + questManager.GetCompleteQuest(incomingQuest));
+        
         if(questManager.GetCompleteQuest(incomingQuest)) //如果任务已经完成
         {
             questSo=noAvailableQuest; //显示没有可用任务的默认数据
@@ -87,23 +90,26 @@ public class QuestLogUI : MonoBehaviour
     {
         if (questSo == null || questSo == noAvailableQuest)
         {
+            Debug.LogWarning("[QuestLogUI] OnAcceptQuestClick: questSo is null or noAvailableQuest, ignoring.");
             return;
         }
 
+        Debug.Log("[QuestLogUI] Accepting quest: " + questSo.questName);
         questManager.AcceptQuest(questSo); //接受当前任务
         QuestEvents.OnQuestAccepted?.Invoke(questSo); //触发任务被接受事件
 
+        RefreshQuestList(); //刷新任务列表
+
         if (questManager.IsQuestComplete(questSo))
         {
-            RefreshQuestList(); //刷新任务列表
             ShowQuestTurnIn(questSo); //如果任务在接受时已经完成，直接显示交付界面
             return;
         }
 
-        SetCanvasState(acceptCanvas, false); //隐藏任务接受界面
-        SetCanvasState(completeCanvas, false); //隐藏任务完成界面
-        SetCanvasState(declineCanvas, false); //隐藏任务拒绝界面
-        RefreshQuestList(); //刷新任务列表
+        // 接受成功后，隐藏接受/拒绝按钮，显示无任务详情
+        SetCanvasState(acceptCanvas, false);
+        SetCanvasState(completeCanvas, false);
+        SetCanvasState(declineCanvas, false);
         HandleQuestclick(noAvailableQuest); //更新任务详情显示
     }
     public void OnDeclineQuestClick() //当点击拒绝任务按钮时

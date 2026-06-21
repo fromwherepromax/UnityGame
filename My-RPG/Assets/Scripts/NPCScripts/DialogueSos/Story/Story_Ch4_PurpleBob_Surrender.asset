@@ -14,24 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 其实...我是被手下们推上去当魔王的。我本来只是个普通的宅男...
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
-    line: 哈？魔王是个宅男？
+    line: "\u5176\u5B9E...\u6211\u662F\u88AB\u624B\u4E0B\u4EEC\u63A8\u4E0A\u53BB\u5F53\u9B54\u738B\u7684\u3002\u6211\u672C\u6765\u53EA\u662F\u4E2A\u666E\u901A\u7684\u5B85\u7537..."
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
+    line: "\u54C8\uFF1F\u9B54\u738B\u662F\u4E2A\u5B85\u7537\uFF1F"
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 他们说我长得像魔王，就硬把我推上王座了。其实我只想在家看漫画...
-  - speaker: {fileID: 11400000, guid: a89a7957c2f3fb44e91244ece8700098, type: 2}
-    line: 那你为什么要派NightRunner来攻打我们？！
+    line: "\u4ED6\u4EEC\u8BF4\u6211\u957F\u5F97\u50CF\u9B54\u738B\uFF0C\u5C31\u786C\u628A\u6211\u63A8\u4E0A\u738B\u5EA7\u4E86\u3002\u5176\u5B9E\u6211\u53EA\u60F3\u5728\u5BB6\u770B\u6F2B\u753B..."
+  - speaker: {fileID: 11400000, guid: 6294632fcfe225249ac5a8d248827d1b, type: 2}
+    line: "\u90A3\u4F60\u4E3A\u4EC0\u4E48\u8981\u6D3ENightRunner\u6765\u653B\u6253\u6211\u4EEC\uFF1F\uFF01"
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 那是手下们自作主张！我根本不知道！而且...而且你们的队伍太吵了！每天在我城外放爆裂魔法！我都睡不好觉！
-  - speaker: {fileID: 11400000, guid: 2851522d805326f4aaa4bb10b90bc3cd, type: 2}
-    line: 那是红发Bob干的，不是我们...
+    line: "\u90A3\u662F\u624B\u4E0B\u4EEC\u81EA\u4F5C\u4E3B\u5F20\uFF01\u6211\u6839\u672C\u4E0D\u77E5\u9053\uFF01\u800C\u4E14...\u800C\u4E14\u4F60\u4EEC\u7684\u961F\u4F0D\u592A\u5435\u4E86\uFF01\u6BCF\u5929\u5728\u6211\u57CE\u5916\u653E\u7206\u88C2\u9B54\u6CD5\uFF01\u6211\u90FD\u7761\u4E0D\u597D\u89C9\uFF01"
+  - speaker: {fileID: 11400000, guid: bc6c5cbb6dd6e6b47ad95398147cbeb2, type: 2}
+    line: "\u90A3\u662F\u7EA2\u53D1Bob\u5E72\u7684\uFF0C\u4E0D\u662F\u6211\u4EEC..."
   - speaker: {fileID: 11400000, guid: 53eaaa0c8d4d9804dbed9f544f0fe184, type: 2}
-    line: 总之！我投降！我不想当魔王了！请让我加入你们吧！
+    line: "\u603B\u4E4B\uFF01\u6211\u6295\u964D\uFF01\u6211\u4E0D\u60F3\u5F53\u9B54\u738B\u4E86\uFF01\u8BF7\u8BA9\u6211\u52A0\u5165\u4F60\u4EEC\u5427\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
-    line: ...我们队伍已经够奇葩了，再加一个社恐魔王？
+    line: "...\u6211\u4EEC\u961F\u4F0D\u5DF2\u7ECF\u591F\u5947\u8469\u4E86\uFF0C\u518D\u52A0\u4E00\u4E2A\u793E\u6050\u9B54\u738B\uFF1F"
   dialogueOptions:
-  - optionText: 欢迎加入...吧
+  - optionText: "\u6B22\u8FCE\u52A0\u5165...\u5427"
     nextDialogue: {fileID: 11400000, guid: a3b4c5d6a7b8c9d0e1f2a3b4c5d6a7b9, type: 2}
+    offerQuest: {fileID: 0}
   requiredNPC: []
   requiredLocations: []
   requiredItems: []
@@ -40,3 +41,11 @@ MonoBehaviour:
   offerQuestOnEnd: {fileID: 0}
   requireCompleteQuests: []
   turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

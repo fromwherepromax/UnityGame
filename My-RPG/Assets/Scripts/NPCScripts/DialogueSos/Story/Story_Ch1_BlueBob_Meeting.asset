@@ -15,15 +15,15 @@ MonoBehaviour:
   dialogueLines:
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u4F60...\u4F60\u662F\u8C01\uFF1F\u6211\u8FD9\u662F\u5728\u54EA\uFF1F"
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u54C8\uFF1F\u4F60\u8FDE\u6211\u662F\u8C01\u90FD\u4E0D\u77E5\u9053\uFF1F\u6211\u53EF\u662F\u4F1F\u5927\u7684\u5973\u795E\xB7\u84DD\u53D1Bob\uFF01\u638C\u7BA1\u6C34\u5143\u7D20\u7684\u5973\u795E\u5927\u4EBA\uFF01\u53EA\u4E0D\u8FC7\u517C\u804C\u8F6C\u751F\u800C\u5DF2\u3002"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u8F6C\u751F\uFF1F\u7B49\u7B49...\u6211\u8BE5\u4E0D\u4F1A\u662F\u6B7B\u4E86\u5427\uFF1F"
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u54C8!\u54C8\uFF01\u54C8\uFF01\u5E93\u65AF\uFF01\u5E93\u65AF\uFF01\u4F60\u5C45\u7136\u662F\u88AB\u5413\u6B7B\u7684\uFF01\u592A\u4E22\u4EBA\u4E86\u5427\uFF01\u6211\u505A\u4E86\u8FD9\u4E48\u4E45\u5973\u795E\uFF0C\u7B2C\u4E00\u6B21\u89C1\u8FD9\u4E48\u8822\u7684\u6B7B\u6CD5\uFF01"
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u554A\uFF1F\u4F60...\u4F60\u80FD\u4E0D\u80FD\u522B\u7B11\u4E86\uFF01"
-  - speaker: {fileID: 11400000, guid: 0bc5327fda19cdc46b15353e7e4ed256, type: 2}
+  - speaker: {fileID: 11400000, guid: 4a8476c30006b8a4daa49dc578fdb97b, type: 2}
     line: "\u597D\u597D\u597D~ \u4F5C\u4E3A\u8865\u507F\uFF0C\u6211\u53EF\u4EE5\u8BA9\u4F60\u8F6C\u751F\u5230\u5F02\u4E16\u754C\uFF0C\u8FD8\u80FD\u5E26\u4E00\u6837\u4E1C\u897F\u8FC7\u53BB\u54E6~"
   dialogueOptions:
   - optionText: "\u90A3\u6211\u5E26\u4F60\u4E00\u8D77\u8D70\u5427"
