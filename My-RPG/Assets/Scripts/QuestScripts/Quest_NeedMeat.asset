@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Need Meat
   questLevel: 1
-  questDescription: PurpleBob is hungry ,He need one meat
+  questDescription: RedBob is hungry ,He need one meat
+  questType: 1
+  nextChapterQuest: {fileID: 0}
   objectives:
   - description: delicious meat
     target: {fileID: 11400000, guid: 9c5c98f11914f8d41a2cc09473b013d4, type: 2}
@@ -22,3 +24,9 @@ MonoBehaviour:
   rewards:
   - itemSo: {fileID: 11400000, guid: 024cc61549536824da5f66fc0cf15c17, type: 2}
     amount: 7
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}

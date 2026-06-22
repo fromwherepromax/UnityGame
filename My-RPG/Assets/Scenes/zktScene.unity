@@ -22682,7 +22682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8470001019105463374, guid: b17ad5157663ae247baa30d48a6d2112, type: 3}
       propertyPath: m_Name
-      value: Black_simple (1)
+      value: TestKing
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -99051,6 +99051,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red_Bob (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8449394461734990925, guid: 3da06a891a988d3428dee5cb0b79a9b4, type: 3}
+      propertyPath: conversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8449394461734990925, guid: 3da06a891a988d3428dee5cb0b79a9b4, type: 3}
+      propertyPath: conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d3eef573d26fbb4cb99dc69d5062b2f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
