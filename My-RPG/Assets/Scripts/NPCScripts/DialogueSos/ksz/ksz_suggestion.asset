@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: ksz_suggestion
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: b72755be61b263d49ac53c2c280ea5b6, type: 2}
+    line: "\u542C\u8BF4\u4F60\u63A5\u4E0B\u4E86Tsan\u7684\u59D4\u6258"
+  - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
+    line: "\u55EF"
+  - speaker: {fileID: 11400000, guid: b72755be61b263d49ac53c2c280ea5b6, type: 2}
+    line: "\u6211\u529D\u4F60\u4EEC\u5C0F\u5FC3\u4E00\u70B9\uFF0C\u5929\u5357\u68EE\u6797\u5371\u9669\u7684\u5F88\uFF01"
+  dialogueOptions: []
+  requiredNPC:
+  - {fileID: 11400000, guid: 657a184dfbc835042bca13aaebaa3871, type: 2}
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 0
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

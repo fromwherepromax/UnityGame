@@ -7164,7 +7164,7 @@ Tilemap:
       - {fileID: 380509257637482562, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
       - {fileID: -3064062377165886614, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
       - {fileID: 6838556818901843596, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -22, y: -21, z: 0}
@@ -13636,6 +13636,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1853942756}
     m_Modifications:
+    - target: {fileID: 2006217534107853364, guid: cbdf1329a842cc54a8d2739105118c44, type: 3}
+      propertyPath: conversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2006217534107853364, guid: cbdf1329a842cc54a8d2739105118c44, type: 3}
+      propertyPath: conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c3a47792d4784848ae075f6f0085392, type: 2}
     - target: {fileID: 2091593536640491122, guid: cbdf1329a842cc54a8d2739105118c44, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.023336
@@ -100204,7 +100212,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.17960739, y: -0.38915634}
@@ -101405,7 +101413,7 @@ Tilemap:
       - {fileID: -1959448745, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
       - {fileID: -452083483, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
       - {fileID: -1110488421, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
