@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24cb25e8efa32447821db9904202466, type: 3}
+  m_Name: Tsan_NeedSkySouthWood
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speaker: {fileID: 11400000, guid: 657a184dfbc835042bca13aaebaa3871, type: 2}
+    line: "\u8FD9\u4F4D\u5192\u9669\u8005\uFF0C\u6211\u770B\u4F60\u9AA8\u9ABC\u7CBE\u5947\uFF0C\u662F\u4E00\u4E2A\u780D\u6811\u7684\u597D\u80FD\u624B\u554A\u3002"
+  - speaker: {fileID: 11400000, guid: 657a184dfbc835042bca13aaebaa3871, type: 2}
+    line: "\u6211\u4E4B\u524D\u59D4\u6258\u4E86\u4E24\u4F4D\u780D\u6811\u7684\u53BB\u5E2E\u6211\u62FF\u5230\u5929\u5357\u6728\u5934\uFF0C\u5F88\u53EF\u60DC\u5931\u8D25\u4E86\u3002"
+  - speaker: {fileID: 11400000, guid: 657a184dfbc835042bca13aaebaa3871, type: 2}
+    line: "\u8FD9\u4F4D\u52C7\u731B\u7684\u5192\u9669\u5BB6\uFF0C\u4F60\u80FD\u5E2E\u6211\u53BB\u5929\u5357\u780D\u53D6\u5929\u5357\u6728\u5934\u5417\uFF1F"
+  dialogueOptions:
+  - optionText: "\u597D\uFF0C\u6211\u63A5\u4E86"
+    nextDialogue: {fileID: 0}
+    offerQuest: {fileID: 11400000, guid: b08faa8ace115d246871a3d3b1586d93, type: 2}
+  requiredNPC: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 1
+  removeTheseOnPlay: []
+  offerQuestOnEnd: {fileID: 0}
+  requireCompleteQuests: []
+  turnInQuest: {fileID: 0}
+  battleEncounter:
+    enemies: []
+    midBattleDialogueThreshold: 0.5
+    midBattleDialogue: {fileID: 0}
+    midDialogueTriggeredOnce: 1
+    onVictoryDialogue: {fileID: 0}
+  shouldTeleport: 0
+  teleportPosition: {x: 0, y: 0}

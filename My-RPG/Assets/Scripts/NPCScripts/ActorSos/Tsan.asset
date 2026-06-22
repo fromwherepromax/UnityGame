@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 758030df16788654298c07011fdb86da, type: 3}
   m_Name: Tsan
   m_EditorClassIdentifier: 
-  actorName: 
+  actorName: Tsan
   portrait: {fileID: -1438690674706414118, guid: a23df2a1bf8d048148ee28e5d15b9cc6, type: 3}
   dialogues: []

@@ -7164,7 +7164,7 @@ Tilemap:
       - {fileID: 380509257637482562, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
       - {fileID: -3064062377165886614, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
       - {fileID: 6838556818901843596, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -22, y: -21, z: 0}
@@ -7389,7 +7389,7 @@ Tilemap:
       - {fileID: -7682559339364223975, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
       - {fileID: 5621842202643913240, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
       - {fileID: 2164890655306233647, guid: bf6d950136617ae4c9d60e11ff38f2b4, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 27, y: 13, z: 0}
@@ -101391,7 +101391,7 @@ Tilemap:
       - {fileID: -1959448745, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
       - {fileID: -452083483, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
       - {fileID: -1110488421, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 2, y: -20, z: 0}
@@ -101405,7 +101405,7 @@ Tilemap:
       - {fileID: -1959448745, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
       - {fileID: -452083483, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
       - {fileID: -1110488421, guid: 7eeeae0f3d4728d42bb5ba14df9d87b3, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   m_TileAssetArray:
@@ -113109,6 +113109,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7212870567091000757, guid: 8dbe5a2abdce2fc4492c72de246ace29, type: 3}
+      propertyPath: conversations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212870567091000757, guid: 8dbe5a2abdce2fc4492c72de246ace29, type: 3}
+      propertyPath: conversations.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d34c14446596d94e90478eb2fea7ea0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
