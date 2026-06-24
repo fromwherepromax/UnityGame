@@ -283,7 +283,7 @@ MonoBehaviour:
   wanderRadius: 3
   wanderSpeed: 1
   wanderWaitTime: 3
-  showWanderRange: 1
+  showWanderRange: 0
   wanderRangeColor: {r: 0, g: 1, b: 0, a: 0.5}
 --- !u!114 &4752065645700421156
 MonoBehaviour:

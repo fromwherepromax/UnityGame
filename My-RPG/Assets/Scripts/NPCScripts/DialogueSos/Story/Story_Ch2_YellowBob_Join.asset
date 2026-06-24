@@ -33,7 +33,8 @@ MonoBehaviour:
     offerQuest: {fileID: 0}
   requiredNPC:
   - {fileID: 11400000, guid: 6294632fcfe225249ac5a8d248827d1b, type: 2}
-  requiredLocations: []
+  requiredLocations:
+  - {fileID: 11400000, guid: 85f104bf33d75e54c95572ae1172cea7, type: 2}
   requiredItems: []
   removeAfterPlay: 1
   removeTheseOnPlay: []

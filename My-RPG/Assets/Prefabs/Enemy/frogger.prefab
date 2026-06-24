@@ -300,7 +300,7 @@ MonoBehaviour:
   wanderRadius: 3
   wanderSpeed: 1
   wanderWaitTime: 5
-  showWanderRange: 1
+  showWanderRange: 0
   wanderRangeColor: {r: 0, g: 1, b: 0, a: 0.5}
 --- !u!1 &6165014180526080006
 GameObject:
