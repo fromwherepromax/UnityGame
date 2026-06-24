@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 542474877}
-  quitButton: {fileID: 0}
+  quitButton: {fileID: 2084013184}
   gameSceneName: zktScene
 --- !u!1 &1608784349
 GameObject:

@@ -12,6 +12,7 @@ public class QuestLogUI : MonoBehaviour
     [SerializeField] private QuestRewardSlot[] rewardSlots; //任务奖励槽位数组
 
     private QuestSO questSo; //当前显示的任务数据
+    private QuestSO pendingOfferQuest; //待接收的任务（关闭面板后仍保留，直到接受或拒绝）
     [SerializeField] private QuestSO noAvailableQuest; //没有可用任务时显示的默认任务数据
     [SerializeField] private QuestLogSlot[] questLogSlots; //任务日志槽位数组
     [SerializeField] private CanvasGroup acceptCanvas; //任务接受界面
@@ -21,14 +22,20 @@ public class QuestLogUI : MonoBehaviour
     public void OnEnable() //当脚本启用时
     {
         if (UIManager.Instance != null)
+        {
             UIManager.Instance.OnPanelClosed += HandlePanelClosed;
+            UIManager.Instance.OnPanelOpened += HandlePanelOpened;
+        }
         QuestEvents.OnQuestofferRequested += ShowQuestOffer; //订阅任务提供事件
         QuestEvents.OnQuestTurnInRequested += ShowQuestTurnIn; //订阅任务交付事件
     }
     public void OnDisable() //当脚本禁用时
     {
         if (UIManager.Instance != null)
+        {
             UIManager.Instance.OnPanelClosed -= HandlePanelClosed;
+            UIManager.Instance.OnPanelOpened -= HandlePanelOpened;
+        }
         QuestEvents.OnQuestofferRequested -= ShowQuestOffer; //取消订阅任务提供事件
         QuestEvents.OnQuestTurnInRequested -= ShowQuestTurnIn; //取消订阅任务交付事件
     }
@@ -65,6 +72,7 @@ public class QuestLogUI : MonoBehaviour
         else
         {   
             questSo=incomingQuest; //显示传入的任务数据
+            pendingOfferQuest = incomingQuest; //记住待接收的任务
             SetCanvasState(acceptCanvas, true); //显示任务接受界面
             SetCanvasState(declineCanvas, true); //显示任务拒绝界面
             SetCanvasState(completeCanvas, false); //隐藏任务完成界面
@@ -95,6 +103,7 @@ public class QuestLogUI : MonoBehaviour
 
         Debug.Log("[QuestLogUI] Accepting quest: " + questSo.questName);
         questManager.AcceptQuest(questSo); //接受当前任务
+        pendingOfferQuest = null; //清除待接收标记
         QuestEvents.OnQuestAccepted?.Invoke(questSo); //触发任务被接受事件
 
         RefreshQuestList(); //刷新任务列表
@@ -113,7 +122,7 @@ public class QuestLogUI : MonoBehaviour
     }
     public void OnDeclineQuestClick() //当点击拒绝任务按钮时
     {
-        // 通过 UIManager 关闭任务面板
+        // 不清理 pendingOfferQuest，关闭面板后再打开仍可重新接受
         if (UIManager.Instance != null)
             UIManager.Instance.ClosePanel(UIPanelType.Quest);
     }
@@ -161,7 +170,25 @@ public class QuestLogUI : MonoBehaviour
         {
             UIManager.Instance.OpenPanel(UIPanelType.Quest);
             RefreshQuestList();
-            HandleQuestclick(noAvailableQuest);
+
+            // 如果有待接收的任务，优先显示它和对应按钮
+            if (pendingOfferQuest != null)
+            {
+                // 直接用 ShowQuestOffer 的逻辑恢复显示（已验证可用）
+                questSo = pendingOfferQuest;
+                HandleQuestclick(questSo);
+                SetCanvasState(acceptCanvas, true);
+                SetCanvasState(declineCanvas, true);
+                SetCanvasState(completeCanvas, false);
+            }
+            else if (questSo != null && questSo != noAvailableQuest)
+            {
+                HandleQuestclick(questSo);
+            }
+            else
+            {
+                HandleQuestclick(noAvailableQuest);
+            }
         }
     }
 
@@ -174,6 +201,21 @@ public class QuestLogUI : MonoBehaviour
         {
             SetCanvasState(acceptCanvas, false);
             SetCanvasState(declineCanvas, false);
+            SetCanvasState(completeCanvas, false);
+        }
+    }
+
+    /// <summary>
+    /// 当面板被 UIManager 打开时，如果有待接收任务则恢复显示
+    /// </summary>
+    private void HandlePanelOpened(UIPanelType panelType)
+    {
+        if (panelType == UIPanelType.Quest && pendingOfferQuest != null)
+        {
+            questSo = pendingOfferQuest;
+            HandleQuestclick(questSo);
+            SetCanvasState(acceptCanvas, true);
+            SetCanvasState(declineCanvas, true);
             SetCanvasState(completeCanvas, false);
         }
     }
