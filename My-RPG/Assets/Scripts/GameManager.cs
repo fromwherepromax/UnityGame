@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
    [Header("Persistent Objects")]
    public GameObject[] persistentObjects;
 
+   [Header("Respawn")]
+   public Vector3 respawnPosition = Vector3.zero;
+   public float respawnDelay = 1.5f;
+
 
    private void Awake()
    {
@@ -107,5 +111,54 @@ public class GameManager : MonoBehaviour
                Destroy(eventSystems[i].gameObject);
            }
        }
+   }
+
+   /// <summary>
+   /// 玩家死亡时调用，延迟后传送到复活点并回满血
+   /// </summary>
+   public void RespawnPlayer(GameObject player)
+   {
+       StartCoroutine(RespawnCoroutine(player));
+   }
+
+   private IEnumerator RespawnCoroutine(GameObject player)
+   {
+       // 恢复时间流逝（防止面板打开时卡住）
+       Time.timeScale = 1f;
+
+       yield return new WaitForSeconds(respawnDelay);
+
+       // 关闭所有打开的 UI 面板
+       if (UIManager.Instance != null)
+       {
+           UIManager.Instance.CloseAllPanels();
+       }
+
+       if (player == null)
+       {
+           Debug.LogWarning("[GameManager] 复活失败：玩家引用为空！");
+           yield break;
+       }
+
+       // 回满血
+       if (StatsManager.Instance != null)
+       {
+           StatsManager.Instance.CurrentHealth = StatsManager.Instance.MaxHealth;
+       }
+
+       // 传送到复活点
+       player.transform.position = respawnPosition;
+
+       // 重新激活玩家
+       player.SetActive(true);
+
+       // 更新血量显示
+       PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+       if (playerHealth != null && playerHealth.healthText != null)
+       {
+           playerHealth.healthText.text = "HP:" + StatsManager.Instance.CurrentHealth + "/" + StatsManager.Instance.MaxHealth;
+       }
+
+       Debug.Log($"[GameManager] 玩家已复活，传送至 {respawnPosition}");
    }
 }

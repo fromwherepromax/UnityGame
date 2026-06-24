@@ -68,9 +68,13 @@ public class SettingManager : MonoBehaviour
 
         UIManager.Instance.OpenPanel(UIPanelType.Settings);
 
-        // 刷新音量 UI
-        SettingsPanelUI panelUI = UIManager.Instance.settingsPanel?.GetComponent<SettingsPanelUI>();
-        panelUI?.RefreshUI();
+        // 刷新音量 UI（需检查 CanvasGroup 是否已被场景重载销毁）
+        CanvasGroup settingsCG = UIManager.Instance.settingsPanel;
+        if (settingsCG != null)
+        {
+            SettingsPanelUI panelUI = settingsCG.GetComponent<SettingsPanelUI>();
+            panelUI?.RefreshUI();
+        }
 
         Debug.Log("[SettingManager] 设置面板已打开");
     }

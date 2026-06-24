@@ -54,6 +54,8 @@ public class PlayerMovemont : MonoBehaviour
 
     public void Knockback(Transform enemy,float force,float stunTime)
     {
+        if (!gameObject.activeInHierarchy) return;
+
         isKnockback = true;
         Vector2 direction = (transform.position - enemy.position).normalized;
         rb.velocity = direction*force;

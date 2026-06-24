@@ -27,8 +27,14 @@ public class En : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, playerLayer);
         if (hits.Length>0)
         {
-            hits[0].GetComponent<PlayerHealth>().ChangHealth(-damage);
-            hits[0].GetComponent<PlayerMovemont>().Knockback(transform,knockbackForce,stunTime);
+            PlayerHealth playerHealth = hits[0].GetComponent<PlayerHealth>();
+            playerHealth.ChangHealth(-damage);
+
+            // 玩家死亡后不再击退
+            if (!playerHealth.IsDead)
+            {
+                hits[0].GetComponent<PlayerMovemont>().Knockback(transform,knockbackForce,stunTime);
+            }
         }
 
         Debug.Log("Attacking Player Now!");

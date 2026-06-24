@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// UI 管理器（单例）—— 统一管理所有面板的显示/隐藏和互斥逻辑。
@@ -71,6 +72,59 @@ public class UIManager : MonoBehaviour
             if (kvp.Value != null)
                 SetCanvasGroupVisible(kvp.Value, false);
         }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        RebindAllPanels();
+    }
+
+    /// <summary>
+    /// 场景加载后重新绑定所有面板的 CanvasGroup 引用（场景重载后原引用已失效）
+    /// </summary>
+    private void RebindAllPanels()
+    {
+        openPanels.Clear();
+
+        UIPanelIdentifier[] identifiers = FindObjectsOfType<UIPanelIdentifier>(true);
+        foreach (UIPanelIdentifier id in identifiers)
+        {
+            CanvasGroup cg = id.GetComponent<CanvasGroup>();
+            if (cg != null)
+            {
+                panelMap[id.panelType] = cg;
+
+                // 同步到序列化字段，方便 Inspector 查看
+                switch (id.panelType)
+                {
+                    case UIPanelType.Settings:  settingsPanel  = cg; break;
+                    case UIPanelType.Inventory: inventoryPanel = cg; break;
+                    case UIPanelType.Stats:     statsPanel     = cg; break;
+                    case UIPanelType.Quest:     questPanel     = cg; break;
+                    case UIPanelType.Shop:      shopPanel      = cg; break;
+                    case UIPanelType.Dialogue:  dialoguePanel  = cg; break;
+                }
+            }
+        }
+
+        // 确保所有面板初始为隐藏状态
+        foreach (var kvp in panelMap)
+        {
+            if (kvp.Value != null)
+                SetCanvasGroupVisible(kvp.Value, false);
+        }
+
+        Debug.Log($"[UIManager] 面板重新绑定完成，共绑定 {identifiers.Length} 个面板。");
     }
 
     private void Update()

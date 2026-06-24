@@ -6,6 +6,7 @@ public class StartUI : MonoBehaviour
 {
     [Header("按钮引用")]
     public Button startButton;
+    public Button quitButton;
 
     [Header("场景名")]
     public string gameSceneName = "zktScene";
@@ -13,6 +14,8 @@ public class StartUI : MonoBehaviour
     private void Start()
     {
         startButton.onClick.AddListener(OnStartGame);
+        if (quitButton != null)
+            quitButton.onClick.AddListener(OnQuitGame);
     }
 
     private void OnStartGame()

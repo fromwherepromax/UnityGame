@@ -26,6 +26,7 @@ public class SettingsPanelUI : MonoBehaviour
     // ═══════════════════════ 系统设置 ═══════════════════════
     [Header("系统设置")]
     public Button closeBtn;           // 关闭面板按钮
+    public Button quitBtn;            // 退出游戏按钮
 
     private bool initialized = false;
 
@@ -71,6 +72,9 @@ public class SettingsPanelUI : MonoBehaviour
         // --- 系统设置 ---
         if (closeBtn != null)
             closeBtn.onClick.AddListener(OnClosePanel);
+
+        if (quitBtn != null)
+            quitBtn.onClick.AddListener(OnQuitGame);
     }
 
     /// <summary>
@@ -157,5 +161,18 @@ public class SettingsPanelUI : MonoBehaviour
         MusicManager.Instance?.PlayClick();
         if (SettingManager.Instance != null)
             SettingManager.Instance.CloseSettings();
+    }
+
+    /// <summary>
+    /// 退出游戏
+    /// </summary>
+    private void OnQuitGame()
+    {
+        MusicManager.Instance?.PlayClick();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
