@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - speaker: {fileID: 11400000, guid: e84bc7f7a4da5bd4aabb47ab5f627a74, type: 2}
-    line: "\u90A3\u5F00\u59CB\u55BD"
+    line: "\u90A3\u5F00\u59CB\u5427"
   dialogueOptions: []
   requiredNPC: []
   requiredLocations: []
