@@ -28,7 +28,7 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: f08b62598cfd73d4f88944f17a08c3b7, type: 2}
     line: "\u54E6\u8036\uFF0C\u6211\u7684\u65B0\u751F\u6D3B\u5F00\u59CB\u4E86\uFF01"
   dialogueOptions:
-  - optionText: "\u54FC\uFF0C\u7B28\u86CB\u3002"
+  - optionText: "\u54C8\u54C8\u54C8\u3002"
     nextDialogue: {fileID: 0}
     offerQuest: {fileID: 0}
   requiredNPC: []
